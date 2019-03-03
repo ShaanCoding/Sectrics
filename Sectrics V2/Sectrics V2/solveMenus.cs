@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace Sectrics_V2
 {
     public partial class solveMenus : Form
     {
+        float zoom = 1f;
 
         public solveMenus()
         {
@@ -229,6 +231,57 @@ namespace Sectrics_V2
                 double stress = stiffness[i] * strain;
                 barStressesTextbox.AppendText(Convert.ToString(stress)+ "\r\n");
             }
+        }
+
+        private void bridgeDrawing_Paint(object sender, PaintEventArgs e)
+        {
+            int nodeMultiplyFactor = 100;
+            Graphics g = e.Graphics;
+            Pen beamPen = new Pen(Color.Black, 10);
+            Pen greenPen = new Pen(Color.Green, 10);
+            Pen forcePen = new Pen(Color.Red, 10);
+            forcePen.StartCap = LineCap.ArrowAnchor;
+            forcePen.EndCap = LineCap.RoundAnchor;
+            g.ScaleTransform(zoom, zoom);
+
+            //Draws Nodes Coordinates
+            for(int i = 0; i < Program.bridgeData.nodes.Count; i++)
+            {
+                g.DrawEllipse(greenPen, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor), 20, 20);
+            }
+
+            //Draws Member Lines With Width
+            for(int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+            {
+                if(Program.bridgeData.areas.Count > i)
+                {
+                    beamPen = new Pen(Color.Black, (10 * Convert.ToSingle(Program.bridgeData.areas[i])));
+                }
+                else
+                {
+                    beamPen = new Pen(Color.Black, 10);
+                }
+
+                g.DrawLine(beamPen, (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeY) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeY) * nodeMultiplyFactor));
+            }
+
+            //Draws Forces Applied
+            for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+            {
+                if(!(Program.bridgeData.forces[i].xMagnitudeForces == 0 && Program.bridgeData.forces[i].yMagnitudeForces == 0))
+                {
+                    g.DrawLine(forcePen, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor), (Convert.ToSingle((Program.bridgeData.nodes[i].NodeX * nodeMultiplyFactor) + Program.bridgeData.forces[i].xMagnitudeForces)), Convert.ToSingle((Program.bridgeData.nodes[i].NodeY * nodeMultiplyFactor) + Program.bridgeData.forces[i].yMagnitudeForces));
+                }
+            }
+
+            //Draws The Support Locations
+        }
+
+        private void zoomInBar_Scroll(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Transparent;
+            zoom = zoomInBar.Value / 100f;
+            bridgeDrawing.Invalidate();
         }
     }
 }

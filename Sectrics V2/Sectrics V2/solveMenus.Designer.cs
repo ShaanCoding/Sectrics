@@ -41,6 +41,9 @@
             this.materialPropertiesMenu = new System.Windows.Forms.Button();
             this.barStressesTextbox = new System.Windows.Forms.TextBox();
             this.solveForForces = new System.Windows.Forms.Button();
+            this.zoomInBar = new System.Windows.Forms.TrackBar();
+            this.bridgeDrawing = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
             // minimize
@@ -197,7 +200,7 @@
             // 
             // barStressesTextbox
             // 
-            this.barStressesTextbox.Location = new System.Drawing.Point(845, 382);
+            this.barStressesTextbox.Location = new System.Drawing.Point(657, 94);
             this.barStressesTextbox.Name = "barStressesTextbox";
             this.barStressesTextbox.ReadOnly = true;
             this.barStressesTextbox.Size = new System.Drawing.Size(884, 31);
@@ -212,7 +215,7 @@
             this.solveForForces.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.solveForForces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.solveForForces.Image = ((System.Drawing.Image)(resources.GetObject("solveForForces.Image")));
-            this.solveForForces.Location = new System.Drawing.Point(1288, 749);
+            this.solveForForces.Location = new System.Drawing.Point(1321, 935);
             this.solveForForces.Name = "solveForForces";
             this.solveForForces.Size = new System.Drawing.Size(537, 91);
             this.solveForForces.TabIndex = 13;
@@ -220,12 +223,36 @@
             this.solveForForces.UseVisualStyleBackColor = false;
             this.solveForForces.Click += new System.EventHandler(this.solveForForces_Click);
             // 
+            // zoomInBar
+            // 
+            this.zoomInBar.BackColor = System.Drawing.Color.White;
+            this.zoomInBar.Location = new System.Drawing.Point(657, 140);
+            this.zoomInBar.Maximum = 100;
+            this.zoomInBar.Minimum = 1;
+            this.zoomInBar.Name = "zoomInBar";
+            this.zoomInBar.Size = new System.Drawing.Size(884, 90);
+            this.zoomInBar.TabIndex = 14;
+            this.zoomInBar.TabStop = false;
+            this.zoomInBar.Value = 100;
+            this.zoomInBar.Scroll += new System.EventHandler(this.zoomInBar_Scroll);
+            // 
+            // bridgeDrawing
+            // 
+            this.bridgeDrawing.BackColor = System.Drawing.Color.Transparent;
+            this.bridgeDrawing.Location = new System.Drawing.Point(709, 278);
+            this.bridgeDrawing.Name = "bridgeDrawing";
+            this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
+            this.bridgeDrawing.TabIndex = 15;
+            this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
+            // 
             // solveMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.bridgeDrawing);
+            this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.solveForForces);
             this.Controls.Add(this.barStressesTextbox);
             this.Controls.Add(this.materialPropertiesMenu);
@@ -245,6 +272,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sectrics - Truss Analysis Program";
             this.Load += new System.EventHandler(this.nodes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +292,7 @@
         private System.Windows.Forms.Button materialPropertiesMenu;
         private System.Windows.Forms.TextBox barStressesTextbox;
         private System.Windows.Forms.Button solveForForces;
+        private System.Windows.Forms.TrackBar zoomInBar;
+        private System.Windows.Forms.Panel bridgeDrawing;
     }
 }

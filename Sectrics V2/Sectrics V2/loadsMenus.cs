@@ -115,12 +115,8 @@ namespace Sectrics_V2
                         Program.bridgeData.forces.Add(new forces());
                         Program.bridgeData.forces[i].xMagnitudeForces = 0;
                         Program.bridgeData.forces[i].yMagnitudeForces = 0;
-                        nodeTextbox.Text = "";
-                        xForceTextbox.Text = "";
-                        yForceTextbox.Text = "";
                     }
                 }
-
 
                 if (Convert.ToInt16(nodeTextbox.Text) < Program.bridgeData.nodes.Count && nodeTextbox.Text != null && xForceTextbox.Text != null && yForceTextbox.Text != null)
                 {
@@ -131,7 +127,7 @@ namespace Sectrics_V2
                 {
                     if (nodeTextbox.Text == null || Convert.ToInt32(nodeTextbox.Text) < Program.bridgeData.nodes.Count)
                     {
-                        nodeTextbox.Text = "Incorrect Variable Entered"; ;
+                        nodeTextbox.Text = "Incorrect Variable Entered";
                     }
                     if (xForceTextbox.Text == null)
                     {
@@ -142,6 +138,9 @@ namespace Sectrics_V2
                         yForceTextbox.Text = "Incorrect Variable Entered";
                     }
                 }
+                nodeTextbox.Text = "";
+                xForceTextbox.Text = "";
+                yForceTextbox.Text = "";
             }
             catch
             {

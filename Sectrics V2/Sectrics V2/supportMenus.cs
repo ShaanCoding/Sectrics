@@ -130,12 +130,15 @@ namespace Sectrics_V2
                         case "Fixed Support":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(XDOF);
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(YDOF);
+                            supportNodeTextbox.Text = "";
                             break;
                         case "Vertical Roller":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(XDOF);
+                            supportNodeTextbox.Text = "";
                             break;
                         case "Horozontal Roller":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(YDOF);
+                            supportNodeTextbox.Text = "";
                             break;
                         default:
                             supportNodeTextbox.Text = "Incorrect Variable Entered";
