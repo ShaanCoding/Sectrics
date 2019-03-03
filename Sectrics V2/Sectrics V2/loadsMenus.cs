@@ -30,7 +30,7 @@ namespace Sectrics_V2
 
         private void nodesMenu_Click(object sender, EventArgs e)
         {
-            loadsMenus node = new loadsMenus();
+            nodes node = new nodes();
             this.Hide();
             node.Show();
         }
