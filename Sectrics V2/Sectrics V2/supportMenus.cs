@@ -119,6 +119,13 @@ namespace Sectrics_V2
                     }
                 }
 
+                if (Program.bridgeData.supportType.Count != Program.bridgeData.nodes.Count)
+                {
+                    for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+                    {
+                        Program.bridgeData.supportType.Add("Null");
+                    }
+                }
 
                 int XDOF = ((Convert.ToInt32(supportNodeTextbox.Text) + 1) * 2 - 1);
                 int YDOF = ((Convert.ToInt32(supportNodeTextbox.Text) + 1) * 2);
@@ -127,17 +134,26 @@ namespace Sectrics_V2
                 {
                     switch (supportType.Text)
                     {
-                        case "Fixed Support":
+                        case "Vertical Fixed Support":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(XDOF);
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(YDOF);
+                            Program.bridgeData.supportType[Convert.ToInt32(supportNodeTextbox.Text)] = "Vertical Fixed Support";
+                            supportNodeTextbox.Text = "";
+                            break;
+                        case "Horozontal Fixed Support":
+                            Program.bridgeData.restrainedDegreesOfFreedom.Add(XDOF);
+                            Program.bridgeData.restrainedDegreesOfFreedom.Add(YDOF);
+                            Program.bridgeData.supportType[Convert.ToInt32(supportNodeTextbox.Text)] = "Horozontal Fixed Support";
                             supportNodeTextbox.Text = "";
                             break;
                         case "Vertical Roller":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(XDOF);
+                            Program.bridgeData.supportType[Convert.ToInt32(supportNodeTextbox.Text)] = "Vertical Roller";
                             supportNodeTextbox.Text = "";
                             break;
                         case "Horozontal Roller":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(YDOF);
+                            Program.bridgeData.supportType[Convert.ToInt32(supportNodeTextbox.Text)] = "Horozontal Roller";
                             supportNodeTextbox.Text = "";
                             break;
                         default:

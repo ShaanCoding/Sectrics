@@ -203,7 +203,7 @@
             this.addSupportButton.BackColor = System.Drawing.Color.Transparent;
             this.addSupportButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addSupportButton.BackgroundImage")));
             this.addSupportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addSupportButton.Location = new System.Drawing.Point(838, 473);
+            this.addSupportButton.Location = new System.Drawing.Point(825, 531);
             this.addSupportButton.Name = "addSupportButton";
             this.addSupportButton.Size = new System.Drawing.Size(540, 91);
             this.addSupportButton.TabIndex = 31;
@@ -252,12 +252,13 @@
             this.supportType.FormattingEnabled = true;
             this.supportType.ItemHeight = 33;
             this.supportType.Items.AddRange(new object[] {
-            "Fixed Support",
+            "Vertical Fixed Support",
+            "Horozontal Fixed Support",
             "Vertical Roller",
             "Horozontal Roller"});
             this.supportType.Location = new System.Drawing.Point(907, 350);
             this.supportType.Name = "supportType";
-            this.supportType.Size = new System.Drawing.Size(471, 103);
+            this.supportType.Size = new System.Drawing.Size(471, 136);
             this.supportType.TabIndex = 32;
             this.supportType.TabStop = false;
             this.supportType.SelectedIndexChanged += new System.EventHandler(this.supportType_SelectedIndexChanged);

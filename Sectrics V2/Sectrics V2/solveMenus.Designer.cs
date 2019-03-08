@@ -238,7 +238,7 @@
             // 
             // bridgeDrawing
             // 
-            this.bridgeDrawing.BackColor = System.Drawing.Color.Transparent;
+            this.bridgeDrawing.BackColor = System.Drawing.Color.White;
             this.bridgeDrawing.Location = new System.Drawing.Point(709, 278);
             this.bridgeDrawing.Name = "bridgeDrawing";
             this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);

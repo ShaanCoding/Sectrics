@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sectrics_V2.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -275,11 +276,34 @@ namespace Sectrics_V2
             }
 
             //Draws The Support Locations
+            Image verticalFixed = Resources.verticalSupport;
+            Image horozontalFixed = Resources.horozontalSupport;
+            Image verticalRoller = Resources.verticalRoller;
+            Image horozontalRoller = Resources.horozontalRoller;
+            for(int i = 0; i < Program.bridgeData.supportType.Count; i++)
+            {
+                switch (Program.bridgeData.supportType[i])
+                {
+                    case "Vertical Fixed Support":
+                        g.DrawImage(verticalFixed, Convert.ToSingle(Program.bridgeData.nodes[i].NodeX), Convert.ToSingle(Program.bridgeData.nodes[i].NodeY));
+                        break;
+                    case "Horozontal Fixed Support":
+                        g.DrawImage(horozontalFixed, Convert.ToSingle(Program.bridgeData.nodes[i].NodeX), Convert.ToSingle(Program.bridgeData.nodes[i].NodeY));
+                        break;
+                    case "Vertical Roller":
+                        g.DrawImage(verticalRoller, Convert.ToSingle(Program.bridgeData.nodes[i].NodeX), Convert.ToSingle(Program.bridgeData.nodes[i].NodeY));
+                        break;
+                    case "Horozontal Roller":
+                        g.DrawImage(horozontalRoller, Convert.ToSingle(Program.bridgeData.nodes[i].NodeX), Convert.ToSingle(Program.bridgeData.nodes[i].NodeY));
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private void zoomInBar_Scroll(object sender, EventArgs e)
         {
-            this.BackColor = Color.Transparent;
             zoom = zoomInBar.Value / 100f;
             bridgeDrawing.Invalidate();
         }
