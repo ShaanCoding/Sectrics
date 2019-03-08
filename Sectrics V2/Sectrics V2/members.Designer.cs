@@ -202,6 +202,7 @@
             // 
             this.addMemberButton.BackColor = System.Drawing.Color.Transparent;
             this.addMemberButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addMemberButton.BackgroundImage")));
+            this.addMemberButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.addMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMemberButton.Location = new System.Drawing.Point(809, 326);
             this.addMemberButton.Name = "addMemberButton";
@@ -217,8 +218,7 @@
             this.fromMemberTextbox.Location = new System.Drawing.Point(932, 127);
             this.fromMemberTextbox.Name = "fromMemberTextbox";
             this.fromMemberTextbox.Size = new System.Drawing.Size(417, 40);
-            this.fromMemberTextbox.TabIndex = 20;
-            this.fromMemberTextbox.TabStop = false;
+            this.fromMemberTextbox.TabIndex = 0;
             this.fromMemberTextbox.Text = "Enter the from member here";
             this.fromMemberTextbox.TextChanged += new System.EventHandler(this.fromMemberTextbox_TextChanged);
             // 
@@ -240,8 +240,7 @@
             this.toMemberTextbox.Location = new System.Drawing.Point(932, 195);
             this.toMemberTextbox.Name = "toMemberTextbox";
             this.toMemberTextbox.Size = new System.Drawing.Size(417, 40);
-            this.toMemberTextbox.TabIndex = 18;
-            this.toMemberTextbox.TabStop = false;
+            this.toMemberTextbox.TabIndex = 1;
             this.toMemberTextbox.Text = "Enter the to member here";
             this.toMemberTextbox.TextChanged += new System.EventHandler(this.toMemberTextbox_TextChanged);
             // 

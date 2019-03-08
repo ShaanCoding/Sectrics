@@ -204,6 +204,7 @@
             // 
             this.addLoadButton.BackColor = System.Drawing.Color.Transparent;
             this.addLoadButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addLoadButton.BackgroundImage")));
+            this.addLoadButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.addLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addLoadButton.Location = new System.Drawing.Point(974, 424);
             this.addLoadButton.Name = "addLoadButton";
@@ -219,8 +220,7 @@
             this.xForceTextbox.Location = new System.Drawing.Point(1043, 278);
             this.xForceTextbox.Name = "xForceTextbox";
             this.xForceTextbox.Size = new System.Drawing.Size(471, 40);
-            this.xForceTextbox.TabIndex = 30;
-            this.xForceTextbox.TabStop = false;
+            this.xForceTextbox.TabIndex = 1;
             this.xForceTextbox.Text = "Enter the X axis forces here";
             this.xForceTextbox.TextChanged += new System.EventHandler(this.xForceTextbox_TextChanged);
             // 
@@ -242,8 +242,7 @@
             this.nodeTextbox.Location = new System.Drawing.Point(1043, 208);
             this.nodeTextbox.Name = "nodeTextbox";
             this.nodeTextbox.Size = new System.Drawing.Size(471, 40);
-            this.nodeTextbox.TabIndex = 28;
-            this.nodeTextbox.TabStop = false;
+            this.nodeTextbox.TabIndex = 0;
             this.nodeTextbox.Text = "Enter the node here";
             this.nodeTextbox.TextChanged += new System.EventHandler(this.nodeTextbox_TextChanged);
             // 
@@ -265,8 +264,7 @@
             this.yForceTextbox.Location = new System.Drawing.Point(1043, 352);
             this.yForceTextbox.Name = "yForceTextbox";
             this.yForceTextbox.Size = new System.Drawing.Size(471, 40);
-            this.yForceTextbox.TabIndex = 33;
-            this.yForceTextbox.TabStop = false;
+            this.yForceTextbox.TabIndex = 2;
             this.yForceTextbox.Text = "Enter the Y axis forces here";
             this.yForceTextbox.TextChanged += new System.EventHandler(this.yForceTextbox_TextChanged);
             // 

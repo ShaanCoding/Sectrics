@@ -216,8 +216,7 @@
             this.xAxisTextbox.Location = new System.Drawing.Point(1018, 192);
             this.xAxisTextbox.Name = "xAxisTextbox";
             this.xAxisTextbox.Size = new System.Drawing.Size(425, 40);
-            this.xAxisTextbox.TabIndex = 13;
-            this.xAxisTextbox.TabStop = false;
+            this.xAxisTextbox.TabIndex = 0;
             this.xAxisTextbox.Text = "Enter the x-axis coordinates here.";
             this.xAxisTextbox.TextChanged += new System.EventHandler(this.xAxisTextbox_TextChanged);
             // 
@@ -227,8 +226,7 @@
             this.yAxisTextbox.Location = new System.Drawing.Point(1018, 262);
             this.yAxisTextbox.Name = "yAxisTextbox";
             this.yAxisTextbox.Size = new System.Drawing.Size(425, 40);
-            this.yAxisTextbox.TabIndex = 15;
-            this.yAxisTextbox.TabStop = false;
+            this.yAxisTextbox.TabIndex = 1;
             this.yAxisTextbox.Text = "Enter the y-axis coordinates here.";
             this.yAxisTextbox.TextChanged += new System.EventHandler(this.yAxisTextbox_TextChanged);
             // 
@@ -248,6 +246,7 @@
             // 
             this.addNodeButton.BackColor = System.Drawing.Color.Transparent;
             this.addNodeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addNodeButton.BackgroundImage")));
+            this.addNodeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.addNodeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNodeButton.Location = new System.Drawing.Point(903, 328);
             this.addNodeButton.Name = "addNodeButton";

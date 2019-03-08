@@ -22,7 +22,7 @@ namespace Sectrics_V2
         {
             Thread t = new Thread(new ThreadStart(SplashScreen));
             t.Start();
-            Thread.Sleep(5000);
+            Thread.Sleep(2500);
 
             InitializeComponent();
 
@@ -41,9 +41,21 @@ namespace Sectrics_V2
 
         private void startApplication_Click(object sender, EventArgs e)
         {
+            nodes node = new nodes();
+            this.Hide();
+            node.Show();
+        }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
             tutorialMenu tutorial = new tutorialMenu();
             this.Hide();
             tutorial.Show();
+        }
+
+        private void startMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

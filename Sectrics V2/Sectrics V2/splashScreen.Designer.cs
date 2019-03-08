@@ -45,6 +45,7 @@
             this.Name = "splashScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Sectrics - Truss Analysis Program";
+            this.Load += new System.EventHandler(this.splashScreen_Load);
             this.ResumeLayout(false);
 
         }

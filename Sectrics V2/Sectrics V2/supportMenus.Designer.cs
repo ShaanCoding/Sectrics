@@ -202,6 +202,7 @@
             // 
             this.addSupportButton.BackColor = System.Drawing.Color.Transparent;
             this.addSupportButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addSupportButton.BackgroundImage")));
+            this.addSupportButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.addSupportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addSupportButton.Location = new System.Drawing.Point(825, 531);
             this.addSupportButton.Name = "addSupportButton";
@@ -229,8 +230,7 @@
             this.supportNodeTextbox.Location = new System.Drawing.Point(907, 279);
             this.supportNodeTextbox.Name = "supportNodeTextbox";
             this.supportNodeTextbox.Size = new System.Drawing.Size(471, 40);
-            this.supportNodeTextbox.TabIndex = 28;
-            this.supportNodeTextbox.TabStop = false;
+            this.supportNodeTextbox.TabIndex = 0;
             this.supportNodeTextbox.Text = "Enter the support node here";
             this.supportNodeTextbox.TextChanged += new System.EventHandler(this.supportNodeTextbox_TextChanged);
             // 
@@ -259,8 +259,7 @@
             this.supportType.Location = new System.Drawing.Point(907, 350);
             this.supportType.Name = "supportType";
             this.supportType.Size = new System.Drawing.Size(471, 136);
-            this.supportType.TabIndex = 32;
-            this.supportType.TabStop = false;
+            this.supportType.TabIndex = 1;
             this.supportType.SelectedIndexChanged += new System.EventHandler(this.supportType_SelectedIndexChanged);
             // 
             // supportMenus

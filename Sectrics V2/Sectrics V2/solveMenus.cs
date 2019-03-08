@@ -285,16 +285,16 @@ namespace Sectrics_V2
                 switch (Program.bridgeData.supportType[i])
                 {
                     case "Vertical Fixed Support":
-                        g.DrawImage(verticalFixed, Convert.ToSingle(Program.bridgeData.nodes[i].NodeX), Convert.ToSingle(Program.bridgeData.nodes[i].NodeY));
+                        g.DrawImage(verticalFixed, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor));
                         break;
                     case "Horozontal Fixed Support":
-                        g.DrawImage(horozontalFixed, Convert.ToSingle(Program.bridgeData.nodes[i].NodeX), Convert.ToSingle(Program.bridgeData.nodes[i].NodeY));
+                        g.DrawImage(horozontalFixed, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor));
                         break;
                     case "Vertical Roller":
-                        g.DrawImage(verticalRoller, Convert.ToSingle(Program.bridgeData.nodes[i].NodeX), Convert.ToSingle(Program.bridgeData.nodes[i].NodeY));
+                        g.DrawImage(verticalRoller, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor));
                         break;
                     case "Horozontal Roller":
-                        g.DrawImage(horozontalRoller, Convert.ToSingle(Program.bridgeData.nodes[i].NodeX), Convert.ToSingle(Program.bridgeData.nodes[i].NodeY));
+                        g.DrawImage(horozontalRoller, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor));
                         break;
                     default:
                         break;

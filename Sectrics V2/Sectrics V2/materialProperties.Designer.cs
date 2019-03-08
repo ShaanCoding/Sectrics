@@ -202,6 +202,7 @@
             // 
             this.addMaterialPropertiesButton.BackColor = System.Drawing.Color.Transparent;
             this.addMaterialPropertiesButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addMaterialPropertiesButton.BackgroundImage")));
+            this.addMaterialPropertiesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.addMaterialPropertiesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMaterialPropertiesButton.Location = new System.Drawing.Point(1030, 379);
             this.addMaterialPropertiesButton.Name = "addMaterialPropertiesButton";
@@ -217,8 +218,7 @@
             this.areaTextbox.Location = new System.Drawing.Point(1099, 319);
             this.areaTextbox.Name = "areaTextbox";
             this.areaTextbox.Size = new System.Drawing.Size(471, 40);
-            this.areaTextbox.TabIndex = 25;
-            this.areaTextbox.TabStop = false;
+            this.areaTextbox.TabIndex = 1;
             this.areaTextbox.Text = "Enter the cross-sectional area here";
             this.areaTextbox.TextChanged += new System.EventHandler(this.areaTextbox_TextChanged);
             // 
@@ -240,8 +240,7 @@
             this.youngModulusTextbox.Location = new System.Drawing.Point(1099, 249);
             this.youngModulusTextbox.Name = "youngModulusTextbox";
             this.youngModulusTextbox.Size = new System.Drawing.Size(471, 40);
-            this.youngModulusTextbox.TabIndex = 23;
-            this.youngModulusTextbox.TabStop = false;
+            this.youngModulusTextbox.TabIndex = 0;
             this.youngModulusTextbox.Text = "Enter the young modulus here";
             this.youngModulusTextbox.TextChanged += new System.EventHandler(this.youngModulusTextbox_TextChanged);
             // 

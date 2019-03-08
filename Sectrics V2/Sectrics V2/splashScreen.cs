@@ -16,5 +16,10 @@ namespace Sectrics_V2
         {
             InitializeComponent();
         }
+
+        private void splashScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

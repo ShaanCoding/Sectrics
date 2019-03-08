@@ -33,6 +33,7 @@
             this.minimize = new System.Windows.Forms.Button();
             this.startApplication = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.helpButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // exitApplication
@@ -77,7 +78,7 @@
             this.startApplication.Location = new System.Drawing.Point(690, 576);
             this.startApplication.Name = "startApplication";
             this.startApplication.Size = new System.Drawing.Size(540, 91);
-            this.startApplication.TabIndex = 2;
+            this.startApplication.TabIndex = 0;
             this.startApplication.TabStop = false;
             this.startApplication.UseVisualStyleBackColor = false;
             this.startApplication.Click += new System.EventHandler(this.startApplication_Click);
@@ -91,11 +92,26 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(818, 713);
+            this.label1.Location = new System.Drawing.Point(825, 835);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(285, 39);
             this.label1.TabIndex = 3;
             this.label1.Text = "STUDENT EDITION";
+            // 
+            // helpButton
+            // 
+            this.helpButton.BackColor = System.Drawing.Color.Transparent;
+            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpButton.Image = ((System.Drawing.Image)(resources.GetObject("helpButton.Image")));
+            this.helpButton.Location = new System.Drawing.Point(690, 697);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(540, 109);
+            this.helpButton.TabIndex = 1;
+            this.helpButton.TabStop = false;
+            this.helpButton.UseVisualStyleBackColor = false;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // startMenu
             // 
@@ -104,6 +120,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.helpButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.startApplication);
             this.Controls.Add(this.minimize);
@@ -116,6 +133,7 @@
             this.Name = "startMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sectrics - Truss Analysis Program";
+            this.Load += new System.EventHandler(this.startMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +145,7 @@
         private System.Windows.Forms.Button minimize;
         private System.Windows.Forms.Button startApplication;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button helpButton;
     }
 }
 
