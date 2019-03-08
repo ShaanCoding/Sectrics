@@ -14,6 +14,7 @@ namespace Sectrics_V2
 {
     public partial class solveMenus : Form
     {
+        double[] stressForPanel = new double[Program.bridgeData.memberConnection.Count];
         float zoom = 1f;
 
         public solveMenus()
@@ -231,7 +232,9 @@ namespace Sectrics_V2
                 double strain = (q[1] - q[0]) /Program. maths.distanceFormula(0, 0, deltaPoint[0], deltaPoint[1]);
                 double stress = stiffness[i] * strain;
                 barStressesTextbox.AppendText(Convert.ToString(stress)+ "\r\n");
+                stressForPanel[i] = stress;
             }
+            bridgeDrawing.Invalidate();
         }
 
         private void bridgeDrawing_Paint(object sender, PaintEventArgs e)
@@ -254,15 +257,29 @@ namespace Sectrics_V2
             //Draws Member Lines With Width
             for(int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
             {
-                if(Program.bridgeData.areas.Count > i)
+                Color penColor;
+
+                if(stressForPanel != null && stressForPanel[i] > 0)
                 {
-                    beamPen = new Pen(Color.Black, (10 * Convert.ToSingle(Program.bridgeData.areas[i])));
+                    penColor = Color.Red;
+                }
+                else if(stressForPanel != null && stressForPanel[i] < 0)
+                {
+                    penColor = Color.Blue;
                 }
                 else
                 {
-                    beamPen = new Pen(Color.Black, 10);
+                    penColor = Color.Black;
                 }
 
+                if(Program.bridgeData.areas.Count > i)
+                {
+                    beamPen = new Pen(penColor, (10 * Convert.ToSingle(Program.bridgeData.areas[i])));
+                }
+                else
+                {
+                    beamPen = new Pen(penColor, 10);
+                }
                 g.DrawLine(beamPen, (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeY) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeY) * nodeMultiplyFactor));
             }
 
