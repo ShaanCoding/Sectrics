@@ -244,6 +244,8 @@ namespace Sectrics_V2
             Pen beamPen = new Pen(Color.Black, 10);
             Pen greenPen = new Pen(Color.Green, 10);
             Pen forcePen = new Pen(Color.Red, 10);
+            SolidBrush blackBrush = new SolidBrush(Color.Black);
+            Font font = new Font("Arial", 16);
             forcePen.StartCap = LineCap.ArrowAnchor;
             forcePen.EndCap = LineCap.RoundAnchor;
             g.ScaleTransform(zoom, zoom);
@@ -280,7 +282,16 @@ namespace Sectrics_V2
                 {
                     beamPen = new Pen(penColor, 10);
                 }
-                g.DrawLine(beamPen, (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeY) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeX) * nodeMultiplyFactor), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeY) * nodeMultiplyFactor));
+                g.DrawLine(beamPen, (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeX) * nodeMultiplyFactor),
+                    (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeY) * nodeMultiplyFactor),
+                    (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeX) * nodeMultiplyFactor),
+                    (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeY) * nodeMultiplyFactor));
+
+                if(stressForPanel[i] != null)
+                {
+                    g.DrawString(stressForPanel[i].ToString(), font, blackBrush,
+                        (((Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeX) * nodeMultiplyFactor) + (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeX) * nodeMultiplyFactor)) / 2), (((Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeY) * nodeMultiplyFactor) + (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeY) * nodeMultiplyFactor)) / 2));
+                }
             }
 
             //Draws Forces Applied
