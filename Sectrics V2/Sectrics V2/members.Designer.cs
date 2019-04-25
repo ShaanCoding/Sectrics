@@ -44,6 +44,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.toMemberTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.membersListView = new System.Windows.Forms.ListBox();
+            this.removeMember = new System.Windows.Forms.Button();
+            this.clearAll = new System.Windows.Forms.Button();
+            this.nodeListView = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // minimize
@@ -256,12 +260,64 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "TO MEMBER:";
             // 
+            // membersListView
+            // 
+            this.membersListView.FormattingEnabled = true;
+            this.membersListView.ItemHeight = 25;
+            this.membersListView.Location = new System.Drawing.Point(1259, 517);
+            this.membersListView.Name = "membersListView";
+            this.membersListView.Size = new System.Drawing.Size(529, 404);
+            this.membersListView.TabIndex = 22;
+            this.membersListView.SelectedIndexChanged += new System.EventHandler(this.membersListView_SelectedIndexChanged);
+            // 
+            // removeMember
+            // 
+            this.removeMember.BackColor = System.Drawing.Color.Transparent;
+            this.removeMember.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeMember.BackgroundImage")));
+            this.removeMember.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.removeMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeMember.Location = new System.Drawing.Point(660, 517);
+            this.removeMember.Name = "removeMember";
+            this.removeMember.Size = new System.Drawing.Size(540, 91);
+            this.removeMember.TabIndex = 23;
+            this.removeMember.TabStop = false;
+            this.removeMember.UseVisualStyleBackColor = false;
+            this.removeMember.Click += new System.EventHandler(this.removeMember_Click);
+            // 
+            // clearAll
+            // 
+            this.clearAll.BackColor = System.Drawing.Color.Transparent;
+            this.clearAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clearAll.BackgroundImage")));
+            this.clearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearAll.Location = new System.Drawing.Point(660, 625);
+            this.clearAll.Name = "clearAll";
+            this.clearAll.Size = new System.Drawing.Size(540, 91);
+            this.clearAll.TabIndex = 24;
+            this.clearAll.TabStop = false;
+            this.clearAll.UseVisualStyleBackColor = false;
+            this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
+            // 
+            // nodeListView
+            // 
+            this.nodeListView.FormattingEnabled = true;
+            this.nodeListView.ItemHeight = 25;
+            this.nodeListView.Location = new System.Drawing.Point(1375, 113);
+            this.nodeListView.Name = "nodeListView";
+            this.nodeListView.Size = new System.Drawing.Size(462, 354);
+            this.nodeListView.TabIndex = 25;
+            this.nodeListView.SelectedIndexChanged += new System.EventHandler(this.nodeListView_SelectedIndexChanged);
+            // 
             // members
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.nodeListView);
+            this.Controls.Add(this.clearAll);
+            this.Controls.Add(this.removeMember);
+            this.Controls.Add(this.membersListView);
             this.Controls.Add(this.addMemberButton);
             this.Controls.Add(this.fromMemberTextbox);
             this.Controls.Add(this.label2);
@@ -306,5 +362,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox toMemberTextbox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox membersListView;
+        private System.Windows.Forms.Button removeMember;
+        private System.Windows.Forms.Button clearAll;
+        private System.Windows.Forms.ListBox nodeListView;
     }
 }

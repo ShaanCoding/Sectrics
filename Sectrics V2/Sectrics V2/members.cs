@@ -15,6 +15,20 @@ namespace Sectrics_V2
         public members()
         {
             InitializeComponent();
+
+            //Adds The Array Coordinates Into ListBox
+            nodeListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+            {
+                nodeListView.Items.Add("Node " + i + " " + "X Coordinate: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Y Coordinate: " + Program.bridgeData.nodes[i].NodeY.ToString());
+            }
+
+            //Adds The Array Coordinates Into ListBox
+            membersListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+            {
+                membersListView.Items.Add("To Member: " + Program.bridgeData.memberConnection[i].toConnection.ToString() + " | From Member: " + Program.bridgeData.memberConnection[i].fromConnection.ToString());
+            }
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -114,6 +128,13 @@ namespace Sectrics_V2
                     toMemberTextbox.Text = "Incorrect Variable Entered";
                     fromMemberTextbox.Text = "Incorrect Variable Entered";
                 }
+
+                //Adds The Array Coordinates Into ListBox
+                membersListView.Items.Clear();
+                for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+                {
+                    membersListView.Items.Add("To Member: " + Program.bridgeData.memberConnection[i].toConnection.ToString() + " | From Member: " + Program.bridgeData.memberConnection[i].fromConnection.ToString());
+                }
             }
             catch
             {
@@ -128,6 +149,49 @@ namespace Sectrics_V2
         }
 
         private void toMemberTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeMember_Click(object sender, EventArgs e)
+        {
+            if (membersListView.SelectedIndex >= 0)
+            {
+                Program.bridgeData.memberConnection.RemoveAt(membersListView.SelectedIndex);
+                Program.bridgeData.memberIndex--;
+
+                //Adds The Array Coordinates Into ListBox
+                membersListView.Items.Clear();
+                for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+                {
+                    membersListView.Items.Add("To Member: " + Program.bridgeData.memberConnection[i].toConnection.ToString() + " | From Member: " + Program.bridgeData.memberConnection[i].fromConnection.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error: Must Select An Item Before Clicking It.");
+            }
+        }
+
+        private void clearAll_Click(object sender, EventArgs e)
+        {
+            Program.bridgeData.memberConnection.Clear();
+            Program.bridgeData.memberIndex = 0;
+
+            //Adds The Array Coordinates Into ListBox
+            membersListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+            {
+                membersListView.Items.Add("To Member: " + Program.bridgeData.memberConnection[i].toConnection.ToString() + " | From Member: " + Program.bridgeData.memberConnection[i].fromConnection.ToString());
+            }
+        }
+
+        private void membersListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nodeListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -15,6 +15,13 @@ namespace Sectrics_V2
         public nodes()
         {
             InitializeComponent();
+
+            //Adds The Array Coordinates Into ListBox
+            nodeListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+            {
+                nodeListView.Items.Add("Node X: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Node Y: " + Program.bridgeData.nodes[i].NodeY.ToString());
+            }
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -114,6 +121,13 @@ namespace Sectrics_V2
                     xAxisTextbox.Text = "Incorrect Variable Entered";
                     yAxisTextbox.Text = "Incorrect Variable Entered";
                 }
+
+                //Adds The Array Coordinates Into ListBox
+                nodeListView.Items.Clear();
+                for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+                {
+                    nodeListView.Items.Add("Node X: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Node Y: " + Program.bridgeData.nodes[i].NodeY.ToString());
+                }
             }
             catch
             {
@@ -130,6 +144,44 @@ namespace Sectrics_V2
         private void xAxisTextbox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void nodeListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeNode_Click(object sender, EventArgs e)
+        {
+            if(nodeListView.SelectedIndex >= 0)
+            {
+                Program.bridgeData.nodes.RemoveAt(nodeListView.SelectedIndex);
+                Program.bridgeData.nodesIndex--;
+
+                //Adds The Array Coordinates Into ListBox
+                nodeListView.Items.Clear();
+                for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+                {
+                    nodeListView.Items.Add("Node X: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Node Y: " + Program.bridgeData.nodes[i].NodeY.ToString());
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error: Must Select An Item Before Clicking It.");
+            }
+        }
+
+        private void clearAll_Click(object sender, EventArgs e)
+        {
+            Program.bridgeData.nodes.Clear();
+            Program.bridgeData.nodesIndex = 0;
+
+            //Adds The Array Coordinates Into ListBox
+            nodeListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+            {
+                nodeListView.Items.Add("Node X: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Node Y: " + Program.bridgeData.nodes[i].NodeY.ToString());
+            }
         }
     }
 }

@@ -44,6 +44,9 @@
             this.yAxisTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.addNodeButton = new System.Windows.Forms.Button();
+            this.nodeListView = new System.Windows.Forms.ListBox();
+            this.removeNode = new System.Windows.Forms.Button();
+            this.clearAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // minimize
@@ -256,12 +259,53 @@
             this.addNodeButton.UseVisualStyleBackColor = false;
             this.addNodeButton.Click += new System.EventHandler(this.addNodeButton_Click);
             // 
+            // nodeListView
+            // 
+            this.nodeListView.FormattingEnabled = true;
+            this.nodeListView.ItemHeight = 25;
+            this.nodeListView.Location = new System.Drawing.Point(1225, 567);
+            this.nodeListView.Name = "nodeListView";
+            this.nodeListView.Size = new System.Drawing.Size(520, 354);
+            this.nodeListView.TabIndex = 17;
+            this.nodeListView.SelectedIndexChanged += new System.EventHandler(this.nodeListView_SelectedIndexChanged);
+            // 
+            // removeNode
+            // 
+            this.removeNode.BackColor = System.Drawing.Color.Transparent;
+            this.removeNode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeNode.BackgroundImage")));
+            this.removeNode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.removeNode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeNode.Location = new System.Drawing.Point(608, 567);
+            this.removeNode.Name = "removeNode";
+            this.removeNode.Size = new System.Drawing.Size(540, 91);
+            this.removeNode.TabIndex = 18;
+            this.removeNode.TabStop = false;
+            this.removeNode.UseVisualStyleBackColor = false;
+            this.removeNode.Click += new System.EventHandler(this.removeNode_Click);
+            // 
+            // clearAll
+            // 
+            this.clearAll.BackColor = System.Drawing.Color.Transparent;
+            this.clearAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clearAll.BackgroundImage")));
+            this.clearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearAll.Location = new System.Drawing.Point(608, 693);
+            this.clearAll.Name = "clearAll";
+            this.clearAll.Size = new System.Drawing.Size(540, 91);
+            this.clearAll.TabIndex = 19;
+            this.clearAll.TabStop = false;
+            this.clearAll.UseVisualStyleBackColor = false;
+            this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
+            // 
             // nodes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.clearAll);
+            this.Controls.Add(this.removeNode);
+            this.Controls.Add(this.nodeListView);
             this.Controls.Add(this.addNodeButton);
             this.Controls.Add(this.yAxisTextbox);
             this.Controls.Add(this.label2);
@@ -306,5 +350,8 @@
         private System.Windows.Forms.TextBox yAxisTextbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addNodeButton;
+        private System.Windows.Forms.ListBox nodeListView;
+        private System.Windows.Forms.Button removeNode;
+        private System.Windows.Forms.Button clearAll;
     }
 }
