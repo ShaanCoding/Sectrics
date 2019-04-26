@@ -16,6 +16,30 @@ namespace Sectrics_V2
         public loadsMenus()
         {
             InitializeComponent();
+
+            if (Program.bridgeData.forces.Count != Program.bridgeData.nodes.Count)
+            {
+                for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+                {
+                    Program.bridgeData.forces.Add(new forces());
+                    Program.bridgeData.forces[i].xMagnitudeForces = 0;
+                    Program.bridgeData.forces[i].yMagnitudeForces = 0;
+                }
+            }
+
+            //Adds The Array Coordinates Into ListBox
+            nodeListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+            {
+                nodeListView.Items.Add("Node " + i + " " + "X Coordinate: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Y Coordinate: " + Program.bridgeData.nodes[i].NodeY.ToString());
+            }
+
+            //Adds The Array Coordinates Into ListBox
+            loadsListView.Items.Clear();
+            for(int i = 0; i < Program.bridgeData.forces.Count; i++)
+            {
+                loadsListView.Items.Add("Node " + i + " X Magnitude: " + Program.bridgeData.forces[i].xMagnitudeForces + " | Y Magnitude: " + Program.bridgeData.forces[i].yMagnitudeForces);
+            }
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -108,20 +132,21 @@ namespace Sectrics_V2
         {
             try
             {
-                if (Program.bridgeData.forces.Count != Program.bridgeData.nodes.Count)
-                {
-                    for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
-                    {
-                        Program.bridgeData.forces.Add(new forces());
-                        Program.bridgeData.forces[i].xMagnitudeForces = 0;
-                        Program.bridgeData.forces[i].yMagnitudeForces = 0;
-                    }
-                }
-
                 if (Convert.ToInt16(nodeTextbox.Text) < Program.bridgeData.nodes.Count && nodeTextbox.Text != null && xForceTextbox.Text != null && yForceTextbox.Text != null)
                 {
                     Program.bridgeData.forces[Convert.ToInt32(nodeTextbox.Text)].xMagnitudeForces = Convert.ToDouble(xForceTextbox.Text);
                     Program.bridgeData.forces[Convert.ToInt32(nodeTextbox.Text)].yMagnitudeForces = Convert.ToDouble(yForceTextbox.Text);
+
+                    nodeTextbox.Text = "";
+                    xForceTextbox.Text = "";
+                    yForceTextbox.Text = "";
+
+                    //Adds The Array Coordinates Into ListBox
+                    loadsListView.Items.Clear();
+                    for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+                    {
+                        loadsListView.Items.Add("Node " + i + " X Magnitude: " + Program.bridgeData.forces[i].xMagnitudeForces + " | Y Magnitude: " + Program.bridgeData.forces[i].yMagnitudeForces);
+                    }
                 }
                 else
                 {
@@ -138,15 +163,58 @@ namespace Sectrics_V2
                         yForceTextbox.Text = "Incorrect Variable Entered";
                     }
                 }
-                nodeTextbox.Text = "";
-                xForceTextbox.Text = "";
-                yForceTextbox.Text = "";
             }
             catch
             {
                 nodeTextbox.Text = "Incorrect Variable Entered";
                 xForceTextbox.Text = "Incorrect Variable Entered";
                 yForceTextbox.Text = "Incorrect Variable Entered";
+            }
+        }
+
+        private void nodeListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loadsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void removeLoad_Click(object sender, EventArgs e)
+        {
+            if(loadsListView.SelectedIndex >= 0)
+            {
+                Program.bridgeData.forces[loadsListView.SelectedIndex].xMagnitudeForces = 0;
+                Program.bridgeData.forces[loadsListView.SelectedIndex].yMagnitudeForces = 0;
+
+                //Adds The Array Coordinates Into ListBox
+                loadsListView.Items.Clear();
+                for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+                {
+                    loadsListView.Items.Add("Node " + i + " X Magnitude: " + Program.bridgeData.forces[i].xMagnitudeForces + " | Y Magnitude: " + Program.bridgeData.forces[i].yMagnitudeForces);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error: Must Select An Item Before Clicking It.");
+            }
+        }
+
+        private void removeAll_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < Program.bridgeData.forces.Count; i++)
+            {
+                Program.bridgeData.forces[loadsListView.SelectedIndex].xMagnitudeForces = 0;
+                Program.bridgeData.forces[loadsListView.SelectedIndex].yMagnitudeForces = 0;
+            }
+
+            //Adds The Array Coordinates Into ListBox
+            loadsListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+            {
+                loadsListView.Items.Add("Node " + i + " X Magnitude: " + Program.bridgeData.forces[i].xMagnitudeForces + " | Y Magnitude: " + Program.bridgeData.forces[i].yMagnitudeForces);
             }
         }
     }

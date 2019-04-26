@@ -46,6 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.yForceTextbox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.nodeListView = new System.Windows.Forms.ListBox();
+            this.loadsListView = new System.Windows.Forms.ListBox();
+            this.removeLoad = new System.Windows.Forms.Button();
+            this.removeAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // minimize
@@ -280,12 +284,64 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "Y AXIS FORCES:";
             // 
+            // nodeListView
+            // 
+            this.nodeListView.FormattingEnabled = true;
+            this.nodeListView.ItemHeight = 25;
+            this.nodeListView.Location = new System.Drawing.Point(1532, 193);
+            this.nodeListView.Name = "nodeListView";
+            this.nodeListView.Size = new System.Drawing.Size(456, 404);
+            this.nodeListView.TabIndex = 33;
+            this.nodeListView.SelectedIndexChanged += new System.EventHandler(this.nodeListView_SelectedIndexChanged);
+            // 
+            // loadsListView
+            // 
+            this.loadsListView.FormattingEnabled = true;
+            this.loadsListView.ItemHeight = 25;
+            this.loadsListView.Location = new System.Drawing.Point(1377, 636);
+            this.loadsListView.Name = "loadsListView";
+            this.loadsListView.Size = new System.Drawing.Size(420, 404);
+            this.loadsListView.TabIndex = 34;
+            this.loadsListView.SelectedIndexChanged += new System.EventHandler(this.loadsListView_SelectedIndexChanged);
+            // 
+            // removeLoad
+            // 
+            this.removeLoad.BackColor = System.Drawing.Color.Transparent;
+            this.removeLoad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeLoad.BackgroundImage")));
+            this.removeLoad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.removeLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeLoad.Location = new System.Drawing.Point(680, 636);
+            this.removeLoad.Name = "removeLoad";
+            this.removeLoad.Size = new System.Drawing.Size(540, 91);
+            this.removeLoad.TabIndex = 35;
+            this.removeLoad.TabStop = false;
+            this.removeLoad.UseVisualStyleBackColor = false;
+            this.removeLoad.Click += new System.EventHandler(this.removeLoad_Click);
+            // 
+            // removeAll
+            // 
+            this.removeAll.BackColor = System.Drawing.Color.Transparent;
+            this.removeAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeAll.BackgroundImage")));
+            this.removeAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.removeAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeAll.Location = new System.Drawing.Point(680, 751);
+            this.removeAll.Name = "removeAll";
+            this.removeAll.Size = new System.Drawing.Size(540, 91);
+            this.removeAll.TabIndex = 36;
+            this.removeAll.TabStop = false;
+            this.removeAll.UseVisualStyleBackColor = false;
+            this.removeAll.Click += new System.EventHandler(this.removeAll_Click);
+            // 
             // loadsMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.removeAll);
+            this.Controls.Add(this.removeLoad);
+            this.Controls.Add(this.loadsListView);
+            this.Controls.Add(this.nodeListView);
             this.Controls.Add(this.yForceTextbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.addLoadButton);
@@ -334,5 +390,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox yForceTextbox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox nodeListView;
+        private System.Windows.Forms.ListBox loadsListView;
+        private System.Windows.Forms.Button removeLoad;
+        private System.Windows.Forms.Button removeAll;
     }
 }
