@@ -44,6 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.youngModulusTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.membersListView = new System.Windows.Forms.ListBox();
+            this.materialsListView = new System.Windows.Forms.ListBox();
+            this.clearAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // minimize
@@ -256,12 +259,49 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "YOUNG MODULUS:";
             // 
+            // membersListView
+            // 
+            this.membersListView.FormattingEnabled = true;
+            this.membersListView.ItemHeight = 25;
+            this.membersListView.Location = new System.Drawing.Point(1115, 499);
+            this.membersListView.Name = "membersListView";
+            this.membersListView.Size = new System.Drawing.Size(405, 454);
+            this.membersListView.TabIndex = 27;
+            this.membersListView.SelectedIndexChanged += new System.EventHandler(this.membersListView_SelectedIndexChanged);
+            // 
+            // materialsListView
+            // 
+            this.materialsListView.FormattingEnabled = true;
+            this.materialsListView.ItemHeight = 25;
+            this.materialsListView.Location = new System.Drawing.Point(728, 499);
+            this.materialsListView.Name = "materialsListView";
+            this.materialsListView.Size = new System.Drawing.Size(360, 454);
+            this.materialsListView.TabIndex = 28;
+            this.materialsListView.SelectedIndexChanged += new System.EventHandler(this.materialsListView_SelectedIndexChanged);
+            // 
+            // clearAll
+            // 
+            this.clearAll.BackColor = System.Drawing.Color.Transparent;
+            this.clearAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clearAll.BackgroundImage")));
+            this.clearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearAll.Location = new System.Drawing.Point(858, 977);
+            this.clearAll.Name = "clearAll";
+            this.clearAll.Size = new System.Drawing.Size(540, 91);
+            this.clearAll.TabIndex = 29;
+            this.clearAll.TabStop = false;
+            this.clearAll.UseVisualStyleBackColor = false;
+            this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
+            // 
             // materialProperties
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.clearAll);
+            this.Controls.Add(this.materialsListView);
+            this.Controls.Add(this.membersListView);
             this.Controls.Add(this.addMaterialPropertiesButton);
             this.Controls.Add(this.areaTextbox);
             this.Controls.Add(this.label2);
@@ -306,5 +346,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox youngModulusTextbox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox membersListView;
+        private System.Windows.Forms.ListBox materialsListView;
+        private System.Windows.Forms.Button clearAll;
     }
 }

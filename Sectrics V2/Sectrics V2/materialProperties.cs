@@ -16,6 +16,20 @@ namespace Sectrics_V2
         public materialProperties()
         {
             InitializeComponent();
+
+            //Adds The Array Coordinates Into ListBox
+            membersListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+            {
+                membersListView.Items.Add("To Member: " + Program.bridgeData.memberConnection[i].toConnection.ToString() + " | From Member: " + Program.bridgeData.memberConnection[i].fromConnection.ToString());
+            }
+
+            //Adds The Array Coordinates Into ListBox
+            materialsListView.Items.Clear();
+            for(int i = 0; i < Program.bridgeData.areas.Count; i++)
+            {
+                materialsListView.Items.Add("Young Modulus: " + Program.bridgeData.stiffness[i] + " | Cross-Sectional Area: " + Program.bridgeData.areas[i]); 
+            }
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -113,6 +127,13 @@ namespace Sectrics_V2
                     youngModulusTextbox.Text = "Incorrect Variable Entered";
                     areaTextbox.Text = "Incorrect Variable Entered";
                 }
+
+                //Adds The Array Coordinates Into ListBox
+                materialsListView.Items.Clear();
+                for (int i = 0; i < Program.bridgeData.areas.Count; i++)
+                {
+                    materialsListView.Items.Add("Young Modulus: " + Program.bridgeData.stiffness[i] + " | Cross-Sectional Area: " + Program.bridgeData.areas[i]);
+                }
             }
             catch
             {
@@ -129,6 +150,30 @@ namespace Sectrics_V2
         private void youngModulusTextbox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void membersListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void materialsListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearAll_Click(object sender, EventArgs e)
+        {
+            Program.bridgeData.stiffness.Clear();
+            Program.bridgeData.areas.Clear();
+            Program.bridgeData.materialPropertiesIndex = 0;
+
+            //Adds The Array Coordinates Into ListBox
+            materialsListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.areas.Count; i++)
+            {
+                materialsListView.Items.Add("Young Modulus: " + Program.bridgeData.stiffness[i] + " | Cross-Sectional Area: " + Program.bridgeData.areas[i]);
+            }
         }
     }
 }

@@ -44,6 +44,9 @@
             this.supportNodeTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.supportType = new System.Windows.Forms.ListBox();
+            this.nodeListView = new System.Windows.Forms.ListBox();
+            this.supportListView = new System.Windows.Forms.ListBox();
+            this.clearAll = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // minimize
@@ -262,12 +265,49 @@
             this.supportType.TabIndex = 1;
             this.supportType.SelectedIndexChanged += new System.EventHandler(this.supportType_SelectedIndexChanged);
             // 
+            // nodeListView
+            // 
+            this.nodeListView.FormattingEnabled = true;
+            this.nodeListView.ItemHeight = 25;
+            this.nodeListView.Location = new System.Drawing.Point(1448, 207);
+            this.nodeListView.Name = "nodeListView";
+            this.nodeListView.Size = new System.Drawing.Size(410, 354);
+            this.nodeListView.TabIndex = 32;
+            this.nodeListView.SelectedIndexChanged += new System.EventHandler(this.nodeListView_SelectedIndexChanged);
+            // 
+            // supportListView
+            // 
+            this.supportListView.FormattingEnabled = true;
+            this.supportListView.ItemHeight = 25;
+            this.supportListView.Location = new System.Drawing.Point(1148, 667);
+            this.supportListView.Name = "supportListView";
+            this.supportListView.Size = new System.Drawing.Size(622, 354);
+            this.supportListView.TabIndex = 33;
+            this.supportListView.SelectedIndexChanged += new System.EventHandler(this.supportListView_SelectedIndexChanged);
+            // 
+            // clearAll
+            // 
+            this.clearAll.BackColor = System.Drawing.Color.Transparent;
+            this.clearAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clearAll.BackgroundImage")));
+            this.clearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearAll.Location = new System.Drawing.Point(592, 775);
+            this.clearAll.Name = "clearAll";
+            this.clearAll.Size = new System.Drawing.Size(540, 91);
+            this.clearAll.TabIndex = 35;
+            this.clearAll.TabStop = false;
+            this.clearAll.UseVisualStyleBackColor = false;
+            this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
+            // 
             // supportMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.clearAll);
+            this.Controls.Add(this.supportListView);
+            this.Controls.Add(this.nodeListView);
             this.Controls.Add(this.supportType);
             this.Controls.Add(this.addSupportButton);
             this.Controls.Add(this.label2);
@@ -312,5 +352,8 @@
         private System.Windows.Forms.TextBox supportNodeTextbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox supportType;
+        private System.Windows.Forms.ListBox nodeListView;
+        private System.Windows.Forms.ListBox supportListView;
+        private System.Windows.Forms.Button clearAll;
     }
 }

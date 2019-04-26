@@ -16,6 +16,20 @@ namespace Sectrics_V2
         public supportMenus()
         {
             InitializeComponent();
+
+            //Adds The Array Coordinates Into ListBox
+            nodeListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+            {
+                nodeListView.Items.Add("Node " + i + " " + "X Coordinate: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Y Coordinate: " + Program.bridgeData.nodes[i].NodeY.ToString());
+            }
+
+            //Adds The Array Coordinates Into ListBox
+            supportListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.supportNode.Count; i++)
+            {
+                supportListView.Items.Add("Support Type: " + Program.bridgeData.supportType[i] + " | At Node: " + Program.bridgeData.supportNode[i].ToString());
+            }
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -138,27 +152,38 @@ namespace Sectrics_V2
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(XDOF);
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(YDOF);
                             Program.bridgeData.supportType[Convert.ToInt32(supportNodeTextbox.Text)] = "Vertical Fixed Support";
+                            Program.bridgeData.supportNode.Add(Convert.ToInt16(supportNodeTextbox.Text));
                             supportNodeTextbox.Text = "";
                             break;
                         case "Horozontal Fixed Support":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(XDOF);
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(YDOF);
                             Program.bridgeData.supportType[Convert.ToInt32(supportNodeTextbox.Text)] = "Horozontal Fixed Support";
+                            Program.bridgeData.supportNode.Add(Convert.ToInt16(supportNodeTextbox.Text));
                             supportNodeTextbox.Text = "";
                             break;
                         case "Vertical Roller":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(XDOF);
                             Program.bridgeData.supportType[Convert.ToInt32(supportNodeTextbox.Text)] = "Vertical Roller";
+                            Program.bridgeData.supportNode.Add(Convert.ToInt16(supportNodeTextbox.Text));
                             supportNodeTextbox.Text = "";
                             break;
                         case "Horozontal Roller":
                             Program.bridgeData.restrainedDegreesOfFreedom.Add(YDOF);
                             Program.bridgeData.supportType[Convert.ToInt32(supportNodeTextbox.Text)] = "Horozontal Roller";
+                            Program.bridgeData.supportNode.Add(Convert.ToInt16(supportNodeTextbox.Text));
                             supportNodeTextbox.Text = "";
                             break;
                         default:
                             supportNodeTextbox.Text = "Incorrect Variable Entered";
                             break;
+                    }
+
+                    //Adds The Array Coordinates Into ListBox
+                    supportListView.Items.Clear();
+                    for (int i = 0; i < Program.bridgeData.supportNode.Count; i++)
+                    {
+                        supportListView.Items.Add("Support Type: " + Program.bridgeData.supportType[i] + " | At Node: " + Program.bridgeData.supportNode[i].ToString());
                     }
                 }
                 else
@@ -182,6 +207,30 @@ namespace Sectrics_V2
         private void supportNodeTextbox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void nodeListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void supportListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearAll_Click(object sender, EventArgs e)
+        {
+            Program.bridgeData.supportNode.Clear();
+            Program.bridgeData.supportType.Clear();
+            Program.bridgeData.restrainedDegreesOfFreedom.Clear();
+
+            //Adds The Array Coordinates Into ListBox
+            supportListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.supportNode.Count; i++)
+            {
+                supportListView.Items.Add("Support Type: " + Program.bridgeData.supportType[i] + " | At Node: " + Program.bridgeData.supportNode[i].ToString());
+            }
         }
     }
 }

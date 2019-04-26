@@ -28,6 +28,7 @@ namespace Sectrics_V2
     class BridgeData
     {
         public List<string> supportType = new List<string>();
+        public List<int> supportNode = new List<int>();
         public List<Nodes> nodes = new List<Nodes>();
         public List<degreesOfFreedom> degreesOfFreedom = new List<degreesOfFreedom>();
         public List<connectedMembers> memberConnection = new List<connectedMembers>();
