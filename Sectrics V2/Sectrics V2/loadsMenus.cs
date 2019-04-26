@@ -206,8 +206,8 @@ namespace Sectrics_V2
         {
             for(int i = 0; i < Program.bridgeData.forces.Count; i++)
             {
-                Program.bridgeData.forces[loadsListView.SelectedIndex].xMagnitudeForces = 0;
-                Program.bridgeData.forces[loadsListView.SelectedIndex].yMagnitudeForces = 0;
+                Program.bridgeData.forces[i].xMagnitudeForces = 0;
+                Program.bridgeData.forces[i].yMagnitudeForces = 0;
             }
 
             //Adds The Array Coordinates Into ListBox
