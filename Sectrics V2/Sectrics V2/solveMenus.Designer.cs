@@ -244,6 +244,7 @@
             this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
             this.bridgeDrawing.TabIndex = 15;
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
+            this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
             // 
             // solveMenus
             // 
