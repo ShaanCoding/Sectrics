@@ -58,6 +58,7 @@
     <Compile Include="exitMenus.Designer.cs">
       <DependentUpon>exitMenus.cs</DependentUpon>
     </Compile>
+    <Compile Include="generalFunctions.cs" />
     <Compile Include="loadsMenus.cs">
       <SubType>Form</SubType>
     </Compile>

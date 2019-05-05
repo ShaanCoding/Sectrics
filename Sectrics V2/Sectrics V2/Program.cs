@@ -11,6 +11,7 @@ namespace Sectrics_V2
     {
         public static Maths maths = new Maths();
         public static BridgeData bridgeData = new BridgeData();
+        public static generalFunctions generalFunctions = new generalFunctions();
 
         [DllImport("Shcore.dll")]
         static extern int SetProcessDpiAwareness(int PROCESS_DPI_AWARENESS);

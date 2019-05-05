@@ -183,5 +183,10 @@ namespace Sectrics_V2
                 nodeListView.Items.Add("Node X: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Node Y: " + Program.bridgeData.nodes[i].NodeY.ToString());
             }
         }
+
+        private void saveBridge_Click(object sender, EventArgs e)
+        {
+            Program.generalFunctions.saveFileCSV();
+        }
     }
 }

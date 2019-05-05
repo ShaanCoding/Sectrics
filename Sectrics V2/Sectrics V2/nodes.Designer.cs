@@ -47,6 +47,7 @@
             this.nodeListView = new System.Windows.Forms.ListBox();
             this.removeNode = new System.Windows.Forms.Button();
             this.clearAll = new System.Windows.Forms.Button();
+            this.saveBridge = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // minimize
@@ -297,12 +298,27 @@
             this.clearAll.UseVisualStyleBackColor = false;
             this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
             // 
+            // saveBridge
+            // 
+            this.saveBridge.BackColor = System.Drawing.Color.Transparent;
+            this.saveBridge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveBridge.BackgroundImage")));
+            this.saveBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.saveBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBridge.Location = new System.Drawing.Point(666, 51);
+            this.saveBridge.Name = "saveBridge";
+            this.saveBridge.Size = new System.Drawing.Size(540, 91);
+            this.saveBridge.TabIndex = 20;
+            this.saveBridge.TabStop = false;
+            this.saveBridge.UseVisualStyleBackColor = false;
+            this.saveBridge.Click += new System.EventHandler(this.saveBridge_Click);
+            // 
             // nodes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.saveBridge);
             this.Controls.Add(this.clearAll);
             this.Controls.Add(this.removeNode);
             this.Controls.Add(this.nodeListView);
@@ -353,5 +369,6 @@
         private System.Windows.Forms.ListBox nodeListView;
         private System.Windows.Forms.Button removeNode;
         private System.Windows.Forms.Button clearAll;
+        private System.Windows.Forms.Button saveBridge;
     }
 }
