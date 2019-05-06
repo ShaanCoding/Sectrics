@@ -188,5 +188,10 @@ namespace Sectrics_V2
         {
             Program.generalFunctions.saveFileCSV();
         }
+
+        private void loadBridge_Click(object sender, EventArgs e)
+        {
+            Program.generalFunctions.LoadFileCSV();
+        }
     }
 }

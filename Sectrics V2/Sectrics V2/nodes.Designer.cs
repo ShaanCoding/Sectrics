@@ -48,6 +48,7 @@
             this.removeNode = new System.Windows.Forms.Button();
             this.clearAll = new System.Windows.Forms.Button();
             this.saveBridge = new System.Windows.Forms.Button();
+            this.loadBridge = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // minimize
@@ -304,7 +305,7 @@
             this.saveBridge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveBridge.BackgroundImage")));
             this.saveBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.saveBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBridge.Location = new System.Drawing.Point(666, 51);
+            this.saveBridge.Location = new System.Drawing.Point(546, 22);
             this.saveBridge.Name = "saveBridge";
             this.saveBridge.Size = new System.Drawing.Size(540, 91);
             this.saveBridge.TabIndex = 20;
@@ -312,12 +313,27 @@
             this.saveBridge.UseVisualStyleBackColor = false;
             this.saveBridge.Click += new System.EventHandler(this.saveBridge_Click);
             // 
+            // loadBridge
+            // 
+            this.loadBridge.BackColor = System.Drawing.Color.Transparent;
+            this.loadBridge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loadBridge.BackgroundImage")));
+            this.loadBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.loadBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadBridge.Location = new System.Drawing.Point(1106, 22);
+            this.loadBridge.Name = "loadBridge";
+            this.loadBridge.Size = new System.Drawing.Size(540, 91);
+            this.loadBridge.TabIndex = 21;
+            this.loadBridge.TabStop = false;
+            this.loadBridge.UseVisualStyleBackColor = false;
+            this.loadBridge.Click += new System.EventHandler(this.loadBridge_Click);
+            // 
             // nodes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.loadBridge);
             this.Controls.Add(this.saveBridge);
             this.Controls.Add(this.clearAll);
             this.Controls.Add(this.removeNode);
@@ -370,5 +386,6 @@
         private System.Windows.Forms.Button removeNode;
         private System.Windows.Forms.Button clearAll;
         private System.Windows.Forms.Button saveBridge;
+        private System.Windows.Forms.Button loadBridge;
     }
 }

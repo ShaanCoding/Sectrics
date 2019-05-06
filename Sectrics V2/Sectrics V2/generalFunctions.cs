@@ -19,6 +19,11 @@ namespace Sectrics_V2
                 saveBridge.Filter = "CSV|*.csv";
                 if (saveBridge.ShowDialog() == DialogResult.OK)
                 {
+                    if (File.Exists(saveBridge.FileName))
+                    {
+                        File.Delete(saveBridge.FileName);
+                    }
+                    
                     using (Stream s = File.Open(saveBridge.FileName, FileMode.CreateNew))
                     {
                         using (StreamWriter sw = new StreamWriter(s))
@@ -66,7 +71,11 @@ namespace Sectrics_V2
                             int[] restrainedDegreesOfFreedom = Program.bridgeData.restrainedDegreesOfFreedom.ToArray();
                             double[] stiffness = Program.bridgeData.stiffness.ToArray();
                             double[] areas = Program.bridgeData.areas.ToArray();
+
                             int ndof = Program.bridgeData.ndof;
+                            int nodeIndex = Program.bridgeData.nodesIndex;
+                            int memberIndex = Program.bridgeData.memberIndex;
+                            int materialPropertIndex = Program.bridgeData.materialPropertiesIndex;
 
                             //Finds the maximum length array
                             int maxLength = 0;
@@ -107,9 +116,8 @@ namespace Sectrics_V2
                                 maxLength = supportType.Length;
                             }
 
-                           
                             //Writes Into CSV
-                            sw.WriteLine("Nodes X,Nodes Y,X Degree Of Freedom,Y Degree Of Freedom,From Member,To Member,X Force,Y Force,Restrained Degree Of Freedom,Stiffness,Area,Support Node,Support Type,Ndof");
+                            sw.WriteLine("Nodes X,Nodes Y,X Degree Of Freedom,Y Degree Of Freedom,From Member,To Member,X Force,Y Force,Restrained Degree Of Freedom,Stiffness,Area,Support Node,Support Type,Ndof, Node Index, Member Index, Material Properties Index");
                             for (int i = 0; i < maxLength; i++)
                             {
                                 if (i < nodes.GetLength(0))
@@ -195,20 +203,23 @@ namespace Sectrics_V2
 
                                 if (i == 0)
                                 {
+                                    sw.Write(nodeIndex + ",");
+                                    sw.Write(memberIndex + ",");
+                                    sw.Write(materialPropertIndex + ",");
                                     sw.Write(ndof+"\n");
                                 }
                                 else
                                 {
-                                    sw.Write(",\n");
+                                    sw.Write(",,,,\n");
                                 }
                             }
                         }
                     }
                 }
             }
-            catch
+            catch(Exception)
             {
-                MessageBox.Show("ERROR: An Error Has Occured Whilst Saving");
+                MessageBox.Show("ERROR: An Error Has Occured Whilst Saving ");
             }
         }
 
@@ -216,7 +227,41 @@ namespace Sectrics_V2
         {
             try
             {
+                Program.bridgeData.supportType.Clear();
+                Program.bridgeData.supportNode.Clear();
+                Program.bridgeData.nodes.Clear();
+                Program.bridgeData.degreesOfFreedom.Clear();
+                Program.bridgeData.memberConnection.Clear();
+                Program.bridgeData.restrainedDegreesOfFreedom.Clear();
+                Program.bridgeData.forces.Clear();
+                Program.bridgeData.stiffness.Clear();
+                Program.bridgeData.areas.Clear();
 
+                Program.bridgeData.ndof = 0;
+                Program.bridgeData.nodesIndex = 0;
+                Program.bridgeData.memberIndex = 0;
+                Program.bridgeData.materialPropertiesIndex = 0;
+
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                openFileDialog.DefaultExt = "csv";
+                openFileDialog.Filter = "CSV|*.csv";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (Stream s = File.Open(openFileDialog.FileName, FileMode.Open))
+                    {
+                        using (StreamReader sr = new StreamReader(s))
+                        {
+                            string data = sr.ReadLine();
+                            while(data != null)
+                            {
+                                //Loads & Splits Data
+                                MessageBox.Show(data);
+                                data = sr.ReadLine();
+                            }
+                        }
+                    }
+                }
             }
             catch
             {
