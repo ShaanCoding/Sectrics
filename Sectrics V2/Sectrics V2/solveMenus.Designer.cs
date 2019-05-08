@@ -43,6 +43,7 @@
             this.solveForForces = new System.Windows.Forms.Button();
             this.zoomInBar = new System.Windows.Forms.TrackBar();
             this.bridgeDrawing = new System.Windows.Forms.Panel();
+            this.savePictureOfBridge = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -246,12 +247,28 @@
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
             this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
             // 
+            // savePictureOfBridge
+            // 
+            this.savePictureOfBridge.BackColor = System.Drawing.Color.Transparent;
+            this.savePictureOfBridge.FlatAppearance.BorderSize = 0;
+            this.savePictureOfBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.savePictureOfBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savePictureOfBridge.Image = ((System.Drawing.Image)(resources.GetObject("savePictureOfBridge.Image")));
+            this.savePictureOfBridge.Location = new System.Drawing.Point(709, 935);
+            this.savePictureOfBridge.Name = "savePictureOfBridge";
+            this.savePictureOfBridge.Size = new System.Drawing.Size(537, 91);
+            this.savePictureOfBridge.TabIndex = 16;
+            this.savePictureOfBridge.TabStop = false;
+            this.savePictureOfBridge.UseVisualStyleBackColor = false;
+            this.savePictureOfBridge.Click += new System.EventHandler(this.savePictureOfBridge_Click);
+            // 
             // solveMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.savePictureOfBridge);
             this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.solveForForces);
@@ -295,5 +312,6 @@
         private System.Windows.Forms.Button solveForForces;
         private System.Windows.Forms.TrackBar zoomInBar;
         private System.Windows.Forms.Panel bridgeDrawing;
+        private System.Windows.Forms.Button savePictureOfBridge;
     }
 }

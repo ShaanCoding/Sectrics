@@ -5,10 +5,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Sectrics_V2
 {
@@ -290,7 +292,8 @@ namespace Sectrics_V2
                     (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)),
                     (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)));
 
-                if(stressForPanel[i] == null)
+                //Draws Forces Applied Magnitude Text
+                if(stressForPanel[i] != null)
                 {
                     g.DrawString(stressForPanel[i].ToString(), font, blackBrush,
                         (((Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeX) * nodeMultiplyFactor) + (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeX) * nodeMultiplyFactor)) / 2 + Convert.ToSingle(xMouseOffset)), (((Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeY) * nodeMultiplyFactor) + (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeY) * nodeMultiplyFactor)) / 2 + Convert.ToSingle(yMouseOffset)));
@@ -352,6 +355,35 @@ namespace Sectrics_V2
                 bridgeDrawing.Refresh();
             }
 
+        }
+
+        private void savePictureOfBridge_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveBridgePhoto = new SaveFileDialog();
+                saveBridgePhoto.DefaultExt = "png";
+                saveBridgePhoto.Filter = "PNG|*.png";
+
+                if(saveBridgePhoto.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(saveBridgePhoto.FileName))
+                    {
+                        File.Delete(saveBridgePhoto.FileName);
+                    }
+
+                    int width = bridgeDrawing.Size.Width;
+                    int height = bridgeDrawing.Size.Height;
+
+                    Bitmap bitmap = new Bitmap(width, height);
+                    bridgeDrawing.DrawToBitmap(bitmap, new Rectangle(0, 0, width, height));
+                    bitmap.Save(saveBridgePhoto.FileName, ImageFormat.Png);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: An Error Has Occured Whilst Saving");
+            }
         }
     }
 }
