@@ -106,7 +106,16 @@ namespace Sectrics_V2
         {
             try
             {
-                if (toMemberTextbox.Text != null && fromMemberTextbox.Text != null && Convert.ToInt16(toMemberTextbox.Text) < Program.bridgeData.nodes.Count && Convert.ToInt16(fromMemberTextbox.Text) < Program.bridgeData.nodes.Count)
+                bool repeatedMember = false;
+                for(int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+                {
+                    if(Program.bridgeData.memberConnection[i].toConnection == Convert.ToInt16(toMemberTextbox.Text) && Program.bridgeData.memberConnection[i].fromConnection == Convert.ToInt16(fromMemberTextbox.Text)
+                        || Program.bridgeData.memberConnection[i].toConnection == Convert.ToInt16(fromMemberTextbox.Text) && Program.bridgeData.memberConnection[i].fromConnection == Convert.ToInt16(toMemberTextbox.Text))
+                    {
+                        repeatedMember = true;
+                    }
+                }
+                if (toMemberTextbox.Text != null && fromMemberTextbox.Text != null && Convert.ToInt16(toMemberTextbox.Text) < Program.bridgeData.nodes.Count && Convert.ToInt16(fromMemberTextbox.Text) < Program.bridgeData.nodes.Count && repeatedMember == false)
                 {
                     Program.bridgeData.memberConnection.Add(new connectedMembers());
                     Program.bridgeData.memberConnection[Program.bridgeData.memberIndex].fromConnection = Convert.ToInt16(fromMemberTextbox.Text);
