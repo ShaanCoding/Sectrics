@@ -99,7 +99,16 @@ namespace Sectrics_V2
         {
             try
             {
-                if (xAxisTextbox.Text != null && yAxisTextbox.Text != null)
+                bool repeatedNode = false;
+                for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+                {
+                    if (Program.bridgeData.nodes[i].NodeX == Convert.ToDouble(xAxisTextbox.Text) && Program.bridgeData.nodes[i].NodeY == Convert.ToDouble(yAxisTextbox.Text))
+                    {
+                        repeatedNode = true;
+                    }
+                }
+
+                if (xAxisTextbox.Text != null && yAxisTextbox.Text != null && repeatedNode = false)
                 {
                     Program.bridgeData.nodes.Add(new Nodes());
                     Program.bridgeData.nodes[Program.bridgeData.nodesIndex].NodeX = Convert.ToDouble(xAxisTextbox.Text);
