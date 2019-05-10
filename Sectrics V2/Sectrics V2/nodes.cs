@@ -108,7 +108,7 @@ namespace Sectrics_V2
                     }
                 }
 
-                if (xAxisTextbox.Text != null && yAxisTextbox.Text != null && repeatedNode = false)
+                if (xAxisTextbox.Text != null && yAxisTextbox.Text != null && repeatedNode == false)
                 {
                     Program.bridgeData.nodes.Add(new Nodes());
                     Program.bridgeData.nodes[Program.bridgeData.nodesIndex].NodeX = Convert.ToDouble(xAxisTextbox.Text);
