@@ -209,15 +209,20 @@ namespace Sectrics_V2
 
                                 if (i == 0)
                                 {
+                                    sw.Write(ndof + ",");
                                     sw.Write(nodeIndex + ",");
                                     sw.Write(memberIndex + ",");
-                                    sw.Write(materialPropertIndex + ",");
-                                    sw.Write(ndof+"\n");
+                                    sw.Write(materialPropertIndex + "\n");
+                                }
+                                else if (i == (maxLength-1))
+                                {
+                                    sw.Write(",,,");
                                 }
                                 else
                                 {
                                     sw.Write(",,,\n");
                                 }
+
                             }
                         }
                     }
@@ -263,59 +268,56 @@ namespace Sectrics_V2
                             while((data = sr.ReadLine()) != null)
                             {
                                 var dataSplit = data.Split(',');
-                                MessageBox.Show(data);
 
-                                if (string.IsNullOrEmpty(dataSplit[0]) && string.IsNullOrEmpty(dataSplit[1]))
+                                if (!string.IsNullOrEmpty(dataSplit[0]) && !string.IsNullOrEmpty(dataSplit[1]))
                                 {
                                     Program.bridgeData.nodes.Add(new Nodes());
                                     Program.bridgeData.nodes[i].NodeX = Convert.ToDouble(dataSplit[0]);
                                     Program.bridgeData.nodes[i].NodeY = Convert.ToDouble(dataSplit[1]);
-                                    Program.bridgeData.nodesIndex++;
                                 }
 
-                                if (string.IsNullOrEmpty(dataSplit[2]) && string.IsNullOrEmpty(dataSplit[3]))
+                                if (!string.IsNullOrEmpty(dataSplit[2]) && !string.IsNullOrEmpty(dataSplit[3]))
                                 {
                                     Program.bridgeData.degreesOfFreedom.Add(new degreesOfFreedom());
                                     Program.bridgeData.degreesOfFreedom[i].xDegreeOfFreedom = Convert.ToInt16(dataSplit[2]);
                                     Program.bridgeData.degreesOfFreedom[i].yDegreesOfFreedom = Convert.ToInt16(dataSplit[3]);
                                 }
 
-                                if (string.IsNullOrEmpty(dataSplit[4]) && string.IsNullOrEmpty(dataSplit[5]))
+                                if (!string.IsNullOrEmpty(dataSplit[4]) && !string.IsNullOrEmpty(dataSplit[5]))
                                 {
                                     Program.bridgeData.memberConnection.Add(new connectedMembers());
                                     Program.bridgeData.memberConnection[i].fromConnection = Convert.ToInt16(dataSplit[4]);
                                     Program.bridgeData.memberConnection[i].toConnection = Convert.ToInt16(dataSplit[5]);
-                                    Program.bridgeData.memberIndex++;
                                 }
 
-                                if (string.IsNullOrEmpty(dataSplit[6]) && string.IsNullOrEmpty(dataSplit[7]))
+                                if (!string.IsNullOrEmpty(dataSplit[6]) && !string.IsNullOrEmpty(dataSplit[7]))
                                 {
                                     Program.bridgeData.forces.Add(new forces());
                                     Program.bridgeData.forces[i].xMagnitudeForces = Convert.ToDouble(dataSplit[6]);
                                     Program.bridgeData.forces[i].yMagnitudeForces = Convert.ToDouble(dataSplit[7]);
                                 }
 
-                                if (string.IsNullOrEmpty(dataSplit[8]))
+                                if (!string.IsNullOrEmpty(dataSplit[8]))
                                 {
                                     Program.bridgeData.restrainedDegreesOfFreedom.Add(Convert.ToInt32(dataSplit[8]));
                                 }
 
-                                if (string.IsNullOrEmpty(dataSplit[9]))
+                                if (!string.IsNullOrEmpty(dataSplit[9]))
                                 {
                                     Program.bridgeData.stiffness.Add(Convert.ToDouble(dataSplit[9]));
                                 }
 
-                                if (string.IsNullOrEmpty(dataSplit[10]))
+                                if (!string.IsNullOrEmpty(dataSplit[10]))
                                 {
                                     Program.bridgeData.areas.Add(Convert.ToDouble(dataSplit[10]));
                                 }
 
-                                if (string.IsNullOrEmpty(dataSplit[11]))
+                                if (!string.IsNullOrEmpty(dataSplit[11]))
                                 {
                                     Program.bridgeData.supportNode.Add(Convert.ToInt16(dataSplit[11]));
                                 }
 
-                                if (string.IsNullOrEmpty(dataSplit[12]))
+                                if (!string.IsNullOrEmpty(dataSplit[12]))
                                 {
                                     Program.bridgeData.supportType.Add(Convert.ToString(dataSplit[12]));
                                 }
