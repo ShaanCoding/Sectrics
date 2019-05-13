@@ -15,6 +15,7 @@ namespace Sectrics_V2
         public members()
         {
             InitializeComponent();
+            this.SetDesktopLocation(Program.generalFunctions.desktopX - Program.generalFunctions.movX, Program.generalFunctions.desktopY - Program.generalFunctions.movY);
 
             //Adds The Array Coordinates Into ListBox
             nodeListView.Items.Clear();
@@ -85,7 +86,10 @@ namespace Sectrics_V2
 
         private void nodes_Load(object sender, EventArgs e)
         {
-
+            if((Program.generalFunctions.desktopX - Program.generalFunctions.movX) != 0 && (Program.generalFunctions.desktopY - Program.generalFunctions.movY) != null)
+            {
+                this.SetDesktopLocation(Program.generalFunctions.desktopX - Program.generalFunctions.movX, Program.generalFunctions.desktopY - Program.generalFunctions.movY);
+            }
         }
 
         private void aboutMenu_Click(object sender, EventArgs e)
@@ -203,6 +207,29 @@ namespace Sectrics_V2
         private void nodeListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void moveMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            Program.generalFunctions.mov = 1;
+            Program.generalFunctions.movX = e.X;
+            Program.generalFunctions.movY = e.Y;
+        }
+
+        private void moveMenu_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Program.generalFunctions.mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - Program.generalFunctions.movX, MousePosition.Y - Program.generalFunctions.movY);
+                Program.generalFunctions.desktopX = MousePosition.X;
+                Program.generalFunctions.desktopY = MousePosition.Y;
+            }
+        }
+
+        private void moveMenu_MouseUp(object sender, MouseEventArgs e)
+        {
+            Program.generalFunctions.mov = 0;
         }
     }
 }

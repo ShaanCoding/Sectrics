@@ -47,6 +47,7 @@
             this.nodeListView = new System.Windows.Forms.ListBox();
             this.supportListView = new System.Windows.Forms.ListBox();
             this.clearAll = new System.Windows.Forms.Button();
+            this.moveMenu = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // minimize
@@ -299,12 +300,23 @@
             this.clearAll.UseVisualStyleBackColor = false;
             this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
             // 
+            // moveMenu
+            // 
+            this.moveMenu.Location = new System.Drawing.Point(0, 0);
+            this.moveMenu.Name = "moveMenu";
+            this.moveMenu.Size = new System.Drawing.Size(1920, 30);
+            this.moveMenu.TabIndex = 36;
+            this.moveMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseDown);
+            this.moveMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseMove);
+            this.moveMenu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseUp);
+            // 
             // supportMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.clearAll);
             this.Controls.Add(this.supportListView);
             this.Controls.Add(this.nodeListView);
@@ -355,5 +367,6 @@
         private System.Windows.Forms.ListBox nodeListView;
         private System.Windows.Forms.ListBox supportListView;
         private System.Windows.Forms.Button clearAll;
+        private System.Windows.Forms.Panel moveMenu;
     }
 }

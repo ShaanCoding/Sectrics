@@ -50,6 +50,7 @@
             this.loadsListView = new System.Windows.Forms.ListBox();
             this.removeLoad = new System.Windows.Forms.Button();
             this.removeAll = new System.Windows.Forms.Button();
+            this.moveMenu = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // minimize
@@ -332,12 +333,23 @@
             this.removeAll.UseVisualStyleBackColor = false;
             this.removeAll.Click += new System.EventHandler(this.removeAll_Click);
             // 
+            // moveMenu
+            // 
+            this.moveMenu.Location = new System.Drawing.Point(0, 0);
+            this.moveMenu.Name = "moveMenu";
+            this.moveMenu.Size = new System.Drawing.Size(1920, 30);
+            this.moveMenu.TabIndex = 37;
+            this.moveMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseDown);
+            this.moveMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseMove);
+            this.moveMenu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseUp);
+            // 
             // loadsMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.removeAll);
             this.Controls.Add(this.removeLoad);
             this.Controls.Add(this.loadsListView);
@@ -394,5 +406,6 @@
         private System.Windows.Forms.ListBox loadsListView;
         private System.Windows.Forms.Button removeLoad;
         private System.Windows.Forms.Button removeAll;
+        private System.Windows.Forms.Panel moveMenu;
     }
 }

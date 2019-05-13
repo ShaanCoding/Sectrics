@@ -41,6 +41,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.moveMenu = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // minimize
@@ -202,12 +203,23 @@
             this.label9.Text = "6. Now you\'re done. Just press solve to view the tensile/compressive forces in ea" +
     "ch member.";
             // 
+            // moveMenu
+            // 
+            this.moveMenu.Location = new System.Drawing.Point(0, 0);
+            this.moveMenu.Name = "moveMenu";
+            this.moveMenu.Size = new System.Drawing.Size(1920, 30);
+            this.moveMenu.TabIndex = 41;
+            this.moveMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseDown);
+            this.moveMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseMove);
+            this.moveMenu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseUp);
+            // 
             // tutorialMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -246,5 +258,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel moveMenu;
     }
 }

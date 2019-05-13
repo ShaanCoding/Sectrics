@@ -10,6 +10,12 @@ namespace Sectrics_V2
 {
     class generalFunctions
     {
+        public int mov;
+        public int movX;
+        public int movY;
+        public int desktopX;
+        public int desktopY;
+
         public void saveFileCSV()
         {
             try

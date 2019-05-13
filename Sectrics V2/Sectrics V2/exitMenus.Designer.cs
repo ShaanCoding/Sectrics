@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.exitConfirm = new System.Windows.Forms.Button();
             this.exitDecline = new System.Windows.Forms.Button();
+            this.moveMenu = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // minimize
@@ -112,12 +113,23 @@
             this.exitDecline.UseVisualStyleBackColor = false;
             this.exitDecline.Click += new System.EventHandler(this.exitDecline_Click);
             // 
+            // moveMenu
+            // 
+            this.moveMenu.Location = new System.Drawing.Point(0, 0);
+            this.moveMenu.Name = "moveMenu";
+            this.moveMenu.Size = new System.Drawing.Size(1920, 30);
+            this.moveMenu.TabIndex = 40;
+            this.moveMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseDown);
+            this.moveMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseMove);
+            this.moveMenu.MouseUp += new System.Windows.Forms.MouseEventHandler(this.moveMenu_MouseUp);
+            // 
             // exitMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.exitDecline);
             this.Controls.Add(this.exitConfirm);
             this.Controls.Add(this.label1);
@@ -142,5 +154,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button exitConfirm;
         private System.Windows.Forms.Button exitDecline;
+        private System.Windows.Forms.Panel moveMenu;
     }
 }
