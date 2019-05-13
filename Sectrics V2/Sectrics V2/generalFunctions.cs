@@ -336,9 +336,9 @@ namespace Sectrics_V2
                     }
                 }
             }
-            catch(Exception e)
+            catch(Exception)
             {
-                MessageBox.Show("ERROR: An Error Has Occured Whilst Loading"+e);
+                MessageBox.Show("ERROR: An Error Has Occured Whilst Loading. Check If The File Is Already In Use Or If The Data Is Valid & Try Again.");
             }
         }
     }
