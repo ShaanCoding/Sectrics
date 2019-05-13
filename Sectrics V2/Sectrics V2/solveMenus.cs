@@ -355,17 +355,19 @@ namespace Sectrics_V2
 
         private void bridgeDrawing_MouseMove(object sender, MouseEventArgs e)
         {
+            double oMouseXOffset = Cursor.Position.X;
+            double oMouseYOffset = Cursor.Position.Y;
+
             if(e.Button == MouseButtons.Left)
             {
                 //Finds the change in mouse position when dragging
-                float deltaX = Convert.ToSingle(Cursor.Position.X - xMouseOffset);
-                float deltaY = Convert.ToSingle(Cursor.Position.Y - yMouseOffset);
+                float deltaX = Convert.ToSingle(Cursor.Position.X - oMouseXOffset) * 10;
+                float deltaY = Convert.ToSingle(Cursor.Position.Y - oMouseYOffset) * 10;
 
                 xMouseOffset += deltaX;
                 yMouseOffset += deltaY;
                 bridgeDrawing.Refresh();
             }
-
         }
 
         private void savePictureOfBridge_Click(object sender, EventArgs e)
