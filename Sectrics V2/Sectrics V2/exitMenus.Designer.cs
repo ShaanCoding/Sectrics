@@ -39,6 +39,8 @@
             // 
             // minimize
             // 
+            this.minimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.minimize.BackColor = System.Drawing.Color.Transparent;
             this.minimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimize.BackgroundImage")));
             this.minimize.FlatAppearance.BorderSize = 0;
@@ -55,6 +57,8 @@
             // 
             // exitApplication
             // 
+            this.exitApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.exitApplication.BackColor = System.Drawing.Color.Transparent;
             this.exitApplication.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exitApplication.BackgroundImage")));
             this.exitApplication.FlatAppearance.BorderSize = 0;
@@ -71,6 +75,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -83,7 +88,7 @@
             // 
             // exitConfirm
             // 
-            this.exitConfirm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.exitConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitConfirm.BackColor = System.Drawing.Color.Transparent;
             this.exitConfirm.FlatAppearance.BorderSize = 0;
             this.exitConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -99,7 +104,7 @@
             // 
             // exitDecline
             // 
-            this.exitDecline.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.exitDecline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitDecline.BackColor = System.Drawing.Color.Transparent;
             this.exitDecline.FlatAppearance.BorderSize = 0;
             this.exitDecline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -115,6 +120,8 @@
             // 
             // moveMenu
             // 
+            this.moveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.moveMenu.Location = new System.Drawing.Point(0, 0);
             this.moveMenu.Name = "moveMenu";
             this.moveMenu.Size = new System.Drawing.Size(1920, 30);

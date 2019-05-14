@@ -12,6 +12,9 @@ namespace Sectrics_V2
 {
     public partial class nodes : Form
     {
+        private const int cGrip = 16;
+        private const int cCaption = 32;
+
         public nodes()
         {
             InitializeComponent();
@@ -22,6 +25,26 @@ namespace Sectrics_V2
             {
                 nodeListView.Items.Add("Node X: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Node Y: " + Program.bridgeData.nodes[i].NodeY.ToString());
             }
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == 0x84)
+            {
+                Point pos = new Point(m.LParam.ToInt32());
+                pos = this.PointToClient(pos);
+                if (pos.Y < cCaption)
+                {
+                    m.Result = (IntPtr)2;
+                    return;
+                }
+                if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
+                {
+                    m.Result = (IntPtr)17;
+                    return;
+                }
+            }
+            base.WndProc(ref m);
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -82,6 +105,7 @@ namespace Sectrics_V2
             {
                 this.SetDesktopLocation(Program.generalFunctions.desktopX - Program.generalFunctions.movX, Program.generalFunctions.desktopY - Program.generalFunctions.movY);
             }
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void aboutMenu_Click(object sender, EventArgs e)

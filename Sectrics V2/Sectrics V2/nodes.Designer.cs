@@ -54,6 +54,8 @@
             // 
             // minimize
             // 
+            this.minimize.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.minimize.BackColor = System.Drawing.Color.Transparent;
             this.minimize.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimize.BackgroundImage")));
             this.minimize.FlatAppearance.BorderSize = 0;
@@ -70,6 +72,8 @@
             // 
             // exitApplication
             // 
+            this.exitApplication.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.exitApplication.BackColor = System.Drawing.Color.Transparent;
             this.exitApplication.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("exitApplication.BackgroundImage")));
             this.exitApplication.FlatAppearance.BorderSize = 0;
@@ -86,6 +90,7 @@
             // 
             // nodesMenu
             // 
+            this.nodesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nodesMenu.BackColor = System.Drawing.Color.Transparent;
             this.nodesMenu.FlatAppearance.BorderSize = 0;
             this.nodesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -101,6 +106,7 @@
             // 
             // membersMenu
             // 
+            this.membersMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.membersMenu.BackColor = System.Drawing.Color.Transparent;
             this.membersMenu.FlatAppearance.BorderSize = 0;
             this.membersMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -116,6 +122,7 @@
             // 
             // supportsMenu
             // 
+            this.supportsMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.supportsMenu.BackColor = System.Drawing.Color.Transparent;
             this.supportsMenu.FlatAppearance.BorderSize = 0;
             this.supportsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -131,6 +138,7 @@
             // 
             // loadsMenu
             // 
+            this.loadsMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.loadsMenu.BackColor = System.Drawing.Color.Transparent;
             this.loadsMenu.FlatAppearance.BorderSize = 0;
             this.loadsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -146,6 +154,7 @@
             // 
             // solveMenu
             // 
+            this.solveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.solveMenu.BackColor = System.Drawing.Color.Transparent;
             this.solveMenu.FlatAppearance.BorderSize = 0;
             this.solveMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -161,6 +170,7 @@
             // 
             // aboutMenu
             // 
+            this.aboutMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.aboutMenu.BackColor = System.Drawing.Color.Transparent;
             this.aboutMenu.FlatAppearance.BorderSize = 0;
             this.aboutMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -176,6 +186,7 @@
             // 
             // exitMenu
             // 
+            this.exitMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitMenu.BackColor = System.Drawing.Color.Transparent;
             this.exitMenu.FlatAppearance.BorderSize = 0;
             this.exitMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -191,6 +202,7 @@
             // 
             // materialPropertiesMenu
             // 
+            this.materialPropertiesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialPropertiesMenu.BackColor = System.Drawing.Color.Transparent;
             this.materialPropertiesMenu.FlatAppearance.BorderSize = 0;
             this.materialPropertiesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -206,6 +218,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,6 +231,7 @@
             // 
             // xAxisTextbox
             // 
+            this.xAxisTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.xAxisTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xAxisTextbox.Location = new System.Drawing.Point(1018, 192);
             this.xAxisTextbox.Name = "xAxisTextbox";
@@ -228,6 +242,7 @@
             // 
             // yAxisTextbox
             // 
+            this.yAxisTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.yAxisTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yAxisTextbox.Location = new System.Drawing.Point(1018, 262);
             this.yAxisTextbox.Name = "yAxisTextbox";
@@ -238,6 +253,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -250,6 +266,7 @@
             // 
             // addNodeButton
             // 
+            this.addNodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addNodeButton.BackColor = System.Drawing.Color.Transparent;
             this.addNodeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addNodeButton.BackgroundImage")));
             this.addNodeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -264,6 +281,7 @@
             // 
             // nodeListView
             // 
+            this.nodeListView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nodeListView.FormattingEnabled = true;
             this.nodeListView.ItemHeight = 25;
             this.nodeListView.Location = new System.Drawing.Point(1225, 567);
@@ -274,6 +292,7 @@
             // 
             // removeNode
             // 
+            this.removeNode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.removeNode.BackColor = System.Drawing.Color.Transparent;
             this.removeNode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeNode.BackgroundImage")));
             this.removeNode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -288,6 +307,7 @@
             // 
             // clearAll
             // 
+            this.clearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.clearAll.BackColor = System.Drawing.Color.Transparent;
             this.clearAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clearAll.BackgroundImage")));
             this.clearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -302,6 +322,8 @@
             // 
             // saveBridge
             // 
+            this.saveBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBridge.BackColor = System.Drawing.Color.Transparent;
             this.saveBridge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveBridge.BackgroundImage")));
             this.saveBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -316,6 +338,8 @@
             // 
             // loadBridge
             // 
+            this.loadBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.loadBridge.BackColor = System.Drawing.Color.Transparent;
             this.loadBridge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loadBridge.BackgroundImage")));
             this.loadBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
@@ -330,6 +354,8 @@
             // 
             // moveMenu
             // 
+            this.moveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.moveMenu.Location = new System.Drawing.Point(0, 0);
             this.moveMenu.Name = "moveMenu";
             this.moveMenu.Size = new System.Drawing.Size(1920, 30);
