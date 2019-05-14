@@ -17,6 +17,7 @@ namespace Sectrics_V2
     public partial class solveMenus : Form
     {
         double[] stressForPanel = new double[Program.bridgeData.memberConnection.Count];
+        double[] reactionForceForPanel = new double[Program.bridgeData.supportNode.Count];
         float zoom = 1f;
         double xMouseOffset;
         double yMouseOffset;
@@ -265,6 +266,21 @@ namespace Sectrics_V2
                 barStressesTextbox.AppendText(Convert.ToString(stress)+ "\r\n");
                 stressForPanel[i] = stress;
             }
+
+            //Calculates reaction forces for each support
+            for(int i = 0; i < Program.bridgeData.supportNode.Count; i++)
+            {
+                reactionForceForPanel[i] = 0;
+                for(int j = 0; j < Program.bridgeData.memberConnection.Count; j++)
+                {
+                    if(Program.bridgeData.memberConnection[j].fromConnection == Program.bridgeData.supportNode[i] || Program.bridgeData.memberConnection[j].toConnection == Program.bridgeData.supportNode[i])
+                    {
+                        reactionForceForPanel[i] += stressForPanel[j];
+                    }
+                }
+                reactionForceForPanel[i] = reactionForceForPanel[i] * -1;
+            }
+
             bridgeDrawing.Refresh();
         }
 
@@ -278,6 +294,7 @@ namespace Sectrics_V2
                 Pen beamPen = new Pen(Color.Black, 10);
                 Pen greenPen = new Pen(Color.Green, 10);
                 Pen forcePen = new Pen(Color.Red, 10);
+                Pen reactionPen = new Pen(Color.Aqua, 10);
                 SolidBrush blackBrush = new SolidBrush(Color.Black);
                 Font font = new Font("Arial", 16);
                 forcePen.StartCap = LineCap.ArrowAnchor;
@@ -363,6 +380,17 @@ namespace Sectrics_V2
                             break;
                     }
                 }
+
+                //Draws The Reaction Forces
+                if(reactionForceForPanel != null)
+                {
+                    for (int i = 0; i < reactionForceForPanel.GetLength(0); i++)
+                    {
+                        g.DrawLine(reactionPen, (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.supportNode[i]].NodeX * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset))), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.supportNode[i]].NodeY * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset))), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.supportNode[i]].NodeX * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset) + reactionForceForPanel[i])), (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.supportNode[i]].NodeY * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset) + reactionForceForPanel[i])));
+                        g.DrawString((reactionForceForPanel[i].ToString()), font, blackBrush, ((Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.supportNode[i]].NodeX * nodeMultiplyFactor)) + (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.supportNode[i]].NodeX * nodeMultiplyFactor + reactionForceForPanel[i]))) / 2 + Convert.ToSingle(xMouseOffset), ((Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.supportNode[i]].NodeY * nodeMultiplyFactor)) + (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.supportNode[i]].NodeY * nodeMultiplyFactor + reactionForceForPanel[i]))) / 2 + Convert.ToSingle(yMouseOffset));
+                    }
+                }
+
             }
             catch
             {
