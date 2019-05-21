@@ -350,6 +350,7 @@
             // 
             this.moveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.moveMenu.BackColor = System.Drawing.Color.White;
             this.moveMenu.Location = new System.Drawing.Point(0, 0);
             this.moveMenu.Name = "moveMenu";
             this.moveMenu.Size = new System.Drawing.Size(1920, 30);
