@@ -92,15 +92,18 @@
             // 
             this.nodesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nodesMenu.BackColor = System.Drawing.Color.Transparent;
-            this.nodesMenu.FlatAppearance.BorderSize = 0;
+            this.nodesMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.nodesMenu.FlatAppearance.BorderSize = 2;
             this.nodesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.nodesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nodesMenu.Image = ((System.Drawing.Image)(resources.GetObject("nodesMenu.Image")));
+            this.nodesMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.nodesMenu.ForeColor = System.Drawing.Color.White;
             this.nodesMenu.Location = new System.Drawing.Point(30, 193);
             this.nodesMenu.Name = "nodesMenu";
             this.nodesMenu.Size = new System.Drawing.Size(537, 91);
             this.nodesMenu.TabIndex = 4;
             this.nodesMenu.TabStop = false;
+            this.nodesMenu.Text = "NODES";
             this.nodesMenu.UseVisualStyleBackColor = false;
             this.nodesMenu.Click += new System.EventHandler(this.nodesMenu_Click);
             // 
@@ -108,15 +111,18 @@
             // 
             this.membersMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.membersMenu.BackColor = System.Drawing.Color.Transparent;
-            this.membersMenu.FlatAppearance.BorderSize = 0;
+            this.membersMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.membersMenu.FlatAppearance.BorderSize = 2;
             this.membersMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.membersMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.membersMenu.Image = ((System.Drawing.Image)(resources.GetObject("membersMenu.Image")));
+            this.membersMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.membersMenu.ForeColor = System.Drawing.Color.White;
             this.membersMenu.Location = new System.Drawing.Point(30, 301);
             this.membersMenu.Name = "membersMenu";
             this.membersMenu.Size = new System.Drawing.Size(537, 91);
             this.membersMenu.TabIndex = 5;
             this.membersMenu.TabStop = false;
+            this.membersMenu.Text = "MEMBERS";
             this.membersMenu.UseVisualStyleBackColor = false;
             this.membersMenu.Click += new System.EventHandler(this.membersMenu_Click);
             // 
@@ -124,15 +130,18 @@
             // 
             this.supportsMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.supportsMenu.BackColor = System.Drawing.Color.Transparent;
-            this.supportsMenu.FlatAppearance.BorderSize = 0;
+            this.supportsMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.supportsMenu.FlatAppearance.BorderSize = 2;
             this.supportsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.supportsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.supportsMenu.Image = ((System.Drawing.Image)(resources.GetObject("supportsMenu.Image")));
+            this.supportsMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.supportsMenu.ForeColor = System.Drawing.Color.White;
             this.supportsMenu.Location = new System.Drawing.Point(30, 517);
             this.supportsMenu.Name = "supportsMenu";
             this.supportsMenu.Size = new System.Drawing.Size(537, 91);
             this.supportsMenu.TabIndex = 6;
             this.supportsMenu.TabStop = false;
+            this.supportsMenu.Text = "SUPPORTS";
             this.supportsMenu.UseVisualStyleBackColor = false;
             this.supportsMenu.Click += new System.EventHandler(this.supportsMenu_Click);
             // 
@@ -140,15 +149,18 @@
             // 
             this.loadsMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.loadsMenu.BackColor = System.Drawing.Color.Transparent;
-            this.loadsMenu.FlatAppearance.BorderSize = 0;
+            this.loadsMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.loadsMenu.FlatAppearance.BorderSize = 2;
             this.loadsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.loadsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadsMenu.Image = ((System.Drawing.Image)(resources.GetObject("loadsMenu.Image")));
+            this.loadsMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.loadsMenu.ForeColor = System.Drawing.Color.White;
             this.loadsMenu.Location = new System.Drawing.Point(30, 625);
             this.loadsMenu.Name = "loadsMenu";
             this.loadsMenu.Size = new System.Drawing.Size(537, 91);
             this.loadsMenu.TabIndex = 7;
             this.loadsMenu.TabStop = false;
+            this.loadsMenu.Text = "LOADS";
             this.loadsMenu.UseVisualStyleBackColor = false;
             this.loadsMenu.Click += new System.EventHandler(this.loadsMenu_Click);
             // 
@@ -156,15 +168,18 @@
             // 
             this.solveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.solveMenu.BackColor = System.Drawing.Color.Transparent;
-            this.solveMenu.FlatAppearance.BorderSize = 0;
+            this.solveMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.solveMenu.FlatAppearance.BorderSize = 2;
             this.solveMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.solveMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.solveMenu.Image = ((System.Drawing.Image)(resources.GetObject("solveMenu.Image")));
+            this.solveMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.solveMenu.ForeColor = System.Drawing.Color.White;
             this.solveMenu.Location = new System.Drawing.Point(30, 733);
             this.solveMenu.Name = "solveMenu";
             this.solveMenu.Size = new System.Drawing.Size(537, 91);
             this.solveMenu.TabIndex = 8;
             this.solveMenu.TabStop = false;
+            this.solveMenu.Text = "SOLVE";
             this.solveMenu.UseVisualStyleBackColor = false;
             this.solveMenu.Click += new System.EventHandler(this.solveMenu_Click);
             // 
@@ -172,15 +187,18 @@
             // 
             this.aboutMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.aboutMenu.BackColor = System.Drawing.Color.Transparent;
-            this.aboutMenu.FlatAppearance.BorderSize = 0;
+            this.aboutMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.aboutMenu.FlatAppearance.BorderSize = 2;
             this.aboutMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.aboutMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aboutMenu.Image = ((System.Drawing.Image)(resources.GetObject("aboutMenu.Image")));
+            this.aboutMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.aboutMenu.ForeColor = System.Drawing.Color.White;
             this.aboutMenu.Location = new System.Drawing.Point(30, 841);
             this.aboutMenu.Name = "aboutMenu";
             this.aboutMenu.Size = new System.Drawing.Size(537, 91);
             this.aboutMenu.TabIndex = 9;
             this.aboutMenu.TabStop = false;
+            this.aboutMenu.Text = "ABOUT";
             this.aboutMenu.UseVisualStyleBackColor = false;
             this.aboutMenu.Click += new System.EventHandler(this.aboutMenu_Click);
             // 
@@ -188,15 +206,18 @@
             // 
             this.exitMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitMenu.BackColor = System.Drawing.Color.Transparent;
-            this.exitMenu.FlatAppearance.BorderSize = 0;
+            this.exitMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.exitMenu.FlatAppearance.BorderSize = 2;
             this.exitMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.exitMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitMenu.Image = ((System.Drawing.Image)(resources.GetObject("exitMenu.Image")));
+            this.exitMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.exitMenu.ForeColor = System.Drawing.Color.White;
             this.exitMenu.Location = new System.Drawing.Point(30, 949);
             this.exitMenu.Name = "exitMenu";
             this.exitMenu.Size = new System.Drawing.Size(537, 91);
             this.exitMenu.TabIndex = 10;
             this.exitMenu.TabStop = false;
+            this.exitMenu.Text = "EXIT";
             this.exitMenu.UseVisualStyleBackColor = false;
             this.exitMenu.Click += new System.EventHandler(this.exitMenu_Click);
             // 
@@ -204,15 +225,18 @@
             // 
             this.materialPropertiesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialPropertiesMenu.BackColor = System.Drawing.Color.Transparent;
-            this.materialPropertiesMenu.FlatAppearance.BorderSize = 0;
+            this.materialPropertiesMenu.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.materialPropertiesMenu.FlatAppearance.BorderSize = 2;
             this.materialPropertiesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.materialPropertiesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialPropertiesMenu.Image = ((System.Drawing.Image)(resources.GetObject("materialPropertiesMenu.Image")));
+            this.materialPropertiesMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.materialPropertiesMenu.ForeColor = System.Drawing.Color.White;
             this.materialPropertiesMenu.Location = new System.Drawing.Point(30, 409);
             this.materialPropertiesMenu.Name = "materialPropertiesMenu";
             this.materialPropertiesMenu.Size = new System.Drawing.Size(537, 91);
             this.materialPropertiesMenu.TabIndex = 11;
             this.materialPropertiesMenu.TabStop = false;
+            this.materialPropertiesMenu.Text = "MATERIAL PROPERTIES";
             this.materialPropertiesMenu.UseVisualStyleBackColor = false;
             this.materialPropertiesMenu.Click += new System.EventHandler(this.materialPropertiesMenu_Click);
             // 
@@ -268,14 +292,18 @@
             // 
             this.addNodeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addNodeButton.BackColor = System.Drawing.Color.Transparent;
-            this.addNodeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addNodeButton.BackgroundImage")));
+            this.addNodeButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.addNodeButton.FlatAppearance.BorderSize = 2;
             this.addNodeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.addNodeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addNodeButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.addNodeButton.ForeColor = System.Drawing.Color.White;
             this.addNodeButton.Location = new System.Drawing.Point(903, 328);
             this.addNodeButton.Name = "addNodeButton";
             this.addNodeButton.Size = new System.Drawing.Size(540, 91);
             this.addNodeButton.TabIndex = 16;
             this.addNodeButton.TabStop = false;
+            this.addNodeButton.Text = "ADD NODE";
             this.addNodeButton.UseVisualStyleBackColor = false;
             this.addNodeButton.Click += new System.EventHandler(this.addNodeButton_Click);
             // 
@@ -294,14 +322,18 @@
             // 
             this.removeNode.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.removeNode.BackColor = System.Drawing.Color.Transparent;
-            this.removeNode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("removeNode.BackgroundImage")));
+            this.removeNode.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.removeNode.FlatAppearance.BorderSize = 2;
             this.removeNode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.removeNode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeNode.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.removeNode.ForeColor = System.Drawing.Color.White;
             this.removeNode.Location = new System.Drawing.Point(608, 567);
             this.removeNode.Name = "removeNode";
             this.removeNode.Size = new System.Drawing.Size(540, 91);
             this.removeNode.TabIndex = 18;
             this.removeNode.TabStop = false;
+            this.removeNode.Text = "REMOVE NODE";
             this.removeNode.UseVisualStyleBackColor = false;
             this.removeNode.Click += new System.EventHandler(this.removeNode_Click);
             // 
@@ -309,14 +341,18 @@
             // 
             this.clearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.clearAll.BackColor = System.Drawing.Color.Transparent;
-            this.clearAll.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clearAll.BackgroundImage")));
+            this.clearAll.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.clearAll.FlatAppearance.BorderSize = 2;
             this.clearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearAll.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.clearAll.ForeColor = System.Drawing.Color.White;
             this.clearAll.Location = new System.Drawing.Point(608, 693);
             this.clearAll.Name = "clearAll";
             this.clearAll.Size = new System.Drawing.Size(540, 91);
             this.clearAll.TabIndex = 19;
             this.clearAll.TabStop = false;
+            this.clearAll.Text = "CLEAR ALL";
             this.clearAll.UseVisualStyleBackColor = false;
             this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
             // 
@@ -325,14 +361,18 @@
             this.saveBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.saveBridge.BackColor = System.Drawing.Color.Transparent;
-            this.saveBridge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("saveBridge.BackgroundImage")));
+            this.saveBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.saveBridge.FlatAppearance.BorderSize = 2;
             this.saveBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.saveBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBridge.Location = new System.Drawing.Point(546, 22);
+            this.saveBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.saveBridge.ForeColor = System.Drawing.Color.White;
+            this.saveBridge.Location = new System.Drawing.Point(540, 51);
             this.saveBridge.Name = "saveBridge";
             this.saveBridge.Size = new System.Drawing.Size(540, 91);
             this.saveBridge.TabIndex = 20;
             this.saveBridge.TabStop = false;
+            this.saveBridge.Text = "SAVE BRIDGE";
             this.saveBridge.UseVisualStyleBackColor = false;
             this.saveBridge.Click += new System.EventHandler(this.saveBridge_Click);
             // 
@@ -341,14 +381,18 @@
             this.loadBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.loadBridge.BackColor = System.Drawing.Color.Transparent;
-            this.loadBridge.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("loadBridge.BackgroundImage")));
+            this.loadBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.loadBridge.FlatAppearance.BorderSize = 2;
             this.loadBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.loadBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadBridge.Location = new System.Drawing.Point(1106, 22);
+            this.loadBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadBridge.ForeColor = System.Drawing.Color.White;
+            this.loadBridge.Location = new System.Drawing.Point(1130, 48);
             this.loadBridge.Name = "loadBridge";
             this.loadBridge.Size = new System.Drawing.Size(540, 91);
             this.loadBridge.TabIndex = 21;
             this.loadBridge.TabStop = false;
+            this.loadBridge.Text = "LOAD BRIDGE";
             this.loadBridge.UseVisualStyleBackColor = false;
             this.loadBridge.Click += new System.EventHandler(this.loadBridge_Click);
             // 
@@ -356,6 +400,8 @@
             // 
             this.moveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.moveMenu.BackColor = System.Drawing.Color.White;
+            this.moveMenu.ForeColor = System.Drawing.Color.Transparent;
             this.moveMenu.Location = new System.Drawing.Point(0, 0);
             this.moveMenu.Name = "moveMenu";
             this.moveMenu.Size = new System.Drawing.Size(1920, 30);
@@ -368,7 +414,7 @@
             // nodes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.moveMenu);

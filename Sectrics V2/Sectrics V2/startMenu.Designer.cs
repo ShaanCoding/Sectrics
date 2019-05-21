@@ -75,15 +75,18 @@
             // 
             this.startApplication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.startApplication.BackColor = System.Drawing.Color.Transparent;
-            this.startApplication.FlatAppearance.BorderSize = 0;
+            this.startApplication.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.startApplication.FlatAppearance.BorderSize = 2;
             this.startApplication.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.startApplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startApplication.Image = ((System.Drawing.Image)(resources.GetObject("startApplication.Image")));
+            this.startApplication.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.startApplication.ForeColor = System.Drawing.Color.White;
             this.startApplication.Location = new System.Drawing.Point(690, 576);
             this.startApplication.Name = "startApplication";
             this.startApplication.Size = new System.Drawing.Size(540, 91);
             this.startApplication.TabIndex = 0;
             this.startApplication.TabStop = false;
+            this.startApplication.Text = "START";
             this.startApplication.UseVisualStyleBackColor = false;
             this.startApplication.Click += new System.EventHandler(this.startApplication_Click);
             // 
@@ -94,7 +97,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(825, 835);
+            this.label1.Location = new System.Drawing.Point(818, 835);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(285, 39);
             this.label1.TabIndex = 3;
@@ -104,15 +107,18 @@
             // 
             this.helpButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.helpButton.BackColor = System.Drawing.Color.Transparent;
-            this.helpButton.FlatAppearance.BorderSize = 0;
+            this.helpButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.helpButton.FlatAppearance.BorderSize = 2;
             this.helpButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.helpButton.Image = ((System.Drawing.Image)(resources.GetObject("helpButton.Image")));
-            this.helpButton.Location = new System.Drawing.Point(690, 697);
+            this.helpButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.helpButton.ForeColor = System.Drawing.Color.White;
+            this.helpButton.Location = new System.Drawing.Point(758, 701);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(540, 109);
+            this.helpButton.Size = new System.Drawing.Size(405, 82);
             this.helpButton.TabIndex = 1;
             this.helpButton.TabStop = false;
+            this.helpButton.Text = "HELP";
             this.helpButton.UseVisualStyleBackColor = false;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
@@ -120,6 +126,7 @@
             // 
             this.moveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.moveMenu.BackColor = System.Drawing.Color.White;
             this.moveMenu.Location = new System.Drawing.Point(0, 0);
             this.moveMenu.Name = "moveMenu";
             this.moveMenu.Size = new System.Drawing.Size(1920, 30);

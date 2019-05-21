@@ -90,15 +90,18 @@
             // 
             this.exitConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitConfirm.BackColor = System.Drawing.Color.Transparent;
-            this.exitConfirm.FlatAppearance.BorderSize = 0;
+            this.exitConfirm.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.exitConfirm.FlatAppearance.BorderSize = 2;
             this.exitConfirm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.exitConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitConfirm.Image = ((System.Drawing.Image)(resources.GetObject("exitConfirm.Image")));
+            this.exitConfirm.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.exitConfirm.ForeColor = System.Drawing.Color.White;
             this.exitConfirm.Location = new System.Drawing.Point(350, 491);
             this.exitConfirm.Name = "exitConfirm";
             this.exitConfirm.Size = new System.Drawing.Size(540, 91);
             this.exitConfirm.TabIndex = 13;
             this.exitConfirm.TabStop = false;
+            this.exitConfirm.Text = "YES";
             this.exitConfirm.UseVisualStyleBackColor = false;
             this.exitConfirm.Click += new System.EventHandler(this.exitConfirm_Click);
             // 
@@ -106,15 +109,18 @@
             // 
             this.exitDecline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.exitDecline.BackColor = System.Drawing.Color.Transparent;
-            this.exitDecline.FlatAppearance.BorderSize = 0;
+            this.exitDecline.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.exitDecline.FlatAppearance.BorderSize = 2;
             this.exitDecline.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.exitDecline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitDecline.Image = ((System.Drawing.Image)(resources.GetObject("exitDecline.Image")));
+            this.exitDecline.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.exitDecline.ForeColor = System.Drawing.Color.White;
             this.exitDecline.Location = new System.Drawing.Point(1031, 491);
             this.exitDecline.Name = "exitDecline";
             this.exitDecline.Size = new System.Drawing.Size(540, 91);
             this.exitDecline.TabIndex = 14;
             this.exitDecline.TabStop = false;
+            this.exitDecline.Text = "NO";
             this.exitDecline.UseVisualStyleBackColor = false;
             this.exitDecline.Click += new System.EventHandler(this.exitDecline_Click);
             // 
@@ -122,6 +128,7 @@
             // 
             this.moveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.moveMenu.BackColor = System.Drawing.Color.White;
             this.moveMenu.Location = new System.Drawing.Point(0, 0);
             this.moveMenu.Name = "moveMenu";
             this.moveMenu.Size = new System.Drawing.Size(1920, 30);
@@ -133,7 +140,7 @@
             // exitMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.moveMenu);
