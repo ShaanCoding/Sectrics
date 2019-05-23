@@ -64,9 +64,9 @@ namespace Sectrics_V2
 
         private void startApplication_Click(object sender, EventArgs e)
         {
-            nodes node = new nodes();
+            buildBridgeMenu buildBridgeMenu = new buildBridgeMenu();
             this.Hide();
-            node.Show();
+            buildBridgeMenu.Show();
         }
 
         private void helpButton_Click(object sender, EventArgs e)

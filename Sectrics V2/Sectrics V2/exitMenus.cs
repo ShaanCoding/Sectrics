@@ -66,9 +66,9 @@ namespace Sectrics_V2
 
         private void exitDecline_Click(object sender, EventArgs e)
         {
-            nodes node = new nodes();
+            buildBridgeMenu buildBridgeMenu = new buildBridgeMenu();
             this.Hide();
-            node.Show();
+            buildBridgeMenu.Show();
         }
 
         private void moveMenu_MouseDown(object sender, MouseEventArgs e)

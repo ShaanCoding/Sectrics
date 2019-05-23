@@ -65,48 +65,6 @@ namespace Sectrics_V2
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void nodesMenu_Click(object sender, EventArgs e)
-        {
-            nodes node = new nodes();
-            this.Hide();
-            node.Show();
-        }
-
-        private void membersMenu_Click(object sender, EventArgs e)
-        {
-            members member = new members();
-            this.Hide();
-            member.Show();
-        }
-
-        private void materialPropertiesMenu_Click(object sender, EventArgs e)
-        {
-            materialProperties materialProperty = new materialProperties();
-            this.Hide();
-            materialProperty.Show();
-        }
-
-        private void supportsMenu_Click(object sender, EventArgs e)
-        {
-            supportMenus supportMenu = new supportMenus();
-            this.Hide();
-            supportMenu.Show();
-        }
-
-        private void loadsMenu_Click(object sender, EventArgs e)
-        {
-            loadsMenus loadMenu = new loadsMenus();
-            this.Hide();
-            loadMenu.Show();
-        }
-
-        private void solveMenu_Click(object sender, EventArgs e)
-        {
-            solveMenus solveMenu = new solveMenus();
-            this.Hide();
-            solveMenu.Show();
-        }
-
         private void nodes_Load(object sender, EventArgs e)
         {
             if((Program.generalFunctions.desktopX - Program.generalFunctions.movX) != 0 && (Program.generalFunctions.desktopY - Program.generalFunctions.movY) != null)
@@ -114,20 +72,6 @@ namespace Sectrics_V2
                 this.SetDesktopLocation(Program.generalFunctions.desktopX - Program.generalFunctions.movX, Program.generalFunctions.desktopY - Program.generalFunctions.movY);
             }
             this.BackgroundImageLayout = ImageLayout.Stretch;
-        }
-
-        private void aboutMenu_Click(object sender, EventArgs e)
-        {
-            aboutMenus aboutMenu = new aboutMenus();
-            this.Hide();
-            aboutMenu.Show();
-        }
-
-        private void exitMenu_Click(object sender, EventArgs e)
-        {
-            exitMenus exitMenu = new exitMenus();
-            this.Hide();
-            exitMenu.Show();
         }
 
         private void addMemberButton_Click(object sender, EventArgs e)
@@ -254,6 +198,13 @@ namespace Sectrics_V2
         private void moveMenu_MouseUp(object sender, MouseEventArgs e)
         {
             Program.generalFunctions.mov = 0;
+        }
+
+        private void BackToMainMenu_Click(object sender, EventArgs e)
+        {
+            buildBridgeMenu buildBridgeMenu = new buildBridgeMenu();
+            this.Hide();
+            buildBridgeMenu.Show();
         }
     }
 }

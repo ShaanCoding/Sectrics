@@ -52,9 +52,9 @@ namespace Sectrics_V2
 
         private void nodesMenu_Click(object sender, EventArgs e)
         {
-            nodes nodes = new nodes();
+            buildBridgeMenu buildBridgeMenu = new buildBridgeMenu();
             this.Hide();
-            nodes.Show();
+            buildBridgeMenu.Show();
         }
 
         private void nodes_Load(object sender, EventArgs e)
