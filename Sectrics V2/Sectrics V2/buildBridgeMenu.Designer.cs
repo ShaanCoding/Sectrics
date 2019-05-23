@@ -234,12 +234,13 @@
             this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
             this.bridgeDrawing.TabIndex = 25;
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
+            this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
             // 
             // zoomInBar
             // 
             this.zoomInBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.zoomInBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.zoomInBar.Location = new System.Drawing.Point(675, 211);
+            this.zoomInBar.Location = new System.Drawing.Point(727, 211);
             this.zoomInBar.Maximum = 100;
             this.zoomInBar.Minimum = 1;
             this.zoomInBar.Name = "zoomInBar";

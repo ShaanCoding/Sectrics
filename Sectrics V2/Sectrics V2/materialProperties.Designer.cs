@@ -41,6 +41,9 @@
             this.clearAll = new System.Windows.Forms.Button();
             this.moveMenu = new System.Windows.Forms.Panel();
             this.BackToMainMenu = new System.Windows.Forms.Button();
+            this.bridgeDrawing = new System.Windows.Forms.Panel();
+            this.zoomInBar = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
             // minimize
@@ -89,7 +92,7 @@
             this.addMaterialPropertiesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMaterialPropertiesButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addMaterialPropertiesButton.ForeColor = System.Drawing.Color.White;
-            this.addMaterialPropertiesButton.Location = new System.Drawing.Point(362, 217);
+            this.addMaterialPropertiesButton.Location = new System.Drawing.Point(60, 221);
             this.addMaterialPropertiesButton.Name = "addMaterialPropertiesButton";
             this.addMaterialPropertiesButton.Size = new System.Drawing.Size(540, 91);
             this.addMaterialPropertiesButton.TabIndex = 26;
@@ -151,7 +154,7 @@
             this.membersListView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.membersListView.FormattingEnabled = true;
             this.membersListView.ItemHeight = 25;
-            this.membersListView.Location = new System.Drawing.Point(447, 337);
+            this.membersListView.Location = new System.Drawing.Point(389, 318);
             this.membersListView.Name = "membersListView";
             this.membersListView.Size = new System.Drawing.Size(405, 454);
             this.membersListView.TabIndex = 27;
@@ -210,7 +213,7 @@
             this.BackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackToMainMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.BackToMainMenu.ForeColor = System.Drawing.Color.White;
-            this.BackToMainMenu.Location = new System.Drawing.Point(972, 87);
+            this.BackToMainMenu.Location = new System.Drawing.Point(978, 61);
             this.BackToMainMenu.Name = "BackToMainMenu";
             this.BackToMainMenu.Size = new System.Drawing.Size(540, 91);
             this.BackToMainMenu.TabIndex = 31;
@@ -219,12 +222,39 @@
             this.BackToMainMenu.UseVisualStyleBackColor = false;
             this.BackToMainMenu.Click += new System.EventHandler(this.BackToMainMenu_Click);
             // 
+            // bridgeDrawing
+            // 
+            this.bridgeDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bridgeDrawing.BackColor = System.Drawing.Color.White;
+            this.bridgeDrawing.Location = new System.Drawing.Point(811, 311);
+            this.bridgeDrawing.Name = "bridgeDrawing";
+            this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
+            this.bridgeDrawing.TabIndex = 33;
+            this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
+            this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
+            // 
+            // zoomInBar
+            // 
+            this.zoomInBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.zoomInBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.zoomInBar.Location = new System.Drawing.Point(883, 193);
+            this.zoomInBar.Maximum = 100;
+            this.zoomInBar.Minimum = 1;
+            this.zoomInBar.Name = "zoomInBar";
+            this.zoomInBar.Size = new System.Drawing.Size(884, 90);
+            this.zoomInBar.TabIndex = 32;
+            this.zoomInBar.TabStop = false;
+            this.zoomInBar.Value = 100;
+            this.zoomInBar.Scroll += new System.EventHandler(this.zoomInBar_Scroll);
+            // 
             // materialProperties
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.bridgeDrawing);
+            this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.BackToMainMenu);
             this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.clearAll);
@@ -244,6 +274,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sectrics - Truss Analysis Program";
             this.Load += new System.EventHandler(this.nodes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +294,7 @@
         private System.Windows.Forms.Button clearAll;
         private System.Windows.Forms.Panel moveMenu;
         private System.Windows.Forms.Button BackToMainMenu;
+        private System.Windows.Forms.Panel bridgeDrawing;
+        private System.Windows.Forms.TrackBar zoomInBar;
     }
 }

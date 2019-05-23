@@ -44,6 +44,9 @@
             this.removeAll = new System.Windows.Forms.Button();
             this.moveMenu = new System.Windows.Forms.Panel();
             this.BackToMainMenu = new System.Windows.Forms.Button();
+            this.bridgeDrawing = new System.Windows.Forms.Panel();
+            this.zoomInBar = new System.Windows.Forms.TrackBar();
+            ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
             // minimize
@@ -92,7 +95,7 @@
             this.addLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addLoadButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addLoadButton.ForeColor = System.Drawing.Color.White;
-            this.addLoadButton.Location = new System.Drawing.Point(376, 406);
+            this.addLoadButton.Location = new System.Drawing.Point(39, 286);
             this.addLoadButton.Name = "addLoadButton";
             this.addLoadButton.Size = new System.Drawing.Size(540, 91);
             this.addLoadButton.TabIndex = 31;
@@ -105,7 +108,7 @@
             // 
             this.xForceTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.xForceTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xForceTextbox.Location = new System.Drawing.Point(445, 260);
+            this.xForceTextbox.Location = new System.Drawing.Point(435, 136);
             this.xForceTextbox.Name = "xForceTextbox";
             this.xForceTextbox.Size = new System.Drawing.Size(471, 40);
             this.xForceTextbox.TabIndex = 1;
@@ -119,7 +122,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(32, 261);
+            this.label2.Location = new System.Drawing.Point(22, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 39);
             this.label2.TabIndex = 29;
@@ -129,7 +132,7 @@
             // 
             this.nodeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nodeTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nodeTextbox.Location = new System.Drawing.Point(445, 190);
+            this.nodeTextbox.Location = new System.Drawing.Point(435, 66);
             this.nodeTextbox.Name = "nodeTextbox";
             this.nodeTextbox.Size = new System.Drawing.Size(471, 40);
             this.nodeTextbox.TabIndex = 0;
@@ -143,7 +146,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 191);
+            this.label1.Location = new System.Drawing.Point(22, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 39);
             this.label1.TabIndex = 27;
@@ -153,7 +156,7 @@
             // 
             this.yForceTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.yForceTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yForceTextbox.Location = new System.Drawing.Point(445, 334);
+            this.yForceTextbox.Location = new System.Drawing.Point(435, 210);
             this.yForceTextbox.Name = "yForceTextbox";
             this.yForceTextbox.Size = new System.Drawing.Size(471, 40);
             this.yForceTextbox.TabIndex = 2;
@@ -167,7 +170,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(32, 335);
+            this.label3.Location = new System.Drawing.Point(22, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(244, 39);
             this.label3.TabIndex = 32;
@@ -178,7 +181,7 @@
             this.nodeListView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nodeListView.FormattingEnabled = true;
             this.nodeListView.ItemHeight = 25;
-            this.nodeListView.Location = new System.Drawing.Point(1100, 307);
+            this.nodeListView.Location = new System.Drawing.Point(230, 594);
             this.nodeListView.Name = "nodeListView";
             this.nodeListView.Size = new System.Drawing.Size(456, 404);
             this.nodeListView.TabIndex = 33;
@@ -189,7 +192,7 @@
             this.loadsListView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.loadsListView.FormattingEnabled = true;
             this.loadsListView.ItemHeight = 25;
-            this.loadsListView.Location = new System.Drawing.Point(603, 585);
+            this.loadsListView.Location = new System.Drawing.Point(53, 594);
             this.loadsListView.Name = "loadsListView";
             this.loadsListView.Size = new System.Drawing.Size(420, 404);
             this.loadsListView.TabIndex = 34;
@@ -205,7 +208,7 @@
             this.removeLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeLoad.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.removeLoad.ForeColor = System.Drawing.Color.White;
-            this.removeLoad.Location = new System.Drawing.Point(39, 560);
+            this.removeLoad.Location = new System.Drawing.Point(39, 383);
             this.removeLoad.Name = "removeLoad";
             this.removeLoad.Size = new System.Drawing.Size(540, 91);
             this.removeLoad.TabIndex = 35;
@@ -224,7 +227,7 @@
             this.removeAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeAll.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.removeAll.ForeColor = System.Drawing.Color.White;
-            this.removeAll.Location = new System.Drawing.Point(39, 675);
+            this.removeAll.Location = new System.Drawing.Point(39, 497);
             this.removeAll.Name = "removeAll";
             this.removeAll.Size = new System.Drawing.Size(540, 91);
             this.removeAll.TabIndex = 36;
@@ -256,7 +259,7 @@
             this.BackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackToMainMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.BackToMainMenu.ForeColor = System.Drawing.Color.White;
-            this.BackToMainMenu.Location = new System.Drawing.Point(1224, 139);
+            this.BackToMainMenu.Location = new System.Drawing.Point(968, 66);
             this.BackToMainMenu.Name = "BackToMainMenu";
             this.BackToMainMenu.Size = new System.Drawing.Size(540, 91);
             this.BackToMainMenu.TabIndex = 38;
@@ -265,12 +268,39 @@
             this.BackToMainMenu.UseVisualStyleBackColor = false;
             this.BackToMainMenu.Click += new System.EventHandler(this.BackToMainMenu_Click);
             // 
+            // bridgeDrawing
+            // 
+            this.bridgeDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bridgeDrawing.BackColor = System.Drawing.Color.White;
+            this.bridgeDrawing.Location = new System.Drawing.Point(779, 424);
+            this.bridgeDrawing.Name = "bridgeDrawing";
+            this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
+            this.bridgeDrawing.TabIndex = 40;
+            this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
+            this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
+            // 
+            // zoomInBar
+            // 
+            this.zoomInBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.zoomInBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
+            this.zoomInBar.Location = new System.Drawing.Point(779, 286);
+            this.zoomInBar.Maximum = 100;
+            this.zoomInBar.Minimum = 1;
+            this.zoomInBar.Name = "zoomInBar";
+            this.zoomInBar.Size = new System.Drawing.Size(884, 90);
+            this.zoomInBar.TabIndex = 39;
+            this.zoomInBar.TabStop = false;
+            this.zoomInBar.Value = 100;
+            this.zoomInBar.Scroll += new System.EventHandler(this.zoomInBar_Scroll);
+            // 
             // loadsMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.bridgeDrawing);
+            this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.BackToMainMenu);
             this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.removeAll);
@@ -293,6 +323,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sectrics - Truss Analysis Program";
             this.Load += new System.EventHandler(this.nodes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,5 +346,7 @@
         private System.Windows.Forms.Button removeAll;
         private System.Windows.Forms.Panel moveMenu;
         private System.Windows.Forms.Button BackToMainMenu;
+        private System.Windows.Forms.Panel bridgeDrawing;
+        private System.Windows.Forms.TrackBar zoomInBar;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sectrics_V2.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,9 @@ namespace Sectrics_V2
 {
     public partial class materialProperties : Form
     {
+        float zoom = 1f;
+        double xMouseOffset;
+        double yMouseOffset;
         private const int cGrip = 16;
         private const int cCaption = 32;
 
@@ -104,6 +108,7 @@ namespace Sectrics_V2
                 {
                     materialsListView.Items.Add("Young Modulus: " + Program.bridgeData.stiffness[i] + " | Cross-Sectional Area: " + Program.bridgeData.areas[i]);
                 }
+                bridgeDrawing.Refresh();
             }
             catch
             {
@@ -144,6 +149,7 @@ namespace Sectrics_V2
             {
                 materialsListView.Items.Add("Young Modulus: " + Program.bridgeData.stiffness[i] + " | Cross-Sectional Area: " + Program.bridgeData.areas[i]);
             }
+            bridgeDrawing.Refresh();
         }
 
         private void moveMenu_MouseDown(object sender, MouseEventArgs e)
@@ -173,6 +179,110 @@ namespace Sectrics_V2
             buildBridgeMenu buildBridgeMenu = new buildBridgeMenu();
             this.Hide();
             buildBridgeMenu.Show();
+        }
+
+        private void bridgeDrawing_Paint(object sender, PaintEventArgs e)
+        {
+            try
+            {
+                this.DoubleBuffered = true;
+                int nodeMultiplyFactor = 100;
+                Graphics g = e.Graphics;
+                Pen beamPen = new Pen(Color.Black, 10);
+                Pen greenPen = new Pen(Color.Green, 10);
+                Pen forcePen = new Pen(Color.Red, 10);
+                Pen reactionPen = new Pen(Color.Aqua, 10);
+                SolidBrush blackBrush = new SolidBrush(Color.Black);
+                Font font = new Font("Arial", 16);
+                g.ScaleTransform(zoom, zoom);
+
+                //Draws Nodes Coordinates
+                for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+                {
+                    g.DrawEllipse(greenPen, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)), 20, 20);
+                }
+
+                //Draws Member Lines With Width
+                for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+                {
+                    Color penColor = Color.Black;
+
+                    if (Program.bridgeData.areas.Count > i)
+                    {
+                        beamPen = new Pen(penColor, (10 * Convert.ToSingle(Program.bridgeData.areas[i])));
+                    }
+                    else
+                    {
+                        beamPen = new Pen(penColor, 10);
+                    }
+                    g.DrawLine(beamPen, (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)),
+                        (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].fromConnection].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)),
+                        (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)),
+                        (Convert.ToSingle(Program.bridgeData.nodes[Program.bridgeData.memberConnection[i].toConnection].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)));
+                }
+
+                //Draws Forces Applied
+                for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+                {
+                    if (!(Program.bridgeData.forces[i].xMagnitudeForces == 0 && Program.bridgeData.forces[i].yMagnitudeForces == 0))
+                    {
+                        g.DrawLine(forcePen, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)), (Convert.ToSingle((Program.bridgeData.nodes[i].NodeX * nodeMultiplyFactor) + Program.bridgeData.forces[i].xMagnitudeForces) + Convert.ToSingle(xMouseOffset)), (Convert.ToSingle((Program.bridgeData.nodes[i].NodeY * nodeMultiplyFactor) + Program.bridgeData.forces[i].yMagnitudeForces) + Convert.ToSingle(yMouseOffset)));
+                    }
+                }
+
+                //Draws The Support Locations
+                Image verticalFixed = Resources.verticalSupport;
+                Image horozontalFixed = Resources.horozontalSupport;
+                Image verticalRoller = Resources.verticalRoller;
+                Image horozontalRoller = Resources.horozontalRoller;
+                for (int i = 0; i < Program.bridgeData.supportType.Count; i++)
+                {
+                    switch (Program.bridgeData.supportType[i])
+                    {
+                        case "Vertical Fixed Support":
+                            g.DrawImage(verticalFixed, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)));
+                            break;
+                        case "Horozontal Fixed Support":
+                            g.DrawImage(horozontalFixed, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)));
+                            break;
+                        case "Vertical Roller":
+                            g.DrawImage(verticalRoller, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)));
+                            break;
+                        case "Horozontal Roller":
+                            g.DrawImage(horozontalRoller, (Convert.ToSingle(Program.bridgeData.nodes[i].NodeX) * nodeMultiplyFactor + Convert.ToSingle(xMouseOffset)), (Convert.ToSingle(Program.bridgeData.nodes[i].NodeY) * nodeMultiplyFactor + Convert.ToSingle(yMouseOffset)));
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: An Error Has Occured Drawing The Bridge");
+            }
+        }
+
+        private void bridgeDrawing_MouseMove(object sender, MouseEventArgs e)
+        {
+            double oMouseXOffset = Cursor.Position.X;
+            double oMouseYOffset = Cursor.Position.Y;
+
+            if (e.Button == MouseButtons.Left)
+            {
+                //Finds the change in mouse position when dragging
+                float deltaX = Convert.ToSingle(Cursor.Position.X - oMouseXOffset) * 10;
+                float deltaY = Convert.ToSingle(Cursor.Position.Y - oMouseYOffset) * 10;
+
+                xMouseOffset += deltaX;
+                yMouseOffset += deltaY;
+                bridgeDrawing.Refresh();
+            }
+        }
+
+        private void zoomInBar_Scroll(object sender, EventArgs e)
+        {
+            zoom = zoomInBar.Value / 100f;
+            bridgeDrawing.Refresh();
         }
     }
 }
