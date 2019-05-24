@@ -90,6 +90,12 @@
     <Compile Include="nodes.Designer.cs">
       <DependentUpon>nodes.cs</DependentUpon>
     </Compile>
+    <Compile Include="nodesTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nodesTable.Designer.cs">
+      <DependentUpon>nodesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="solveMenus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="nodes.resx">
       <DependentUpon>nodes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nodesTable.resx">
+      <DependentUpon>nodesTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="solveMenus.resx">
       <DependentUpon>solveMenus.cs</DependentUpon>

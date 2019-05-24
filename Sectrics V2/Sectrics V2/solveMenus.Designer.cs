@@ -80,7 +80,7 @@
             // barStressesTextbox
             // 
             this.barStressesTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.barStressesTextbox.Location = new System.Drawing.Point(43, 100);
+            this.barStressesTextbox.Location = new System.Drawing.Point(645, 174);
             this.barStressesTextbox.Name = "barStressesTextbox";
             this.barStressesTextbox.ReadOnly = true;
             this.barStressesTextbox.Size = new System.Drawing.Size(884, 31);
@@ -98,7 +98,7 @@
             this.solveForForces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.solveForForces.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.solveForForces.ForeColor = System.Drawing.Color.White;
-            this.solveForForces.Location = new System.Drawing.Point(707, 941);
+            this.solveForForces.Location = new System.Drawing.Point(95, 789);
             this.solveForForces.Name = "solveForForces";
             this.solveForForces.Size = new System.Drawing.Size(537, 91);
             this.solveForForces.TabIndex = 13;
@@ -111,7 +111,7 @@
             // 
             this.zoomInBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.zoomInBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.zoomInBar.Location = new System.Drawing.Point(43, 146);
+            this.zoomInBar.Location = new System.Drawing.Point(645, 232);
             this.zoomInBar.Maximum = 100;
             this.zoomInBar.Minimum = 1;
             this.zoomInBar.Name = "zoomInBar";
@@ -125,9 +125,9 @@
             // 
             this.bridgeDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bridgeDrawing.BackColor = System.Drawing.Color.White;
-            this.bridgeDrawing.Location = new System.Drawing.Point(95, 284);
+            this.bridgeDrawing.Location = new System.Drawing.Point(645, 328);
             this.bridgeDrawing.Name = "bridgeDrawing";
-            this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
+            this.bridgeDrawing.Size = new System.Drawing.Size(1237, 723);
             this.bridgeDrawing.TabIndex = 15;
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
             this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
@@ -174,7 +174,7 @@
             this.BackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackToMainMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.BackToMainMenu.ForeColor = System.Drawing.Color.White;
-            this.BackToMainMenu.Location = new System.Drawing.Point(1008, 100);
+            this.BackToMainMenu.Location = new System.Drawing.Point(24, 64);
             this.BackToMainMenu.Name = "BackToMainMenu";
             this.BackToMainMenu.Size = new System.Drawing.Size(540, 91);
             this.BackToMainMenu.TabIndex = 39;
@@ -192,12 +192,12 @@
             this.Controls.Add(this.BackToMainMenu);
             this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.savePictureOfBridge);
-            this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.solveForForces);
             this.Controls.Add(this.barStressesTextbox);
             this.Controls.Add(this.minimize);
             this.Controls.Add(this.exitApplication);
+            this.Controls.Add(this.bridgeDrawing);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

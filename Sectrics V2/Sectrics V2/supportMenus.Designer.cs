@@ -108,7 +108,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(26, 140);
+            this.label2.Location = new System.Drawing.Point(1076, 176);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(249, 39);
             this.label2.TabIndex = 29;
@@ -118,7 +118,7 @@
             // 
             this.supportNodeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.supportNodeTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supportNodeTextbox.Location = new System.Drawing.Point(299, 69);
+            this.supportNodeTextbox.Location = new System.Drawing.Point(1349, 105);
             this.supportNodeTextbox.Name = "supportNodeTextbox";
             this.supportNodeTextbox.Size = new System.Drawing.Size(471, 40);
             this.supportNodeTextbox.TabIndex = 0;
@@ -132,7 +132,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(26, 70);
+            this.label1.Location = new System.Drawing.Point(1076, 106);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 39);
             this.label1.TabIndex = 27;
@@ -149,7 +149,7 @@
             "Horozontal Fixed Support",
             "Vertical Roller",
             "Horozontal Roller"});
-            this.supportType.Location = new System.Drawing.Point(299, 140);
+            this.supportType.Location = new System.Drawing.Point(1349, 176);
             this.supportType.Name = "supportType";
             this.supportType.Size = new System.Drawing.Size(471, 136);
             this.supportType.TabIndex = 1;
@@ -219,7 +219,7 @@
             this.BackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackToMainMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.BackToMainMenu.ForeColor = System.Drawing.Color.White;
-            this.BackToMainMenu.Location = new System.Drawing.Point(33, 403);
+            this.BackToMainMenu.Location = new System.Drawing.Point(24, 64);
             this.BackToMainMenu.Name = "BackToMainMenu";
             this.BackToMainMenu.Size = new System.Drawing.Size(540, 91);
             this.BackToMainMenu.TabIndex = 37;
@@ -232,9 +232,9 @@
             // 
             this.bridgeDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bridgeDrawing.BackColor = System.Drawing.Color.White;
-            this.bridgeDrawing.Location = new System.Drawing.Point(817, 341);
+            this.bridgeDrawing.Location = new System.Drawing.Point(645, 328);
             this.bridgeDrawing.Name = "bridgeDrawing";
-            this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
+            this.bridgeDrawing.Size = new System.Drawing.Size(1237, 723);
             this.bridgeDrawing.TabIndex = 39;
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
             this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
@@ -243,7 +243,7 @@
             // 
             this.zoomInBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.zoomInBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.zoomInBar.Location = new System.Drawing.Point(817, 203);
+            this.zoomInBar.Location = new System.Drawing.Point(645, 232);
             this.zoomInBar.Maximum = 100;
             this.zoomInBar.Minimum = 1;
             this.zoomInBar.Name = "zoomInBar";
@@ -259,13 +259,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.nodeListView);
             this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.BackToMainMenu);
             this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.clearAll);
             this.Controls.Add(this.supportListView);
-            this.Controls.Add(this.nodeListView);
             this.Controls.Add(this.supportType);
             this.Controls.Add(this.addSupportButton);
             this.Controls.Add(this.label2);

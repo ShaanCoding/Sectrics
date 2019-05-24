@@ -93,7 +93,7 @@
             this.addMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMemberButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addMemberButton.ForeColor = System.Drawing.Color.White;
-            this.addMemberButton.Location = new System.Drawing.Point(27, 224);
+            this.addMemberButton.Location = new System.Drawing.Point(763, 100);
             this.addMemberButton.Name = "addMemberButton";
             this.addMemberButton.Size = new System.Drawing.Size(540, 91);
             this.addMemberButton.TabIndex = 21;
@@ -106,7 +106,7 @@
             // 
             this.fromMemberTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.fromMemberTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fromMemberTextbox.Location = new System.Drawing.Point(266, 89);
+            this.fromMemberTextbox.Location = new System.Drawing.Point(17, 238);
             this.fromMemberTextbox.Name = "fromMemberTextbox";
             this.fromMemberTextbox.Size = new System.Drawing.Size(417, 40);
             this.fromMemberTextbox.TabIndex = 0;
@@ -120,7 +120,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(7, 87);
+            this.label2.Location = new System.Drawing.Point(17, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(253, 39);
             this.label2.TabIndex = 19;
@@ -130,7 +130,7 @@
             // 
             this.toMemberTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toMemberTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toMemberTextbox.Location = new System.Drawing.Point(266, 157);
+            this.toMemberTextbox.Location = new System.Drawing.Point(17, 354);
             this.toMemberTextbox.Name = "toMemberTextbox";
             this.toMemberTextbox.Size = new System.Drawing.Size(417, 40);
             this.toMemberTextbox.TabIndex = 1;
@@ -144,7 +144,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(7, 155);
+            this.label1.Location = new System.Drawing.Point(17, 298);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 39);
             this.label1.TabIndex = 17;
@@ -171,7 +171,7 @@
             this.removeMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeMember.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.removeMember.ForeColor = System.Drawing.Color.White;
-            this.removeMember.Location = new System.Drawing.Point(27, 333);
+            this.removeMember.Location = new System.Drawing.Point(52, 435);
             this.removeMember.Name = "removeMember";
             this.removeMember.Size = new System.Drawing.Size(540, 91);
             this.removeMember.TabIndex = 23;
@@ -190,7 +190,7 @@
             this.clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearAll.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.clearAll.ForeColor = System.Drawing.Color.White;
-            this.clearAll.Location = new System.Drawing.Point(27, 441);
+            this.clearAll.Location = new System.Drawing.Point(52, 549);
             this.clearAll.Name = "clearAll";
             this.clearAll.Size = new System.Drawing.Size(540, 91);
             this.clearAll.TabIndex = 24;
@@ -233,7 +233,7 @@
             this.BackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackToMainMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.BackToMainMenu.ForeColor = System.Drawing.Color.White;
-            this.BackToMainMenu.Location = new System.Drawing.Point(730, 87);
+            this.BackToMainMenu.Location = new System.Drawing.Point(24, 64);
             this.BackToMainMenu.Name = "BackToMainMenu";
             this.BackToMainMenu.Size = new System.Drawing.Size(540, 91);
             this.BackToMainMenu.TabIndex = 27;
@@ -246,9 +246,9 @@
             // 
             this.bridgeDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bridgeDrawing.BackColor = System.Drawing.Color.White;
-            this.bridgeDrawing.Location = new System.Drawing.Point(705, 399);
+            this.bridgeDrawing.Location = new System.Drawing.Point(645, 328);
             this.bridgeDrawing.Name = "bridgeDrawing";
-            this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
+            this.bridgeDrawing.Size = new System.Drawing.Size(1237, 723);
             this.bridgeDrawing.TabIndex = 29;
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
             this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
@@ -257,7 +257,7 @@
             // 
             this.zoomInBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.zoomInBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.zoomInBar.Location = new System.Drawing.Point(705, 261);
+            this.zoomInBar.Location = new System.Drawing.Point(645, 232);
             this.zoomInBar.Maximum = 100;
             this.zoomInBar.Minimum = 1;
             this.zoomInBar.Name = "zoomInBar";
@@ -275,7 +275,6 @@
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
-            this.Controls.Add(this.BackToMainMenu);
             this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.nodeListView);
             this.Controls.Add(this.clearAll);
@@ -288,6 +287,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.minimize);
             this.Controls.Add(this.exitApplication);
+            this.Controls.Add(this.BackToMainMenu);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

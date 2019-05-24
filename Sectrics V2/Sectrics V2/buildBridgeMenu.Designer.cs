@@ -42,6 +42,12 @@
             this.moveMenu = new System.Windows.Forms.Panel();
             this.bridgeDrawing = new System.Windows.Forms.Panel();
             this.zoomInBar = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,11 +88,11 @@
             this.nodesMenu.FlatAppearance.BorderSize = 2;
             this.nodesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.nodesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nodesMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.nodesMenu.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nodesMenu.ForeColor = System.Drawing.Color.White;
-            this.nodesMenu.Location = new System.Drawing.Point(30, 193);
+            this.nodesMenu.Location = new System.Drawing.Point(48, 149);
             this.nodesMenu.Name = "nodesMenu";
-            this.nodesMenu.Size = new System.Drawing.Size(537, 91);
+            this.nodesMenu.Size = new System.Drawing.Size(269, 61);
             this.nodesMenu.TabIndex = 4;
             this.nodesMenu.Text = "NODES";
             this.nodesMenu.UseVisualStyleBackColor = false;
@@ -99,11 +105,11 @@
             this.membersMenu.FlatAppearance.BorderSize = 2;
             this.membersMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.membersMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.membersMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.membersMenu.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.membersMenu.ForeColor = System.Drawing.Color.White;
-            this.membersMenu.Location = new System.Drawing.Point(30, 301);
+            this.membersMenu.Location = new System.Drawing.Point(355, 149);
             this.membersMenu.Name = "membersMenu";
-            this.membersMenu.Size = new System.Drawing.Size(537, 91);
+            this.membersMenu.Size = new System.Drawing.Size(269, 61);
             this.membersMenu.TabIndex = 5;
             this.membersMenu.Text = "MEMBERS";
             this.membersMenu.UseVisualStyleBackColor = false;
@@ -116,11 +122,11 @@
             this.supportsMenu.FlatAppearance.BorderSize = 2;
             this.supportsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.supportsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.supportsMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.supportsMenu.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supportsMenu.ForeColor = System.Drawing.Color.White;
-            this.supportsMenu.Location = new System.Drawing.Point(30, 517);
+            this.supportsMenu.Location = new System.Drawing.Point(355, 264);
             this.supportsMenu.Name = "supportsMenu";
-            this.supportsMenu.Size = new System.Drawing.Size(537, 91);
+            this.supportsMenu.Size = new System.Drawing.Size(269, 61);
             this.supportsMenu.TabIndex = 6;
             this.supportsMenu.Text = "SUPPORTS";
             this.supportsMenu.UseVisualStyleBackColor = false;
@@ -133,11 +139,11 @@
             this.loadsMenu.FlatAppearance.BorderSize = 2;
             this.loadsMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.loadsMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadsMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.loadsMenu.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadsMenu.ForeColor = System.Drawing.Color.White;
-            this.loadsMenu.Location = new System.Drawing.Point(30, 625);
+            this.loadsMenu.Location = new System.Drawing.Point(48, 447);
             this.loadsMenu.Name = "loadsMenu";
-            this.loadsMenu.Size = new System.Drawing.Size(537, 91);
+            this.loadsMenu.Size = new System.Drawing.Size(269, 61);
             this.loadsMenu.TabIndex = 7;
             this.loadsMenu.Text = "LOADS";
             this.loadsMenu.UseVisualStyleBackColor = false;
@@ -150,11 +156,11 @@
             this.solveMenu.FlatAppearance.BorderSize = 2;
             this.solveMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.solveMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.solveMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.solveMenu.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.solveMenu.ForeColor = System.Drawing.Color.White;
-            this.solveMenu.Location = new System.Drawing.Point(30, 733);
+            this.solveMenu.Location = new System.Drawing.Point(355, 447);
             this.solveMenu.Name = "solveMenu";
-            this.solveMenu.Size = new System.Drawing.Size(537, 91);
+            this.solveMenu.Size = new System.Drawing.Size(269, 61);
             this.solveMenu.TabIndex = 8;
             this.solveMenu.Text = "SOLVE";
             this.solveMenu.UseVisualStyleBackColor = false;
@@ -167,11 +173,11 @@
             this.aboutMenu.FlatAppearance.BorderSize = 2;
             this.aboutMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.aboutMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.aboutMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.aboutMenu.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboutMenu.ForeColor = System.Drawing.Color.White;
-            this.aboutMenu.Location = new System.Drawing.Point(30, 841);
+            this.aboutMenu.Location = new System.Drawing.Point(48, 633);
             this.aboutMenu.Name = "aboutMenu";
-            this.aboutMenu.Size = new System.Drawing.Size(537, 91);
+            this.aboutMenu.Size = new System.Drawing.Size(269, 61);
             this.aboutMenu.TabIndex = 9;
             this.aboutMenu.Text = "ABOUT";
             this.aboutMenu.UseVisualStyleBackColor = false;
@@ -184,11 +190,11 @@
             this.exitMenu.FlatAppearance.BorderSize = 2;
             this.exitMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.exitMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.exitMenu.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitMenu.ForeColor = System.Drawing.Color.White;
-            this.exitMenu.Location = new System.Drawing.Point(30, 949);
+            this.exitMenu.Location = new System.Drawing.Point(355, 633);
             this.exitMenu.Name = "exitMenu";
-            this.exitMenu.Size = new System.Drawing.Size(537, 91);
+            this.exitMenu.Size = new System.Drawing.Size(269, 61);
             this.exitMenu.TabIndex = 10;
             this.exitMenu.Text = "EXIT";
             this.exitMenu.UseVisualStyleBackColor = false;
@@ -201,11 +207,11 @@
             this.materialPropertiesMenu.FlatAppearance.BorderSize = 2;
             this.materialPropertiesMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
             this.materialPropertiesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialPropertiesMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.materialPropertiesMenu.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.materialPropertiesMenu.ForeColor = System.Drawing.Color.White;
-            this.materialPropertiesMenu.Location = new System.Drawing.Point(30, 409);
+            this.materialPropertiesMenu.Location = new System.Drawing.Point(48, 264);
             this.materialPropertiesMenu.Name = "materialPropertiesMenu";
-            this.materialPropertiesMenu.Size = new System.Drawing.Size(537, 91);
+            this.materialPropertiesMenu.Size = new System.Drawing.Size(269, 61);
             this.materialPropertiesMenu.TabIndex = 11;
             this.materialPropertiesMenu.Text = "MATERIAL PROPERTIES";
             this.materialPropertiesMenu.UseVisualStyleBackColor = false;
@@ -229,9 +235,9 @@
             // 
             this.bridgeDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bridgeDrawing.BackColor = System.Drawing.Color.White;
-            this.bridgeDrawing.Location = new System.Drawing.Point(727, 349);
+            this.bridgeDrawing.Location = new System.Drawing.Point(645, 328);
             this.bridgeDrawing.Name = "bridgeDrawing";
-            this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
+            this.bridgeDrawing.Size = new System.Drawing.Size(1237, 723);
             this.bridgeDrawing.TabIndex = 25;
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
             this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
@@ -240,7 +246,7 @@
             // 
             this.zoomInBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.zoomInBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.zoomInBar.Location = new System.Drawing.Point(727, 211);
+            this.zoomInBar.Location = new System.Drawing.Point(645, 232);
             this.zoomInBar.Maximum = 100;
             this.zoomInBar.Minimum = 1;
             this.zoomInBar.Name = "zoomInBar";
@@ -250,12 +256,88 @@
             this.zoomInBar.Value = 100;
             this.zoomInBar.Scroll += new System.EventHandler(this.zoomInBar_Scroll);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(255, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 33);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "STRUCTURE";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(42, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(591, 33);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "____________________________________";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(222, 375);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(230, 33);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "LOAD AND SOLVE";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(42, 393);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(591, 33);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "____________________________________";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(299, 559);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 33);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "MISC";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(42, 577);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(591, 33);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "____________________________________";
+            // 
             // buildBridgeMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.moveMenu);
@@ -296,5 +378,11 @@
         private System.Windows.Forms.Panel moveMenu;
         private System.Windows.Forms.Panel bridgeDrawing;
         private System.Windows.Forms.TrackBar zoomInBar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

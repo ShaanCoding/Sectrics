@@ -108,7 +108,7 @@
             // 
             this.xForceTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.xForceTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xForceTextbox.Location = new System.Drawing.Point(435, 136);
+            this.xForceTextbox.Location = new System.Drawing.Point(1411, 126);
             this.xForceTextbox.Name = "xForceTextbox";
             this.xForceTextbox.Size = new System.Drawing.Size(471, 40);
             this.xForceTextbox.TabIndex = 1;
@@ -122,7 +122,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(22, 137);
+            this.label2.Location = new System.Drawing.Point(998, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 39);
             this.label2.TabIndex = 29;
@@ -132,7 +132,7 @@
             // 
             this.nodeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nodeTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nodeTextbox.Location = new System.Drawing.Point(435, 66);
+            this.nodeTextbox.Location = new System.Drawing.Point(1411, 56);
             this.nodeTextbox.Name = "nodeTextbox";
             this.nodeTextbox.Size = new System.Drawing.Size(471, 40);
             this.nodeTextbox.TabIndex = 0;
@@ -146,7 +146,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(22, 67);
+            this.label1.Location = new System.Drawing.Point(998, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 39);
             this.label1.TabIndex = 27;
@@ -156,7 +156,7 @@
             // 
             this.yForceTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.yForceTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yForceTextbox.Location = new System.Drawing.Point(435, 210);
+            this.yForceTextbox.Location = new System.Drawing.Point(1411, 200);
             this.yForceTextbox.Name = "yForceTextbox";
             this.yForceTextbox.Size = new System.Drawing.Size(471, 40);
             this.yForceTextbox.TabIndex = 2;
@@ -170,7 +170,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(22, 211);
+            this.label3.Location = new System.Drawing.Point(998, 201);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(244, 39);
             this.label3.TabIndex = 32;
@@ -259,7 +259,7 @@
             this.BackToMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackToMainMenu.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.BackToMainMenu.ForeColor = System.Drawing.Color.White;
-            this.BackToMainMenu.Location = new System.Drawing.Point(968, 66);
+            this.BackToMainMenu.Location = new System.Drawing.Point(24, 64);
             this.BackToMainMenu.Name = "BackToMainMenu";
             this.BackToMainMenu.Size = new System.Drawing.Size(540, 91);
             this.BackToMainMenu.TabIndex = 38;
@@ -272,9 +272,9 @@
             // 
             this.bridgeDrawing.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bridgeDrawing.BackColor = System.Drawing.Color.White;
-            this.bridgeDrawing.Location = new System.Drawing.Point(779, 424);
+            this.bridgeDrawing.Location = new System.Drawing.Point(645, 328);
             this.bridgeDrawing.Name = "bridgeDrawing";
-            this.bridgeDrawing.Size = new System.Drawing.Size(1079, 608);
+            this.bridgeDrawing.Size = new System.Drawing.Size(1237, 723);
             this.bridgeDrawing.TabIndex = 40;
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
             this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
@@ -283,7 +283,7 @@
             // 
             this.zoomInBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.zoomInBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
-            this.zoomInBar.Location = new System.Drawing.Point(779, 286);
+            this.zoomInBar.Location = new System.Drawing.Point(645, 232);
             this.zoomInBar.Maximum = 100;
             this.zoomInBar.Minimum = 1;
             this.zoomInBar.Name = "zoomInBar";
@@ -299,6 +299,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.nodeListView);
             this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.BackToMainMenu);
@@ -306,7 +307,6 @@
             this.Controls.Add(this.removeAll);
             this.Controls.Add(this.removeLoad);
             this.Controls.Add(this.loadsListView);
-            this.Controls.Add(this.nodeListView);
             this.Controls.Add(this.yForceTextbox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.addLoadButton);
