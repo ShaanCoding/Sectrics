@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Sectrics_V2
 {
-    public partial class loadsMenus : Form
+    public partial class loadsMenusTable : Form
     {
         float zoom = 1f;
         double xMouseOffset;
@@ -19,18 +19,22 @@ namespace Sectrics_V2
         private const int cGrip = 16;
         private const int cCaption = 32;
 
-        public loadsMenus()
+        public loadsMenusTable()
         {
             InitializeComponent();
 
-            if (Program.bridgeData.forces.Count != Program.bridgeData.nodes.Count)
+            //Adds The Array Coordinates Into ListBox
+            nodeListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
             {
-                for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
-                {
-                    Program.bridgeData.forces.Add(new forces());
-                    Program.bridgeData.forces[i].xMagnitudeForces = 0;
-                    Program.bridgeData.forces[i].yMagnitudeForces = 0;
-                }
+                nodeListView.Items.Add("Node " + i + " " + "X Coordinate: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Y Coordinate: " + Program.bridgeData.nodes[i].NodeY.ToString());
+            }
+
+            //Adds The Array Coordinates Into ListBox
+            loadsListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+            {
+                loadsListView.Items.Add("Node " + i + " X Magnitude: " + Program.bridgeData.forces[i].xMagnitudeForces + " | Y Magnitude: " + Program.bridgeData.forces[i].yMagnitudeForces);
             }
         }
 
@@ -73,96 +77,11 @@ namespace Sectrics_V2
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
-        private void yForceTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void xForceTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nodeTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addLoadButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt16(nodeTextbox.Text) < Program.bridgeData.nodes.Count && nodeTextbox.Text != null && xForceTextbox.Text != null && yForceTextbox.Text != null)
-                {
-                    Program.bridgeData.forces[Convert.ToInt32(nodeTextbox.Text)].xMagnitudeForces = Convert.ToDouble(xForceTextbox.Text);
-                    Program.bridgeData.forces[Convert.ToInt32(nodeTextbox.Text)].yMagnitudeForces = Convert.ToDouble(yForceTextbox.Text);
-
-                    nodeTextbox.Text = "";
-                    xForceTextbox.Text = "";
-                    yForceTextbox.Text = "";
-                }
-                else
-                {
-                    if (nodeTextbox.Text == null || Convert.ToInt32(nodeTextbox.Text) < Program.bridgeData.nodes.Count)
-                    {
-                        nodeTextbox.Text = "Incorrect Variable Entered";
-                    }
-                    if (xForceTextbox.Text == null)
-                    {
-                        xForceTextbox.Text = "Incorrect Variable Entered";
-                    }
-                    if (yForceTextbox.Text == null)
-                    {
-                        yForceTextbox.Text = "Incorrect Variable Entered";
-                    }
-                }
-                bridgeDrawing.Refresh();
-            }
-            catch
-            {
-                nodeTextbox.Text = "Incorrect Variable Entered";
-                xForceTextbox.Text = "Incorrect Variable Entered";
-                yForceTextbox.Text = "Incorrect Variable Entered";
-            }
-        }
-
-        private void nodeListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loadsListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void moveMenu_MouseDown(object sender, MouseEventArgs e)
-        {
-            Program.generalFunctions.mov = 1;
-            Program.generalFunctions.movX = e.X;
-            Program.generalFunctions.movY = e.Y;
-        }
-
-        private void moveMenu_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (Program.generalFunctions.mov == 1)
-            {
-                this.SetDesktopLocation(MousePosition.X - Program.generalFunctions.movX, MousePosition.Y - Program.generalFunctions.movY);
-                Program.generalFunctions.desktopX = MousePosition.X;
-                Program.generalFunctions.desktopY = MousePosition.Y;
-            }
-        }
-
-        private void moveMenu_MouseUp(object sender, MouseEventArgs e)
-        {
-            Program.generalFunctions.mov = 0;
-        }
-
         private void BackToMainMenu_Click(object sender, EventArgs e)
         {
-            buildBridgeMenu buildBridgeMenu = new buildBridgeMenu();
+            loadsMenus loadsMenus = new loadsMenus();
             this.Hide();
-            buildBridgeMenu.Show();
+            loadsMenus.Show();
         }
 
         private void zoomInBar_Scroll(object sender, EventArgs e)
@@ -269,26 +188,42 @@ namespace Sectrics_V2
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void removeLoad_Click(object sender, EventArgs e)
         {
+            if (loadsListView.SelectedIndex >= 0)
+            {
+                Program.bridgeData.forces[loadsListView.SelectedIndex].xMagnitudeForces = 0;
+                Program.bridgeData.forces[loadsListView.SelectedIndex].yMagnitudeForces = 0;
 
+                //Adds The Array Coordinates Into ListBox
+                loadsListView.Items.Clear();
+                for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+                {
+                    loadsListView.Items.Add("Node " + i + " X Magnitude: " + Program.bridgeData.forces[i].xMagnitudeForces + " | Y Magnitude: " + Program.bridgeData.forces[i].yMagnitudeForces);
+                }
+                bridgeDrawing.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Error: Must Select An Item Before Clicking It.");
+            }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void removeAll_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+            {
+                Program.bridgeData.forces[i].xMagnitudeForces = 0;
+                Program.bridgeData.forces[i].yMagnitudeForces = 0;
+            }
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void loadMenusTable_Click(object sender, EventArgs e)
-        {
-            loadsMenusTable loadsMenusTable = new loadsMenusTable();
-            this.Hide();
-            loadMenusTable.Show();
+            //Adds The Array Coordinates Into ListBox
+            loadsListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.forces.Count; i++)
+            {
+                loadsListView.Items.Add("Node " + i + " X Magnitude: " + Program.bridgeData.forces[i].xMagnitudeForces + " | Y Magnitude: " + Program.bridgeData.forces[i].yMagnitudeForces);
+            }
+            bridgeDrawing.Refresh();
         }
     }
 }
