@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Sectrics_V2
 {
-    public partial class members : Form
+    public partial class membersTable : Form
     {
         float zoom = 1f;
         double xMouseOffset;
@@ -19,30 +19,24 @@ namespace Sectrics_V2
         private const int cGrip = 16;
         private const int cCaption = 32;
 
-        public members()
+        public membersTable()
         {
             InitializeComponent();
             this.SetDesktopLocation(Program.generalFunctions.desktopX - Program.generalFunctions.movX, Program.generalFunctions.desktopY - Program.generalFunctions.movY);
-        }
 
-        protected override void WndProc(ref Message m)
-        {
-            if (m.Msg == 0x84)
+            //Adds The Array Coordinates Into ListBox
+            nodeListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
             {
-                Point pos = new Point(m.LParam.ToInt32());
-                pos = this.PointToClient(pos);
-                if (pos.Y < cCaption)
-                {
-                    m.Result = (IntPtr)2;
-                    return;
-                }
-                if (pos.X >= this.ClientSize.Width - cGrip && pos.Y >= this.ClientSize.Height - cGrip)
-                {
-                    m.Result = (IntPtr)17;
-                    return;
-                }
+                nodeListView.Items.Add("Node " + i + " " + "X Coordinate: " + Program.bridgeData.nodes[i].NodeX.ToString() + " | Y Coordinate: " + Program.bridgeData.nodes[i].NodeY.ToString());
             }
-            base.WndProc(ref m);
+
+            //Adds The Array Coordinates Into ListBox
+            membersListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+            {
+                membersListView.Items.Add("To Member: " + Program.bridgeData.memberConnection[i].toConnection.ToString() + " | From Member: " + Program.bridgeData.memberConnection[i].fromConnection.ToString());
+            }
         }
 
         private void exitApplication_Click(object sender, EventArgs e)
@@ -57,78 +51,19 @@ namespace Sectrics_V2
 
         private void nodes_Load(object sender, EventArgs e)
         {
-            if((Program.generalFunctions.desktopX - Program.generalFunctions.movX) != 0 && (Program.generalFunctions.desktopY - Program.generalFunctions.movY) != null)
+            if ((Program.generalFunctions.desktopX - Program.generalFunctions.movX) != 0 && (Program.generalFunctions.desktopY - Program.generalFunctions.movY) != null)
             {
                 this.SetDesktopLocation(Program.generalFunctions.desktopX - Program.generalFunctions.movX, Program.generalFunctions.desktopY - Program.generalFunctions.movY);
             }
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
-        private void addMemberButton_Click(object sender, EventArgs e)
+        private void BackToMainMenu_Click(object sender, EventArgs e)
         {
-            try
-            {
-                bool repeatedMember = false;
-                for(int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
-                {
-                    if(Program.bridgeData.memberConnection[i].toConnection == Convert.ToInt16(toMemberTextbox.Text) && Program.bridgeData.memberConnection[i].fromConnection == Convert.ToInt16(fromMemberTextbox.Text)
-                        || Program.bridgeData.memberConnection[i].toConnection == Convert.ToInt16(fromMemberTextbox.Text) && Program.bridgeData.memberConnection[i].fromConnection == Convert.ToInt16(toMemberTextbox.Text))
-                    {
-                        repeatedMember = true;
-                    }
-                }
-                if (toMemberTextbox.Text != null && fromMemberTextbox.Text != null && Convert.ToInt16(toMemberTextbox.Text) < Program.bridgeData.nodes.Count && Convert.ToInt16(fromMemberTextbox.Text) < Program.bridgeData.nodes.Count && repeatedMember == false)
-                {
-                    Program.bridgeData.memberConnection.Add(new connectedMembers());
-                    Program.bridgeData.memberConnection[Program.bridgeData.memberIndex].fromConnection = Convert.ToInt16(fromMemberTextbox.Text);
-                    Program.bridgeData.memberConnection[Program.bridgeData.memberIndex].toConnection = Convert.ToInt16(toMemberTextbox.Text);
-                    Program.bridgeData.memberIndex++;
-                    fromMemberTextbox.Text = "";
-                    toMemberTextbox.Text = "";
-                }
-                else if (toMemberTextbox.Text == null)
-                {
-                    toMemberTextbox.Text = "Incorrect Variable Entered";
-                }
-                else if (fromMemberTextbox.Text == null)
-                {
-                    fromMemberTextbox.Text = "Incorrect Variable Entered";
-                }
-                else
-                {
-                    toMemberTextbox.Text = "Incorrect Variable Entered";
-                    fromMemberTextbox.Text = "Incorrect Variable Entered";
-                }
-
-                bridgeDrawing.Refresh();
-            }
-            catch
-            {
-                toMemberTextbox.Text = "Incorrect Variable Entered";
-                fromMemberTextbox.Text = "Incorrect Variable Entered";
-            }
+            members members = new members();
+            this.Hide();
+            members.Show();
         }
-
-        private void fromMemberTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toMemberTextbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void membersListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nodeListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void moveMenu_MouseDown(object sender, MouseEventArgs e)
         {
@@ -150,13 +85,6 @@ namespace Sectrics_V2
         private void moveMenu_MouseUp(object sender, MouseEventArgs e)
         {
             Program.generalFunctions.mov = 0;
-        }
-
-        private void BackToMainMenu_Click(object sender, EventArgs e)
-        {
-            buildBridgeMenu buildBridgeMenu = new buildBridgeMenu();
-            this.Hide();
-            buildBridgeMenu.Show();
         }
 
         private void zoomInBar_Scroll(object sender, EventArgs e)
@@ -263,11 +191,39 @@ namespace Sectrics_V2
             }
         }
 
-        private void membersTable_Click(object sender, EventArgs e)
+        private void removeMember_Click(object sender, EventArgs e)
         {
-            membersTable membersTable = new membersTable();
-            this.Hide();
-            membersTable.Show();
+            if (membersListView.SelectedIndex >= 0)
+            {
+                Program.bridgeData.memberConnection.RemoveAt(membersListView.SelectedIndex);
+                Program.bridgeData.memberIndex--;
+
+                //Adds The Array Coordinates Into ListBox
+                membersListView.Items.Clear();
+                for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+                {
+                    membersListView.Items.Add("To Member: " + Program.bridgeData.memberConnection[i].toConnection.ToString() + " | From Member: " + Program.bridgeData.memberConnection[i].fromConnection.ToString());
+                }
+                bridgeDrawing.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Error: Must Select An Item Before Clicking It.");
+            }
+        }
+
+        private void clearAll_Click(object sender, EventArgs e)
+        {
+            Program.bridgeData.memberConnection.Clear();
+            Program.bridgeData.memberIndex = 0;
+
+            //Adds The Array Coordinates Into ListBox
+            membersListView.Items.Clear();
+            for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+            {
+                membersListView.Items.Add("To Member: " + Program.bridgeData.memberConnection[i].toConnection.ToString() + " | From Member: " + Program.bridgeData.memberConnection[i].fromConnection.ToString());
+            }
+            bridgeDrawing.Refresh();
         }
     }
 }

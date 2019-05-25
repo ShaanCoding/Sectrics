@@ -36,14 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.toMemberTextbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.membersListView = new System.Windows.Forms.ListBox();
-            this.removeMember = new System.Windows.Forms.Button();
-            this.clearAll = new System.Windows.Forms.Button();
-            this.nodeListView = new System.Windows.Forms.ListBox();
             this.moveMenu = new System.Windows.Forms.Panel();
             this.BackToMainMenu = new System.Windows.Forms.Button();
             this.bridgeDrawing = new System.Windows.Forms.Panel();
             this.zoomInBar = new System.Windows.Forms.TrackBar();
+            this.membersTable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +90,7 @@
             this.addMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMemberButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addMemberButton.ForeColor = System.Drawing.Color.White;
-            this.addMemberButton.Location = new System.Drawing.Point(763, 100);
+            this.addMemberButton.Location = new System.Drawing.Point(12, 426);
             this.addMemberButton.Name = "addMemberButton";
             this.addMemberButton.Size = new System.Drawing.Size(540, 91);
             this.addMemberButton.TabIndex = 21;
@@ -149,66 +146,6 @@
             this.label1.Size = new System.Drawing.Size(205, 39);
             this.label1.TabIndex = 17;
             this.label1.Text = "TO MEMBER:";
-            // 
-            // membersListView
-            // 
-            this.membersListView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.membersListView.FormattingEnabled = true;
-            this.membersListView.ItemHeight = 25;
-            this.membersListView.Location = new System.Drawing.Point(63, 549);
-            this.membersListView.Name = "membersListView";
-            this.membersListView.Size = new System.Drawing.Size(529, 404);
-            this.membersListView.TabIndex = 22;
-            this.membersListView.SelectedIndexChanged += new System.EventHandler(this.membersListView_SelectedIndexChanged);
-            // 
-            // removeMember
-            // 
-            this.removeMember.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.removeMember.BackColor = System.Drawing.Color.Transparent;
-            this.removeMember.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.removeMember.FlatAppearance.BorderSize = 2;
-            this.removeMember.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.removeMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeMember.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
-            this.removeMember.ForeColor = System.Drawing.Color.White;
-            this.removeMember.Location = new System.Drawing.Point(52, 435);
-            this.removeMember.Name = "removeMember";
-            this.removeMember.Size = new System.Drawing.Size(540, 91);
-            this.removeMember.TabIndex = 23;
-            this.removeMember.TabStop = false;
-            this.removeMember.Text = "REMOVE MEMBER";
-            this.removeMember.UseVisualStyleBackColor = false;
-            this.removeMember.Click += new System.EventHandler(this.removeMember_Click);
-            // 
-            // clearAll
-            // 
-            this.clearAll.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.clearAll.BackColor = System.Drawing.Color.Transparent;
-            this.clearAll.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.clearAll.FlatAppearance.BorderSize = 2;
-            this.clearAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.clearAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearAll.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
-            this.clearAll.ForeColor = System.Drawing.Color.White;
-            this.clearAll.Location = new System.Drawing.Point(52, 549);
-            this.clearAll.Name = "clearAll";
-            this.clearAll.Size = new System.Drawing.Size(540, 91);
-            this.clearAll.TabIndex = 24;
-            this.clearAll.TabStop = false;
-            this.clearAll.Text = "CLEAR ALL";
-            this.clearAll.UseVisualStyleBackColor = false;
-            this.clearAll.Click += new System.EventHandler(this.clearAll_Click);
-            // 
-            // nodeListView
-            // 
-            this.nodeListView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.nodeListView.FormattingEnabled = true;
-            this.nodeListView.ItemHeight = 25;
-            this.nodeListView.Location = new System.Drawing.Point(95, 714);
-            this.nodeListView.Name = "nodeListView";
-            this.nodeListView.Size = new System.Drawing.Size(462, 354);
-            this.nodeListView.TabIndex = 25;
-            this.nodeListView.SelectedIndexChanged += new System.EventHandler(this.nodeListView_SelectedIndexChanged);
             // 
             // moveMenu
             // 
@@ -267,19 +204,35 @@
             this.zoomInBar.Value = 100;
             this.zoomInBar.Scroll += new System.EventHandler(this.zoomInBar_Scroll);
             // 
+            // membersTable
+            // 
+            this.membersTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.membersTable.BackColor = System.Drawing.Color.Transparent;
+            this.membersTable.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.membersTable.FlatAppearance.BorderSize = 2;
+            this.membersTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.membersTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.membersTable.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.membersTable.ForeColor = System.Drawing.Color.White;
+            this.membersTable.Location = new System.Drawing.Point(1318, 105);
+            this.membersTable.Name = "membersTable";
+            this.membersTable.Size = new System.Drawing.Size(540, 91);
+            this.membersTable.TabIndex = 30;
+            this.membersTable.TabStop = false;
+            this.membersTable.Text = "TABLE";
+            this.membersTable.UseVisualStyleBackColor = false;
+            this.membersTable.Click += new System.EventHandler(this.membersTable_Click);
+            // 
             // members
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.membersTable);
             this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.moveMenu);
-            this.Controls.Add(this.nodeListView);
-            this.Controls.Add(this.clearAll);
-            this.Controls.Add(this.removeMember);
-            this.Controls.Add(this.membersListView);
             this.Controls.Add(this.addMemberButton);
             this.Controls.Add(this.fromMemberTextbox);
             this.Controls.Add(this.label2);
@@ -311,13 +264,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox toMemberTextbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox membersListView;
-        private System.Windows.Forms.Button removeMember;
-        private System.Windows.Forms.Button clearAll;
-        private System.Windows.Forms.ListBox nodeListView;
         private System.Windows.Forms.Panel moveMenu;
         private System.Windows.Forms.Button BackToMainMenu;
         private System.Windows.Forms.Panel bridgeDrawing;
         private System.Windows.Forms.TrackBar zoomInBar;
+        private System.Windows.Forms.Button membersTable;
     }
 }
