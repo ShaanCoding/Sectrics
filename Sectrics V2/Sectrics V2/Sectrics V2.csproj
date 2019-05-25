@@ -134,6 +134,12 @@
     <Compile Include="supportMenus.Designer.cs">
       <DependentUpon>supportMenus.cs</DependentUpon>
     </Compile>
+    <Compile Include="supportMenusTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="supportMenusTable.Designer.cs">
+      <DependentUpon>supportMenusTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="tutorialMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,6 +197,9 @@
     </Compile>
     <EmbeddedResource Include="supportMenus.resx">
       <DependentUpon>supportMenus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="supportMenusTable.resx">
+      <DependentUpon>supportMenusTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tutorialMenu.resx">
       <DependentUpon>tutorialMenu.cs</DependentUpon>
