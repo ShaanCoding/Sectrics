@@ -77,6 +77,12 @@
     <Compile Include="materialProperties.Designer.cs">
       <DependentUpon>materialProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="materialPropertiesTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="materialPropertiesTable.Designer.cs">
+      <DependentUpon>materialPropertiesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maths.cs" />
     <Compile Include="members.cs">
       <SubType>Form</SubType>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="materialProperties.resx">
       <DependentUpon>materialProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="materialPropertiesTable.resx">
+      <DependentUpon>materialPropertiesTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="members.resx">
       <DependentUpon>members.cs</DependentUpon>
