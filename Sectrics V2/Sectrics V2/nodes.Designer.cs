@@ -43,6 +43,7 @@
             this.minimize = new System.Windows.Forms.Button();
             this.exitApplication = new System.Windows.Forms.Button();
             this.nodesTable = new System.Windows.Forms.Button();
+            this.newBridge = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -267,12 +268,33 @@
             this.nodesTable.UseVisualStyleBackColor = false;
             this.nodesTable.Click += new System.EventHandler(this.nodesTable_Click);
             // 
+            // newBridge
+            // 
+            this.newBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.newBridge.BackColor = System.Drawing.Color.Transparent;
+            this.newBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.newBridge.FlatAppearance.BorderSize = 2;
+            this.newBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.newBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newBridge.ForeColor = System.Drawing.Color.White;
+            this.newBridge.Location = new System.Drawing.Point(17, 767);
+            this.newBridge.Name = "newBridge";
+            this.newBridge.Size = new System.Drawing.Size(540, 91);
+            this.newBridge.TabIndex = 29;
+            this.newBridge.TabStop = false;
+            this.newBridge.Text = "NEW BRIDGE";
+            this.newBridge.UseVisualStyleBackColor = false;
+            this.newBridge.Click += new System.EventHandler(this.newBridge_Click);
+            // 
             // nodes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.newBridge);
             this.Controls.Add(this.nodesTable);
             this.Controls.Add(this.addNodeButton);
             this.Controls.Add(this.yAxisTextbox);
@@ -316,5 +338,6 @@
         private System.Windows.Forms.Panel bridgeDrawing;
         private System.Windows.Forms.TrackBar zoomInBar;
         private System.Windows.Forms.Button nodesTable;
+        private System.Windows.Forms.Button newBridge;
     }
 }
