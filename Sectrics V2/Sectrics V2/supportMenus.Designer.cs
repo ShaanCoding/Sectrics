@@ -107,7 +107,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 294);
+            this.label2.Location = new System.Drawing.Point(17, 310);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(249, 39);
             this.label2.TabIndex = 29;
@@ -117,7 +117,7 @@
             // 
             this.supportNodeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.supportNodeTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supportNodeTextbox.Location = new System.Drawing.Point(25, 232);
+            this.supportNodeTextbox.Location = new System.Drawing.Point(17, 239);
             this.supportNodeTextbox.Name = "supportNodeTextbox";
             this.supportNodeTextbox.Size = new System.Drawing.Size(471, 40);
             this.supportNodeTextbox.TabIndex = 0;
@@ -131,7 +131,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 176);
+            this.label1.Location = new System.Drawing.Point(17, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(258, 39);
             this.label1.TabIndex = 27;
@@ -148,7 +148,7 @@
             "Horozontal Fixed Support",
             "Vertical Roller",
             "Horozontal Roller"});
-            this.supportType.Location = new System.Drawing.Point(25, 348);
+            this.supportType.Location = new System.Drawing.Point(17, 363);
             this.supportType.Name = "supportType";
             this.supportType.Size = new System.Drawing.Size(471, 136);
             this.supportType.TabIndex = 1;
@@ -240,7 +240,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(24, 510);
+            this.button1.Location = new System.Drawing.Point(17, 530);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(540, 91);
             this.button1.TabIndex = 31;

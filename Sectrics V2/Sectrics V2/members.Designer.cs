@@ -90,7 +90,7 @@
             this.addMemberButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMemberButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addMemberButton.ForeColor = System.Drawing.Color.White;
-            this.addMemberButton.Location = new System.Drawing.Point(12, 426);
+            this.addMemberButton.Location = new System.Drawing.Point(17, 434);
             this.addMemberButton.Name = "addMemberButton";
             this.addMemberButton.Size = new System.Drawing.Size(540, 91);
             this.addMemberButton.TabIndex = 21;
@@ -103,7 +103,7 @@
             // 
             this.fromMemberTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.fromMemberTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fromMemberTextbox.Location = new System.Drawing.Point(17, 238);
+            this.fromMemberTextbox.Location = new System.Drawing.Point(17, 239);
             this.fromMemberTextbox.Name = "fromMemberTextbox";
             this.fromMemberTextbox.Size = new System.Drawing.Size(417, 40);
             this.fromMemberTextbox.TabIndex = 0;
@@ -127,7 +127,7 @@
             // 
             this.toMemberTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.toMemberTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toMemberTextbox.Location = new System.Drawing.Point(17, 354);
+            this.toMemberTextbox.Location = new System.Drawing.Point(17, 363);
             this.toMemberTextbox.Name = "toMemberTextbox";
             this.toMemberTextbox.Size = new System.Drawing.Size(417, 40);
             this.toMemberTextbox.TabIndex = 1;
@@ -141,7 +141,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 298);
+            this.label1.Location = new System.Drawing.Point(17, 310);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(205, 39);
             this.label1.TabIndex = 17;

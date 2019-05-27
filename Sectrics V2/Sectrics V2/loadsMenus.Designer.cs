@@ -92,7 +92,7 @@
             this.addLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addLoadButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addLoadButton.ForeColor = System.Drawing.Color.White;
-            this.addLoadButton.Location = new System.Drawing.Point(15, 568);
+            this.addLoadButton.Location = new System.Drawing.Point(15, 541);
             this.addLoadButton.Name = "addLoadButton";
             this.addLoadButton.Size = new System.Drawing.Size(540, 91);
             this.addLoadButton.TabIndex = 31;
@@ -105,7 +105,7 @@
             // 
             this.xForceTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.xForceTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xForceTextbox.Location = new System.Drawing.Point(24, 370);
+            this.xForceTextbox.Location = new System.Drawing.Point(17, 363);
             this.xForceTextbox.Name = "xForceTextbox";
             this.xForceTextbox.Size = new System.Drawing.Size(471, 40);
             this.xForceTextbox.TabIndex = 1;
@@ -119,7 +119,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 309);
+            this.label2.Location = new System.Drawing.Point(17, 310);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(245, 39);
             this.label2.TabIndex = 29;
@@ -130,7 +130,7 @@
             // 
             this.nodeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.nodeTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nodeTextbox.Location = new System.Drawing.Point(24, 246);
+            this.nodeTextbox.Location = new System.Drawing.Point(17, 239);
             this.nodeTextbox.Name = "nodeTextbox";
             this.nodeTextbox.Size = new System.Drawing.Size(471, 40);
             this.nodeTextbox.TabIndex = 0;
@@ -144,7 +144,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 189);
+            this.label1.Location = new System.Drawing.Point(17, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 39);
             this.label1.TabIndex = 27;
@@ -155,7 +155,7 @@
             // 
             this.yForceTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.yForceTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yForceTextbox.Location = new System.Drawing.Point(25, 494);
+            this.yForceTextbox.Location = new System.Drawing.Point(25, 470);
             this.yForceTextbox.Name = "yForceTextbox";
             this.yForceTextbox.Size = new System.Drawing.Size(471, 40);
             this.yForceTextbox.TabIndex = 2;
@@ -169,7 +169,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 437);
+            this.label3.Location = new System.Drawing.Point(18, 417);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(244, 39);
             this.label3.TabIndex = 32;

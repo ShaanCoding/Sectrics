@@ -90,7 +90,7 @@
             this.addMaterialPropertiesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMaterialPropertiesButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addMaterialPropertiesButton.ForeColor = System.Drawing.Color.White;
-            this.addMaterialPropertiesButton.Location = new System.Drawing.Point(60, 221);
+            this.addMaterialPropertiesButton.Location = new System.Drawing.Point(24, 677);
             this.addMaterialPropertiesButton.Name = "addMaterialPropertiesButton";
             this.addMaterialPropertiesButton.Size = new System.Drawing.Size(540, 91);
             this.addMaterialPropertiesButton.TabIndex = 26;
@@ -103,7 +103,7 @@
             // 
             this.areaTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.areaTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.areaTextbox.Location = new System.Drawing.Point(1085, 134);
+            this.areaTextbox.Location = new System.Drawing.Point(17, 363);
             this.areaTextbox.Name = "areaTextbox";
             this.areaTextbox.Size = new System.Drawing.Size(471, 40);
             this.areaTextbox.TabIndex = 1;
@@ -117,7 +117,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(672, 135);
+            this.label2.Location = new System.Drawing.Point(17, 310);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(392, 39);
             this.label2.TabIndex = 24;
@@ -127,7 +127,7 @@
             // 
             this.youngModulusTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.youngModulusTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.youngModulusTextbox.Location = new System.Drawing.Point(1085, 64);
+            this.youngModulusTextbox.Location = new System.Drawing.Point(17, 239);
             this.youngModulusTextbox.Name = "youngModulusTextbox";
             this.youngModulusTextbox.Size = new System.Drawing.Size(471, 40);
             this.youngModulusTextbox.TabIndex = 0;
@@ -141,7 +141,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(672, 65);
+            this.label1.Location = new System.Drawing.Point(17, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 39);
             this.label1.TabIndex = 22;
