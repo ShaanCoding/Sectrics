@@ -54,7 +54,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 184);
+            this.label1.Location = new System.Drawing.Point(24, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(339, 39);
             this.label1.TabIndex = 12;
@@ -64,7 +64,7 @@
             // 
             this.xAxisTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.xAxisTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xAxisTextbox.Location = new System.Drawing.Point(17, 239);
+            this.xAxisTextbox.Location = new System.Drawing.Point(24, 239);
             this.xAxisTextbox.Name = "xAxisTextbox";
             this.xAxisTextbox.Size = new System.Drawing.Size(425, 40);
             this.xAxisTextbox.TabIndex = 0;
@@ -75,7 +75,7 @@
             // 
             this.yAxisTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.yAxisTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yAxisTextbox.Location = new System.Drawing.Point(17, 363);
+            this.yAxisTextbox.Location = new System.Drawing.Point(24, 363);
             this.yAxisTextbox.Name = "yAxisTextbox";
             this.yAxisTextbox.Size = new System.Drawing.Size(425, 40);
             this.yAxisTextbox.TabIndex = 1;
@@ -89,7 +89,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 310);
+            this.label2.Location = new System.Drawing.Point(24, 310);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(338, 39);
             this.label2.TabIndex = 14;
@@ -105,7 +105,7 @@
             this.addNodeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNodeButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addNodeButton.ForeColor = System.Drawing.Color.White;
-            this.addNodeButton.Location = new System.Drawing.Point(17, 434);
+            this.addNodeButton.Location = new System.Drawing.Point(24, 434);
             this.addNodeButton.Name = "addNodeButton";
             this.addNodeButton.Size = new System.Drawing.Size(540, 91);
             this.addNodeButton.TabIndex = 16;
@@ -125,7 +125,7 @@
             this.saveBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.saveBridge.ForeColor = System.Drawing.Color.White;
-            this.saveBridge.Location = new System.Drawing.Point(1166, 64);
+            this.saveBridge.Location = new System.Drawing.Point(24, 656);
             this.saveBridge.Name = "saveBridge";
             this.saveBridge.Size = new System.Drawing.Size(540, 91);
             this.saveBridge.TabIndex = 20;
@@ -145,7 +145,7 @@
             this.loadBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loadBridge.ForeColor = System.Drawing.Color.White;
-            this.loadBridge.Location = new System.Drawing.Point(604, 64);
+            this.loadBridge.Location = new System.Drawing.Point(24, 545);
             this.loadBridge.Name = "loadBridge";
             this.loadBridge.Size = new System.Drawing.Size(540, 91);
             this.loadBridge.TabIndex = 21;
@@ -259,7 +259,7 @@
             this.nodesTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nodesTable.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.nodesTable.ForeColor = System.Drawing.Color.White;
-            this.nodesTable.Location = new System.Drawing.Point(604, 161);
+            this.nodesTable.Location = new System.Drawing.Point(584, 64);
             this.nodesTable.Name = "nodesTable";
             this.nodesTable.Size = new System.Drawing.Size(540, 91);
             this.nodesTable.TabIndex = 28;
@@ -279,7 +279,7 @@
             this.newBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newBridge.ForeColor = System.Drawing.Color.White;
-            this.newBridge.Location = new System.Drawing.Point(1166, 161);
+            this.newBridge.Location = new System.Drawing.Point(24, 767);
             this.newBridge.Name = "newBridge";
             this.newBridge.Size = new System.Drawing.Size(540, 91);
             this.newBridge.TabIndex = 29;
@@ -302,13 +302,13 @@
             this.Controls.Add(this.xAxisTextbox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.zoomInBar);
-            this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.BackToMainMenu);
             this.Controls.Add(this.moveMenu);
             this.Controls.Add(this.loadBridge);
             this.Controls.Add(this.saveBridge);
             this.Controls.Add(this.minimize);
             this.Controls.Add(this.exitApplication);
+            this.Controls.Add(this.bridgeDrawing);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

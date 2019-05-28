@@ -269,5 +269,22 @@ namespace Sectrics_V2
             this.Hide();
             membersTable.Show();
         }
+
+        private void loadBridge_Click(object sender, EventArgs e)
+        {
+            Program.generalFunctions.LoadFileCSV();
+            bridgeDrawing.Refresh();
+        }
+
+        private void saveBridge_Click(object sender, EventArgs e)
+        {
+            Program.generalFunctions.saveFileCSV();
+        }
+
+        private void newBridge_Click(object sender, EventArgs e)
+        {
+            Program.generalFunctions.newBridge();
+            bridgeDrawing.Refresh();
+        }
     }
 }

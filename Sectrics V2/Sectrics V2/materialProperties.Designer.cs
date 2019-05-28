@@ -41,6 +41,9 @@
             this.bridgeDrawing = new System.Windows.Forms.Panel();
             this.zoomInBar = new System.Windows.Forms.TrackBar();
             this.membersTable = new System.Windows.Forms.Button();
+            this.newBridge = new System.Windows.Forms.Button();
+            this.loadBridge = new System.Windows.Forms.Button();
+            this.saveBridge = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +93,7 @@
             this.addMaterialPropertiesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addMaterialPropertiesButton.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.addMaterialPropertiesButton.ForeColor = System.Drawing.Color.White;
-            this.addMaterialPropertiesButton.Location = new System.Drawing.Point(24, 677);
+            this.addMaterialPropertiesButton.Location = new System.Drawing.Point(24, 434);
             this.addMaterialPropertiesButton.Name = "addMaterialPropertiesButton";
             this.addMaterialPropertiesButton.Size = new System.Drawing.Size(540, 91);
             this.addMaterialPropertiesButton.TabIndex = 26;
@@ -103,7 +106,7 @@
             // 
             this.areaTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.areaTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.areaTextbox.Location = new System.Drawing.Point(17, 363);
+            this.areaTextbox.Location = new System.Drawing.Point(24, 363);
             this.areaTextbox.Name = "areaTextbox";
             this.areaTextbox.Size = new System.Drawing.Size(471, 40);
             this.areaTextbox.TabIndex = 1;
@@ -117,7 +120,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(17, 310);
+            this.label2.Location = new System.Drawing.Point(24, 310);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(392, 39);
             this.label2.TabIndex = 24;
@@ -127,7 +130,7 @@
             // 
             this.youngModulusTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.youngModulusTextbox.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.youngModulusTextbox.Location = new System.Drawing.Point(17, 239);
+            this.youngModulusTextbox.Location = new System.Drawing.Point(24, 239);
             this.youngModulusTextbox.Name = "youngModulusTextbox";
             this.youngModulusTextbox.Size = new System.Drawing.Size(471, 40);
             this.youngModulusTextbox.TabIndex = 0;
@@ -141,7 +144,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("DIN Alternate", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(17, 184);
+            this.label1.Location = new System.Drawing.Point(24, 184);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 39);
             this.label1.TabIndex = 22;
@@ -214,7 +217,7 @@
             this.membersTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.membersTable.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.membersTable.ForeColor = System.Drawing.Color.White;
-            this.membersTable.Location = new System.Drawing.Point(38, 941);
+            this.membersTable.Location = new System.Drawing.Point(584, 64);
             this.membersTable.Name = "membersTable";
             this.membersTable.Size = new System.Drawing.Size(540, 91);
             this.membersTable.TabIndex = 34;
@@ -223,12 +226,75 @@
             this.membersTable.UseVisualStyleBackColor = false;
             this.membersTable.Click += new System.EventHandler(this.membersTable_Click);
             // 
+            // newBridge
+            // 
+            this.newBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.newBridge.BackColor = System.Drawing.Color.Transparent;
+            this.newBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.newBridge.FlatAppearance.BorderSize = 2;
+            this.newBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.newBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newBridge.ForeColor = System.Drawing.Color.White;
+            this.newBridge.Location = new System.Drawing.Point(24, 767);
+            this.newBridge.Name = "newBridge";
+            this.newBridge.Size = new System.Drawing.Size(540, 91);
+            this.newBridge.TabIndex = 37;
+            this.newBridge.TabStop = false;
+            this.newBridge.Text = "NEW BRIDGE";
+            this.newBridge.UseVisualStyleBackColor = false;
+            this.newBridge.Click += new System.EventHandler(this.newBridge_Click);
+            // 
+            // loadBridge
+            // 
+            this.loadBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.loadBridge.BackColor = System.Drawing.Color.Transparent;
+            this.loadBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.loadBridge.FlatAppearance.BorderSize = 2;
+            this.loadBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.loadBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadBridge.ForeColor = System.Drawing.Color.White;
+            this.loadBridge.Location = new System.Drawing.Point(24, 545);
+            this.loadBridge.Name = "loadBridge";
+            this.loadBridge.Size = new System.Drawing.Size(540, 91);
+            this.loadBridge.TabIndex = 36;
+            this.loadBridge.TabStop = false;
+            this.loadBridge.Text = "LOAD BRIDGE";
+            this.loadBridge.UseVisualStyleBackColor = false;
+            this.loadBridge.Click += new System.EventHandler(this.loadBridge_Click);
+            // 
+            // saveBridge
+            // 
+            this.saveBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveBridge.BackColor = System.Drawing.Color.Transparent;
+            this.saveBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.saveBridge.FlatAppearance.BorderSize = 2;
+            this.saveBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.saveBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.saveBridge.ForeColor = System.Drawing.Color.White;
+            this.saveBridge.Location = new System.Drawing.Point(24, 656);
+            this.saveBridge.Name = "saveBridge";
+            this.saveBridge.Size = new System.Drawing.Size(540, 91);
+            this.saveBridge.TabIndex = 35;
+            this.saveBridge.TabStop = false;
+            this.saveBridge.Text = "SAVE BRIDGE";
+            this.saveBridge.UseVisualStyleBackColor = false;
+            this.saveBridge.Click += new System.EventHandler(this.saveBridge_Click);
+            // 
             // materialProperties
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.newBridge);
+            this.Controls.Add(this.loadBridge);
+            this.Controls.Add(this.saveBridge);
             this.Controls.Add(this.membersTable);
             this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
@@ -268,5 +334,8 @@
         private System.Windows.Forms.Panel bridgeDrawing;
         private System.Windows.Forms.TrackBar zoomInBar;
         private System.Windows.Forms.Button membersTable;
+        private System.Windows.Forms.Button newBridge;
+        private System.Windows.Forms.Button loadBridge;
+        private System.Windows.Forms.Button saveBridge;
     }
 }

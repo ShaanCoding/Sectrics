@@ -282,6 +282,6 @@ namespace Sectrics_V2
         {
             Program.generalFunctions.newBridge();
             bridgeDrawing.Refresh();
-    }
+        }
     }
 }
