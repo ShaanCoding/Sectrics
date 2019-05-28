@@ -341,22 +341,5 @@ namespace Sectrics_V2
                 MessageBox.Show("ERROR: An Error Has Occured Whilst Loading. Check If The File Is Already In Use Or If The Data Is Valid & Try Again.");
             }
         }
-
-        public void newBridge()
-        {
-            Program.bridgeData.supportType.Clear();
-            Program.bridgeData.supportNode.Clear();
-            Program.bridgeData.nodes.Clear();
-            Program.bridgeData.degreesOfFreedom.Clear();
-            Program.bridgeData.memberConnection.Clear();
-            Program.bridgeData.restrainedDegreesOfFreedom.Clear();
-            Program.bridgeData.forces.Clear();
-            Program.bridgeData.stiffness.Clear();
-            Program.bridgeData.areas.Clear();
-            Program.bridgeData.ndof = 0;
-            Program.bridgeData.nodesIndex = 0;
-            Program.bridgeData.memberIndex = 0;
-            Program.bridgeData.materialPropertiesIndex = 0;
-        }
     }
 }

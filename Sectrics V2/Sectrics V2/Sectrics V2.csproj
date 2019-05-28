@@ -58,6 +58,12 @@
     <Compile Include="buildBridgeMenu.Designer.cs">
       <DependentUpon>buildBridgeMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="confirmNewBridgeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="confirmNewBridgeMenu.Designer.cs">
+      <DependentUpon>confirmNewBridgeMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="exitMenus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="buildBridgeMenu.resx">
       <DependentUpon>buildBridgeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="confirmNewBridgeMenu.resx">
+      <DependentUpon>confirmNewBridgeMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="exitMenus.resx">
       <DependentUpon>exitMenus.cs</DependentUpon>
