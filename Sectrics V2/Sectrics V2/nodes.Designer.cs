@@ -259,7 +259,7 @@
             this.nodesTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.nodesTable.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
             this.nodesTable.ForeColor = System.Drawing.Color.White;
-            this.nodesTable.Location = new System.Drawing.Point(17, 627);
+            this.nodesTable.Location = new System.Drawing.Point(604, 161);
             this.nodesTable.Name = "nodesTable";
             this.nodesTable.Size = new System.Drawing.Size(540, 91);
             this.nodesTable.TabIndex = 28;
@@ -279,7 +279,7 @@
             this.newBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newBridge.ForeColor = System.Drawing.Color.White;
-            this.newBridge.Location = new System.Drawing.Point(17, 767);
+            this.newBridge.Location = new System.Drawing.Point(1166, 161);
             this.newBridge.Name = "newBridge";
             this.newBridge.Size = new System.Drawing.Size(540, 91);
             this.newBridge.TabIndex = 29;

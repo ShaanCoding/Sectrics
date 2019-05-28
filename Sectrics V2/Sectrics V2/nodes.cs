@@ -280,19 +280,7 @@ namespace Sectrics_V2
 
         private void newBridge_Click(object sender, EventArgs e)
         {
-            Program.bridgeData.supportType.Clear();
-            Program.bridgeData.supportNode.Clear();
-            Program.bridgeData.nodes.Clear();
-            Program.bridgeData.degreesOfFreedom.Clear();
-            Program.bridgeData.memberConnection.Clear();
-            Program.bridgeData.restrainedDegreesOfFreedom.Clear();
-            Program.bridgeData.forces.Clear();
-            Program.bridgeData.stiffness.Clear();
-            Program.bridgeData.areas.Clear();
-            Program.bridgeData.ndof = 0;
-            Program.bridgeData.nodesIndex = 0;
-            Program.bridgeData.memberIndex = 0;
-            Program.bridgeData.materialPropertiesIndex = 0;
+            Program.generalFunctions.newBridge();
             bridgeDrawing.Refresh();
     }
     }
