@@ -87,6 +87,9 @@ namespace Sectrics_V2
 
         private void solveForForces_Click(object sender, EventArgs e)
         {
+            //Orders restrained degree of freedom, to simplify in the solving process
+            Program.bridgeData.restrainedDegreesOfFreedom.Sort();
+
             double[,] nodes = new double[Program.bridgeData.nodes.Count, 2];
             for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
             {
