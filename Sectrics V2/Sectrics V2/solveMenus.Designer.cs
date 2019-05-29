@@ -35,7 +35,6 @@
             this.solveForForces = new System.Windows.Forms.Button();
             this.zoomInBar = new System.Windows.Forms.TrackBar();
             this.bridgeDrawing = new System.Windows.Forms.Panel();
-            this.savePictureOfBridge = new System.Windows.Forms.Button();
             this.moveMenu = new System.Windows.Forms.Panel();
             this.BackToMainMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
@@ -132,25 +131,6 @@
             this.bridgeDrawing.Paint += new System.Windows.Forms.PaintEventHandler(this.bridgeDrawing_Paint);
             this.bridgeDrawing.MouseMove += new System.Windows.Forms.MouseEventHandler(this.bridgeDrawing_MouseMove);
             // 
-            // savePictureOfBridge
-            // 
-            this.savePictureOfBridge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.savePictureOfBridge.BackColor = System.Drawing.Color.Transparent;
-            this.savePictureOfBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.savePictureOfBridge.FlatAppearance.BorderSize = 2;
-            this.savePictureOfBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.savePictureOfBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.savePictureOfBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
-            this.savePictureOfBridge.ForeColor = System.Drawing.Color.White;
-            this.savePictureOfBridge.Location = new System.Drawing.Point(24, 286);
-            this.savePictureOfBridge.Name = "savePictureOfBridge";
-            this.savePictureOfBridge.Size = new System.Drawing.Size(537, 91);
-            this.savePictureOfBridge.TabIndex = 16;
-            this.savePictureOfBridge.TabStop = false;
-            this.savePictureOfBridge.Text = "SAVE PICTURE";
-            this.savePictureOfBridge.UseVisualStyleBackColor = false;
-            this.savePictureOfBridge.Click += new System.EventHandler(this.savePictureOfBridge_Click);
-            // 
             // moveMenu
             // 
             this.moveMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -191,7 +171,6 @@
             this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.BackToMainMenu);
             this.Controls.Add(this.moveMenu);
-            this.Controls.Add(this.savePictureOfBridge);
             this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.solveForForces);
             this.Controls.Add(this.barStressesTextbox);
@@ -219,7 +198,6 @@
         private System.Windows.Forms.Button solveForForces;
         private System.Windows.Forms.TrackBar zoomInBar;
         private System.Windows.Forms.Panel bridgeDrawing;
-        private System.Windows.Forms.Button savePictureOfBridge;
         private System.Windows.Forms.Panel moveMenu;
         private System.Windows.Forms.Button BackToMainMenu;
     }

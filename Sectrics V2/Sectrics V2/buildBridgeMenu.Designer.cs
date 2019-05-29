@@ -51,6 +51,9 @@
             this.newBridge = new System.Windows.Forms.Button();
             this.loadBridge = new System.Windows.Forms.Button();
             this.saveBridge = new System.Windows.Forms.Button();
+            this.savePictureOfBridge = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -340,7 +343,7 @@
             this.newBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newBridge.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold);
             this.newBridge.ForeColor = System.Drawing.Color.White;
-            this.newBridge.Location = new System.Drawing.Point(1293, 70);
+            this.newBridge.Location = new System.Drawing.Point(48, 949);
             this.newBridge.Name = "newBridge";
             this.newBridge.Size = new System.Drawing.Size(269, 61);
             this.newBridge.TabIndex = 47;
@@ -360,7 +363,7 @@
             this.loadBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadBridge.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold);
             this.loadBridge.ForeColor = System.Drawing.Color.White;
-            this.loadBridge.Location = new System.Drawing.Point(645, 70);
+            this.loadBridge.Location = new System.Drawing.Point(48, 814);
             this.loadBridge.Name = "loadBridge";
             this.loadBridge.Size = new System.Drawing.Size(269, 61);
             this.loadBridge.TabIndex = 46;
@@ -380,7 +383,7 @@
             this.saveBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBridge.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold);
             this.saveBridge.ForeColor = System.Drawing.Color.White;
-            this.saveBridge.Location = new System.Drawing.Point(969, 70);
+            this.saveBridge.Location = new System.Drawing.Point(355, 814);
             this.saveBridge.Name = "saveBridge";
             this.saveBridge.Size = new System.Drawing.Size(269, 61);
             this.saveBridge.TabIndex = 45;
@@ -389,12 +392,57 @@
             this.saveBridge.UseVisualStyleBackColor = false;
             this.saveBridge.Click += new System.EventHandler(this.saveBridge_Click);
             // 
+            // savePictureOfBridge
+            // 
+            this.savePictureOfBridge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.savePictureOfBridge.BackColor = System.Drawing.Color.Transparent;
+            this.savePictureOfBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.savePictureOfBridge.FlatAppearance.BorderSize = 2;
+            this.savePictureOfBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
+            this.savePictureOfBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savePictureOfBridge.Font = new System.Drawing.Font("DIN Alternate", 7.875F, System.Drawing.FontStyle.Bold);
+            this.savePictureOfBridge.ForeColor = System.Drawing.Color.White;
+            this.savePictureOfBridge.Location = new System.Drawing.Point(355, 949);
+            this.savePictureOfBridge.Name = "savePictureOfBridge";
+            this.savePictureOfBridge.Size = new System.Drawing.Size(269, 61);
+            this.savePictureOfBridge.TabIndex = 48;
+            this.savePictureOfBridge.TabStop = false;
+            this.savePictureOfBridge.Text = "SAVE PICTURE";
+            this.savePictureOfBridge.UseVisualStyleBackColor = false;
+            this.savePictureOfBridge.Click += new System.EventHandler(this.savePictureOfBridge_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(249, 743);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(176, 33);
+            this.label7.TabIndex = 49;
+            this.label7.Text = "BRIDGE INFO";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(42, 761);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(591, 33);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "____________________________________";
+            // 
             // buildBridgeMenu
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.savePictureOfBridge);
             this.Controls.Add(this.newBridge);
             this.Controls.Add(this.loadBridge);
             this.Controls.Add(this.saveBridge);
@@ -453,5 +501,8 @@
         private System.Windows.Forms.Button newBridge;
         private System.Windows.Forms.Button loadBridge;
         private System.Windows.Forms.Button saveBridge;
+        private System.Windows.Forms.Button savePictureOfBridge;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
     }
 }

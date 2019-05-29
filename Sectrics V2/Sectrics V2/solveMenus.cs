@@ -365,35 +365,6 @@ namespace Sectrics_V2
             }
         }
 
-        private void savePictureOfBridge_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                SaveFileDialog saveBridgePhoto = new SaveFileDialog();
-                saveBridgePhoto.DefaultExt = "png";
-                saveBridgePhoto.Filter = "PNG|*.png";
-
-                if(saveBridgePhoto.ShowDialog() == DialogResult.OK)
-                {
-                    if (File.Exists(saveBridgePhoto.FileName))
-                    {
-                        File.Delete(saveBridgePhoto.FileName);
-                    }
-
-                    int width = bridgeDrawing.Size.Width;
-                    int height = bridgeDrawing.Size.Height;
-
-                    Bitmap bitmap = new Bitmap(width, height);
-                    bridgeDrawing.DrawToBitmap(bitmap, new Rectangle(0, 0, width, height));
-                    bitmap.Save(saveBridgePhoto.FileName, ImageFormat.Png);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("ERROR: An Error Has Occured Whilst Saving");
-            }
-        }
-
         private void moveMenu_MouseDown(object sender, MouseEventArgs e)
         {
             Program.generalFunctions.mov = 1;

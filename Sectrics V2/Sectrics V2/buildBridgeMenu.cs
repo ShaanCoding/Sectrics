@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -266,6 +268,35 @@ namespace Sectrics_V2
             confirmNewBridgeMenu confirmNewBridgeMenu = new confirmNewBridgeMenu();
             this.Hide();
             confirmNewBridgeMenu.Show();
+        }
+
+        private void savePictureOfBridge_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog saveBridgePhoto = new SaveFileDialog();
+                saveBridgePhoto.DefaultExt = "png";
+                saveBridgePhoto.Filter = "PNG|*.png";
+
+                if (saveBridgePhoto.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(saveBridgePhoto.FileName))
+                    {
+                        File.Delete(saveBridgePhoto.FileName);
+                    }
+
+                    int width = bridgeDrawing.Size.Width;
+                    int height = bridgeDrawing.Size.Height;
+
+                    Bitmap bitmap = new Bitmap(width, height);
+                    bridgeDrawing.DrawToBitmap(bitmap, new Rectangle(0, 0, width, height));
+                    bitmap.Save(saveBridgePhoto.FileName, ImageFormat.Png);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("ERROR: An Error Has Occured Whilst Saving");
+            }
         }
     }
 }
