@@ -34,8 +34,6 @@
             this.yAxisTextbox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.addNodeButton = new System.Windows.Forms.Button();
-            this.saveBridge = new System.Windows.Forms.Button();
-            this.loadBridge = new System.Windows.Forms.Button();
             this.moveMenu = new System.Windows.Forms.Panel();
             this.BackToMainMenu = new System.Windows.Forms.Button();
             this.bridgeDrawing = new System.Windows.Forms.Panel();
@@ -43,7 +41,6 @@
             this.minimize = new System.Windows.Forms.Button();
             this.exitApplication = new System.Windows.Forms.Button();
             this.nodesTable = new System.Windows.Forms.Button();
-            this.newBridge = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,46 +110,6 @@
             this.addNodeButton.Text = "ADD NODE";
             this.addNodeButton.UseVisualStyleBackColor = false;
             this.addNodeButton.Click += new System.EventHandler(this.addNodeButton_Click);
-            // 
-            // saveBridge
-            // 
-            this.saveBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBridge.BackColor = System.Drawing.Color.Transparent;
-            this.saveBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.saveBridge.FlatAppearance.BorderSize = 2;
-            this.saveBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.saveBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
-            this.saveBridge.ForeColor = System.Drawing.Color.White;
-            this.saveBridge.Location = new System.Drawing.Point(24, 656);
-            this.saveBridge.Name = "saveBridge";
-            this.saveBridge.Size = new System.Drawing.Size(540, 91);
-            this.saveBridge.TabIndex = 20;
-            this.saveBridge.TabStop = false;
-            this.saveBridge.Text = "SAVE BRIDGE";
-            this.saveBridge.UseVisualStyleBackColor = false;
-            this.saveBridge.Click += new System.EventHandler(this.saveBridge_Click);
-            // 
-            // loadBridge
-            // 
-            this.loadBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.loadBridge.BackColor = System.Drawing.Color.Transparent;
-            this.loadBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.loadBridge.FlatAppearance.BorderSize = 2;
-            this.loadBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.loadBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadBridge.ForeColor = System.Drawing.Color.White;
-            this.loadBridge.Location = new System.Drawing.Point(24, 545);
-            this.loadBridge.Name = "loadBridge";
-            this.loadBridge.Size = new System.Drawing.Size(540, 91);
-            this.loadBridge.TabIndex = 21;
-            this.loadBridge.TabStop = false;
-            this.loadBridge.Text = "LOAD BRIDGE";
-            this.loadBridge.UseVisualStyleBackColor = false;
-            this.loadBridge.Click += new System.EventHandler(this.loadBridge_Click);
             // 
             // moveMenu
             // 
@@ -268,33 +225,12 @@
             this.nodesTable.UseVisualStyleBackColor = false;
             this.nodesTable.Click += new System.EventHandler(this.nodesTable_Click);
             // 
-            // newBridge
-            // 
-            this.newBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.newBridge.BackColor = System.Drawing.Color.Transparent;
-            this.newBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.newBridge.FlatAppearance.BorderSize = 2;
-            this.newBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.newBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newBridge.ForeColor = System.Drawing.Color.White;
-            this.newBridge.Location = new System.Drawing.Point(24, 767);
-            this.newBridge.Name = "newBridge";
-            this.newBridge.Size = new System.Drawing.Size(540, 91);
-            this.newBridge.TabIndex = 29;
-            this.newBridge.TabStop = false;
-            this.newBridge.Text = "NEW BRIDGE";
-            this.newBridge.UseVisualStyleBackColor = false;
-            this.newBridge.Click += new System.EventHandler(this.newBridge_Click);
-            // 
             // nodes
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.newBridge);
             this.Controls.Add(this.nodesTable);
             this.Controls.Add(this.addNodeButton);
             this.Controls.Add(this.yAxisTextbox);
@@ -304,8 +240,6 @@
             this.Controls.Add(this.zoomInBar);
             this.Controls.Add(this.BackToMainMenu);
             this.Controls.Add(this.moveMenu);
-            this.Controls.Add(this.loadBridge);
-            this.Controls.Add(this.saveBridge);
             this.Controls.Add(this.minimize);
             this.Controls.Add(this.exitApplication);
             this.Controls.Add(this.bridgeDrawing);
@@ -331,13 +265,10 @@
         private System.Windows.Forms.TextBox yAxisTextbox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addNodeButton;
-        private System.Windows.Forms.Button saveBridge;
-        private System.Windows.Forms.Button loadBridge;
         private System.Windows.Forms.Panel moveMenu;
         private System.Windows.Forms.Button BackToMainMenu;
         private System.Windows.Forms.Panel bridgeDrawing;
         private System.Windows.Forms.TrackBar zoomInBar;
         private System.Windows.Forms.Button nodesTable;
-        private System.Windows.Forms.Button newBridge;
     }
 }

@@ -41,9 +41,6 @@
             this.bridgeDrawing = new System.Windows.Forms.Panel();
             this.zoomInBar = new System.Windows.Forms.TrackBar();
             this.supportMenuTable = new System.Windows.Forms.Button();
-            this.newBridge = new System.Windows.Forms.Button();
-            this.loadBridge = new System.Windows.Forms.Button();
-            this.saveBridge = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.zoomInBar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,75 +229,12 @@
             this.supportMenuTable.UseVisualStyleBackColor = false;
             this.supportMenuTable.Click += new System.EventHandler(this.supportMenuTable_Click);
             // 
-            // newBridge
-            // 
-            this.newBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.newBridge.BackColor = System.Drawing.Color.Transparent;
-            this.newBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.newBridge.FlatAppearance.BorderSize = 2;
-            this.newBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.newBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.newBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newBridge.ForeColor = System.Drawing.Color.White;
-            this.newBridge.Location = new System.Drawing.Point(24, 851);
-            this.newBridge.Name = "newBridge";
-            this.newBridge.Size = new System.Drawing.Size(540, 91);
-            this.newBridge.TabIndex = 43;
-            this.newBridge.TabStop = false;
-            this.newBridge.Text = "NEW BRIDGE";
-            this.newBridge.UseVisualStyleBackColor = false;
-            this.newBridge.Click += new System.EventHandler(this.newBridge_Click);
-            // 
-            // loadBridge
-            // 
-            this.loadBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.loadBridge.BackColor = System.Drawing.Color.Transparent;
-            this.loadBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.loadBridge.FlatAppearance.BorderSize = 2;
-            this.loadBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.loadBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loadBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loadBridge.ForeColor = System.Drawing.Color.White;
-            this.loadBridge.Location = new System.Drawing.Point(24, 630);
-            this.loadBridge.Name = "loadBridge";
-            this.loadBridge.Size = new System.Drawing.Size(540, 91);
-            this.loadBridge.TabIndex = 42;
-            this.loadBridge.TabStop = false;
-            this.loadBridge.Text = "LOAD BRIDGE";
-            this.loadBridge.UseVisualStyleBackColor = false;
-            this.loadBridge.Click += new System.EventHandler(this.loadBridge_Click);
-            // 
-            // saveBridge
-            // 
-            this.saveBridge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBridge.BackColor = System.Drawing.Color.Transparent;
-            this.saveBridge.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.saveBridge.FlatAppearance.BorderSize = 2;
-            this.saveBridge.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(78)))), ((int)(((byte)(81)))));
-            this.saveBridge.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveBridge.Font = new System.Drawing.Font("DIN Alternate", 10.125F, System.Drawing.FontStyle.Bold);
-            this.saveBridge.ForeColor = System.Drawing.Color.White;
-            this.saveBridge.Location = new System.Drawing.Point(24, 741);
-            this.saveBridge.Name = "saveBridge";
-            this.saveBridge.Size = new System.Drawing.Size(540, 91);
-            this.saveBridge.TabIndex = 41;
-            this.saveBridge.TabStop = false;
-            this.saveBridge.Text = "SAVE BRIDGE";
-            this.saveBridge.UseVisualStyleBackColor = false;
-            this.saveBridge.Click += new System.EventHandler(this.saveBridge_Click);
-            // 
             // supportMenus
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
-            this.Controls.Add(this.newBridge);
-            this.Controls.Add(this.loadBridge);
-            this.Controls.Add(this.saveBridge);
             this.Controls.Add(this.supportMenuTable);
             this.Controls.Add(this.bridgeDrawing);
             this.Controls.Add(this.zoomInBar);
@@ -340,8 +274,5 @@
         private System.Windows.Forms.Panel bridgeDrawing;
         private System.Windows.Forms.TrackBar zoomInBar;
         private System.Windows.Forms.Button supportMenuTable;
-        private System.Windows.Forms.Button newBridge;
-        private System.Windows.Forms.Button loadBridge;
-        private System.Windows.Forms.Button saveBridge;
     }
 }

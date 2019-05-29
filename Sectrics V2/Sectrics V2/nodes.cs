@@ -122,17 +122,6 @@ namespace Sectrics_V2
 
         }
 
-        private void saveBridge_Click(object sender, EventArgs e)
-        {
-            Program.generalFunctions.saveFileCSV();
-        }
-
-        private void loadBridge_Click(object sender, EventArgs e)
-        {
-            Program.generalFunctions.LoadFileCSV();
-            bridgeDrawing.Refresh();
-        }
-
         private void moveMenu_Paint(object sender, PaintEventArgs e)
         {
 
@@ -276,13 +265,6 @@ namespace Sectrics_V2
             nodesTable nodesTable = new nodesTable();
             this.Hide();
             nodesTable.Show();
-        }
-
-        private void newBridge_Click(object sender, EventArgs e)
-        {
-            confirmNewBridgeMenu confirmNewBridgeMenu = new confirmNewBridgeMenu();
-            this.Hide();
-            confirmNewBridgeMenu.Show();
         }
     }
 }
