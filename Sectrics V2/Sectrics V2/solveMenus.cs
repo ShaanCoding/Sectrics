@@ -128,7 +128,6 @@ namespace Sectrics_V2
 
 
             //M,K,F MATRIX
-            double[,] M = Program.maths.zeroMatrix(ndof, ndof);
             double[,] K = Program.maths.zeroMatrix(ndof, ndof);
             double[] F = new double[forces.GetLength(0) * 2];
 
@@ -180,7 +179,6 @@ namespace Sectrics_V2
 
             //Remove Restrained Degrees Of Freedom Remove row & axis of the corresponding index of restrainedDOF
             int[] remove_indices = Program.maths.vectorAdditionByOne(-1, restrainedDegreesOfFreedom);
-            double[,] MRemovedDOF = Program.maths.vectorMatrixRemove(M, remove_indices, remove_indices);
             double[,] KRemovedDOF = Program.maths.vectorMatrixRemove(K, remove_indices, remove_indices);
             double[] forceRemovedDOF = Program.maths.vectorVectorRemove(F, remove_indices);
 
