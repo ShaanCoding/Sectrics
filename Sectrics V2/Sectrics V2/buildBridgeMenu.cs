@@ -256,6 +256,7 @@ namespace Sectrics_V2
         private void loadBridge_Click(object sender, EventArgs e)
         {
             Program.generalFunctions.LoadFileCSV();
+            bridgeDrawing.Refresh();
         }
 
         private void saveBridge_Click(object sender, EventArgs e)
