@@ -247,5 +247,10 @@
   <ItemGroup>
     <None Include="Resources\verticalSupport.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="calculateStiffness.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

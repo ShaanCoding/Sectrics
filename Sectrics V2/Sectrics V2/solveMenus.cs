@@ -11,11 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace Sectrics_V2
 {
     public partial class solveMenus : Form
     {
+
+
         double[] stressForPanel = new double[Program.bridgeData.memberConnection.Count];
         double[] reactionForceForPanel = new double[Program.bridgeData.supportNode.Count];
         float zoom = 1f;
@@ -74,17 +77,6 @@ namespace Sectrics_V2
 
         }
 
-        static double[,] rotation_matrix(double[] deltaPoint)
-        {
-            double[] x_axis = { 1, 0 };
-            double[] y_axis = { 0, 1 };
-
-            double x_proj = Program.maths.dotProduct(deltaPoint, x_axis) * (1 / ((Program.maths.distanceFormula(0, 0, deltaPoint[0], deltaPoint[1])) * (Program.maths.distanceFormula(0, 0, x_axis[0], x_axis[1]))));
-            double y_proj = Program.maths.dotProduct(deltaPoint, y_axis) * (1 / ((Program.maths.distanceFormula(0, 0, deltaPoint[0], deltaPoint[1])) * (Program.maths.distanceFormula(0, 0, y_axis[0], y_axis[1]))));
-            double[,] returnMatrix = { { x_proj, y_proj, 0, 0 }, { 0, 0, x_proj, y_proj } };
-            return returnMatrix;
-        }
-
         private void solveForForces_Click(object sender, EventArgs e)
         {
             //Orders restrained degree of freedom, to simplify in the solving process
@@ -124,64 +116,30 @@ namespace Sectrics_V2
             double[] areas = Program.bridgeData.areas.ToArray();
             int ndof = Program.bridgeData.ndof;
 
+            // Get config settings
+            string filePythonExePath = "C:/Python27/python.exe";
+            string filePythonNamePath = @"calculateStiffness.py";
+            string filePythonParameterName = "john is gay";
+            string outputText, standardError;
 
-
-
-            //M,K,F MATRIX
-            double[,] K = Program.maths.zeroMatrix(ndof, ndof);
-            double[] F = new double[forces.GetLength(0) * 2];
-
-            for (int i = 0; i < memberConnections.GetLength(0); i++)
+            // Instantiate Machine Learning C# - Python class object            
+            IMLSharpPython mlSharpPython = new MLSharpPython(filePythonExePath);
+            // Test image
+            // Define Python script file and input parameter name
+            string fileNameParameter = $"{filePythonNamePath} {filePythonParameterName}";
+            // Execute the python script file 
+            outputText = mlSharpPython.ExecutePythonScript(fileNameParameter, out standardError);
+            if (string.IsNullOrEmpty(standardError))
             {
-                int fromNode = memberConnections[i, 0];
-                int toNode = memberConnections[i, 1];
-                double[] fromPoint = { nodes[fromNode, 0], nodes[fromNode, 1] };
-                double[] toPoint = { nodes[toNode, 0], nodes[toNode, 1] };
-                double[] deltaPoint = { (toPoint[0] - fromPoint[0]), (toPoint[1] - fromPoint[1]) };
-                int[] dofs = { degreesOfFreedom[fromNode, 0], degreesOfFreedom[fromNode, 1], degreesOfFreedom[toNode, 0], degreesOfFreedom[toNode, 1] };
-
-                //Find Element Mass & Stiffness Matrix
-                double length = Program.maths.distanceFormula(toPoint[0], toPoint[1], fromPoint[0], fromPoint[1]);
-                double area = areas[i];
-                double Ck = stiffness[i] * area / length;
-
-                double[,] k = { { 1, -1 }, { -1, 1 } };
-
-                double[,] tau = rotation_matrix(deltaPoint);
-                double[,] k_r = Program.maths.matrixMultiplication(Program.maths.matrixMultiplication(Program.maths.transposeSolver(tau), k), tau);
-                //Change from element matrix to global matrix
-
-                double[,] B = Program.maths.zeroMatrix(4, ndof);
-
-                for (int l = 0; l < 4; l++)
-                {
-                    B[l, (dofs[l] - 1)] = 1.0;
-                }
-
-                double[,] K_rG = Program.maths.matrixMultiplication(Program.maths.matrixMultiplication(Program.maths.transposeSolver(B), k_r), B);
-                K = Program.maths.matrixAddition(K, Program.maths.oneValueMultiplyMatrix(Ck, K_rG));
-
+                MessageBox.Show(outputText);
+            }
+            else
+            {
+                MessageBox.Show(standardError);
             }
 
-            //Construct force vector
-            int u = 0;
-            int y = 0;
-            for (int p = 0; p < F.GetLength(0); p++)
-            {
-                F[p] = forces[u, y];
-                y++;
-                if (y == 2)
-                {
-                    y = 0;
-                    u++;
-                }
-            }
 
-            //Remove Restrained Degrees Of Freedom Remove row & axis of the corresponding index of restrainedDOF
-            int[] remove_indices = Program.maths.vectorAdditionByOne(-1, restrainedDegreesOfFreedom);
-            double[,] KRemovedDOF = Program.maths.vectorMatrixRemove(K, remove_indices, remove_indices);
-            double[] forceRemovedDOF = Program.maths.vectorVectorRemove(F, remove_indices);
-
+            /*
             //Displacements
             double[] displacements = Program.maths.vectorMatrixDotProduct(Program.maths.inverseMatrix(KRemovedDOF), forceRemovedDOF);
 
@@ -227,6 +185,7 @@ namespace Sectrics_V2
             }
 
             bridgeDrawing.Refresh();
+            */
         }
 
         private void bridgeDrawing_Paint(object sender, PaintEventArgs e)
@@ -393,6 +352,51 @@ namespace Sectrics_V2
             buildBridgeMenu buildBridgeMenu = new buildBridgeMenu();
             this.Hide();
             buildBridgeMenu.Show();
+        }
+    }
+
+    public interface IMLSharpPython
+    {
+        string ExecutePythonScript(string filePythonScript, out string standardError);
+    }
+
+    public class MLSharpPython : IMLSharpPython
+    {
+        public readonly string filePythonExePath;
+
+        public MLSharpPython(string exePythonPath)
+        {
+            filePythonExePath = exePythonPath;
+        }
+
+        public string ExecutePythonScript(string filePythonScript, out string standardError)
+        {
+            string outputText = string.Empty;
+            standardError = string.Empty;
+            try
+            {
+                using (Process process = new Process())
+                {
+                    process.StartInfo = new ProcessStartInfo(filePythonExePath)
+                    {
+                        Arguments = filePythonScript,
+                        UseShellExecute = false,
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        CreateNoWindow = true
+                    };
+                    process.Start();
+                    outputText = process.StandardOutput.ReadToEnd();
+                    outputText = outputText.Replace(Environment.NewLine, string.Empty);
+                    standardError = process.StandardError.ReadToEnd();
+                    process.WaitForExit();
+                }
+            }
+            catch (Exception ex)
+            {
+                string exceptionMessage = ex.Message;
+            }
+            return outputText;
         }
     }
 }

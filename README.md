@@ -1,8 +1,10 @@
 # Sectrics - Truss Analysis Calculator
-
+The Sectrics application is a Truss Analysis Calculator made to find the forces in each member, being tensile or compressive using the Finite Element Method. This program was part of the HSC course in Australia as part of my major project, as such this program is NOT intended to be used for real life structural analysis and therefore we take no responsibility for harm from the misuse/misfunctioning of this program.
 
 ## Prerequisites
-This program requires no prerequisites
+This program requires Python 2.7 at a minimum however, Python 3.7.3 is recommended. In  addition several libraries are required including:
+* Numpy
+* Scipy
 
 ## Built With
 This program was built with no external frameworks excluding the C# system libraries, all additional libraries included, such as the maths class was created by me, Shaan Khan.
