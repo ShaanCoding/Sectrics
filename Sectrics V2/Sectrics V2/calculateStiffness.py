@@ -17,7 +17,8 @@ def setup():
 	# define the model
 	nodes              = list(zip(list(map(int, nodeX)), list(map(int, nodeY))))
 	degrees_of_freedom = list(map(list, zip(map(int, dofsX),map(int, dofsY))))
-	elements 		   = { 0:[0,1], 1:[1,2], 2:[0,2], 3:[2,3]}
+	elementsTo          = list(map(int, toMember))
+	elementsFrom        = list(map(int, fromMember))
 	restrained_dofs    = list(map(int, restrainedDOFS))
 	forces             = { 0:[0,0], 1:[20000,0], 2:[0,-25000], 3:[0,0]}
 
@@ -28,24 +29,20 @@ def setup():
 
 	ndofs = int(ndof[0])
 
-	# assertions
-	assert len(elements) == len(stiffnesses) == len(areas)
-	assert len(restrained_dofs) < ndofs
-	assert len(forces) == len(nodes)
-
 	return {  'x_axis':x_axis, 'y_axis':y_axis, 'nodes':nodes, 'degrees_of_freedom':degrees_of_freedom,   \
-	      	  'elements':elements, 'restrained_dofs':restrained_dofs, 'forces':forces, 'ndofs':ndofs,     \
+	      	  'elementsTo':elementsTo, 'elementsFrom':elementsFrom, 'restrained_dofs':restrained_dofs, 'forces':forces, 'ndofs':ndofs,     \
 	      	  'stiffnesses':stiffnesses, 'areas':areas }
 
 
 def points(element, properties):
-	elements = properties['elements']
+	elementsTo = properties['elementsTo']
+	elementsFrom = properties['elementsFrom']
 	nodes = properties['nodes']
 	degrees_of_freedom = properties['degrees_of_freedom']
 
 	# find the nodes that the lements connects
-	fromNode = elements[element][0]
-	toNode = elements[element][1]
+	fromNode = elementsTo[element]
+	toNode = elementsFrom[element]
 
 	# the coordinates for each node
 	fromPoint = np.array(nodes[fromNode])
@@ -71,7 +68,8 @@ def get_matrices(properties):
 	# construct the global mass and stiffness matrices
 	ndofs    = properties['ndofs']
 	nodes    = properties['nodes']
-	elements = properties['elements']
+	elementsTo = properties['elementsTo']
+	elementsFrom = properties['elementsFrom']
 	forces   = properties['forces']
 	areas    = properties['areas']
 	x_axis   = properties['x_axis']
@@ -79,7 +77,7 @@ def get_matrices(properties):
 
 	K = np.zeros((ndofs,ndofs))
 
-	for element in elements:
+	for element in range(0, len(elementsTo)):
 		# find the element geometry
 		fromPoint, toPoint, dofs = points(element, properties)
 
@@ -126,12 +124,12 @@ def get_matrices(properties):
 def get_stresses(properties, X):
 	x_axis   = properties['x_axis']
 	y_axis   = properties['y_axis']
-	elements = properties['elements']
+	elementsTo = properties['elementsTo']
 	E 		 = properties['stiffnesses']
 
 	# find the stresses in each member
 	stresses = []
-	for element in elements:
+	for element in range(0, len(elementsTo)):
 		# find the element geometry
 		fromPoint, toPoint, dofs = points(element, properties)
 		element_vector = toPoint - fromPoint
