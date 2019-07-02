@@ -79,54 +79,67 @@ namespace Sectrics_V2
 
         private void solveForForces_Click(object sender, EventArgs e)
         {
-            //Orders restrained degree of freedom, to simplify in the solving process
-            Program.bridgeData.restrainedDegreesOfFreedom.Sort();
+            string nodeX = "Node-X: ";
+            string nodeY = "Node-Y: ";
+            string dofs = "Dofs: ";
+            string toMember = "To-Member: ";
+            string fromMember = "From-Member: ";
+            string restrainedDOFS = "Restrained-DOFS: ";
+            string forceX = "Forces-X: ";
+            string forceY = "Force-Y: ";
+            string stiffness = "Stiffness: ";
+            string areas = "Areas: ";
+            string ndof = "Ndof: "+Program.bridgeData.ndof.ToString();
 
-            double[,] nodes = new double[Program.bridgeData.nodes.Count, 2];
-            for (int i = 0; i < Program.bridgeData.nodes.Count; i++)
+            for(int i = 0; i < Program.bridgeData.nodes.Count; i++)
             {
-                nodes[i, 0] = Program.bridgeData.nodes[i].NodeX;
-                nodes[i, 1] = Program.bridgeData.nodes[i].NodeY;
+                nodeX += Convert.ToString(Program.bridgeData.nodes[i].NodeX) + " ";
+                nodeY += Convert.ToString(Program.bridgeData.nodes[i].NodeY) + " ";
             }
 
-            int[,] degreesOfFreedom = new int[Program.bridgeData.degreesOfFreedom.Count, 2];
-            for (int i = 0; i < Program.bridgeData.degreesOfFreedom.Count; i++)
+            for(int i = 0; i < Program.bridgeData.degreesOfFreedom.Count; i++)
             {
-                degreesOfFreedom[i, 0] = Program.bridgeData.degreesOfFreedom[i].xDegreeOfFreedom;
-                degreesOfFreedom[i, 1] = Program.bridgeData.degreesOfFreedom[i].yDegreesOfFreedom;
+                dofs += Convert.ToString(Program.bridgeData.degreesOfFreedom[i]) + " ";
             }
 
-            int[,] memberConnections = new int[Program.bridgeData.memberConnection.Count, 2];
-            for (int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
+            for(int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
             {
-                memberConnections[i, 0] = Program.bridgeData.memberConnection[i].fromConnection;
-                memberConnections[i, 1] = Program.bridgeData.memberConnection[i].toConnection;
+                toMember += Convert.ToString(Program.bridgeData.memberConnection[i].fromConnection) + " ";
+                fromMember += Convert.ToString(Program.bridgeData.memberConnection[i].toConnection) + " ";
             }
 
-            double[,] forces = new double[Program.bridgeData.forces.Count, 2];
+            for(int i = 0; i < Program.bridgeData.restrainedDegreesOfFreedom.Count; i++)
+            {
+                restrainedDOFS += Convert.ToString(Program.bridgeData.restrainedDegreesOfFreedom[i]);
+            }
+
             for (int i = 0; i < Program.bridgeData.forces.Count; i++)
             {
-                forces[i, 0] = Program.bridgeData.forces[i].xMagnitudeForces;
-                forces[i, 1] = Program.bridgeData.forces[i].yMagnitudeForces;
+                forceX += Convert.ToString(Program.bridgeData.forces[i].xMagnitudeForces) + " ";
+                forceY += Convert.ToString(Program.bridgeData.forces[i].yMagnitudeForces) + " ";
             }
 
+            for(int i = 0; i < Program.bridgeData.stiffness.Count; i++)
+            {
+                stiffness += Convert.ToString(Program.bridgeData.stiffness[i]) + " ";
+            }
 
-            int[] restrainedDegreesOfFreedom = Program.bridgeData.restrainedDegreesOfFreedom.ToArray();
-            double[] stiffness = Program.bridgeData.stiffness.ToArray();
-            double[] areas = Program.bridgeData.areas.ToArray();
-            int ndof = Program.bridgeData.ndof;
+            for(int i = 0; i < Program.bridgeData.areas.Count; i++)
+            {
+                areas += Convert.ToString(Program.bridgeData.areas[i]) + " ";
+            }
 
             // Get config settings
             string filePythonExePath = "C:/Python27/python.exe";
             string filePythonNamePath = @"calculateStiffness.py";
-            string filePythonParameterName = "john is gay";
             string outputText, standardError;
 
             // Instantiate Machine Learning C# - Python class object            
             IMLSharpPython mlSharpPython = new MLSharpPython(filePythonExePath);
             // Test image
             // Define Python script file and input parameter name
-            string fileNameParameter = $"{filePythonNamePath} {filePythonParameterName}";
+            string fileNameParameter = $"{filePythonNamePath} {nodeX} {nodeY} {dofs} {toMember} {fromMember} {restrainedDOFS} {forceX} {forceY} {stiffness} {areas} {ndof}";
+
             // Execute the python script file 
             outputText = mlSharpPython.ExecutePythonScript(fileNameParameter, out standardError);
             if (string.IsNullOrEmpty(standardError))
