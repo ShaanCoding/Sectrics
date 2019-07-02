@@ -15,12 +15,15 @@ def setup():
 
 	print(name)
 	# define the model
-	nodes              = list(zip(list(map(int, nodeX)), list(map(int, nodeY))))
-	degrees_of_freedom = list(map(list, zip(map(int, dofsX),map(int, dofsY))))
+	nodes               = list(zip(list(map(int, nodeX)), list(map(int, nodeY))))
+	degrees_of_freedom  = list(map(list, zip(map(int, dofsX),map(int, dofsY))))
 	elementsTo          = list(map(int, toMember))
 	elementsFrom        = list(map(int, fromMember))
-	restrained_dofs    = list(map(int, restrainedDOFS))
-	forces             = { 0:[0,0], 1:[20000,0], 2:[0,-25000], 3:[0,0]}
+	restrained_dofs     = list(map(int, restrainedDOFS))
+	forces = [None]*(len(forceX)+len(forceY))
+	forces[::2] = forceX
+	forces[1::2] = forceY
+	forces = list(map(int, forces))
 
 	# material properties - AISI 1095 Carbon Steel (Spring Steel)
 	stiffnesses = list(map(float, youngModulus))
@@ -106,10 +109,7 @@ def get_matrices(properties):
 		K += Ck * K_rG
 
 	# construct the force vector
-	F = []
-	for f in forces.values():
-		F.extend(f)
-	F = np.array(F)
+	F = forces
 
 
 	# remove the restrained dofs
