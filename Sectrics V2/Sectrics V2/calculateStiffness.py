@@ -15,7 +15,7 @@ def setup():
 
 	print(name)
 	# define the model
-	nodes               = list(zip(list(map(int, nodeX)), list(map(int, nodeY))))
+	nodes               = list(zip(list(map(float, nodeX)), list(map(float, nodeY))))
 	degrees_of_freedom  = list(map(list, zip(map(int, dofsX),map(int, dofsY))))
 	elementsTo          = list(map(int, toMember))
 	elementsFrom        = list(map(int, fromMember))
