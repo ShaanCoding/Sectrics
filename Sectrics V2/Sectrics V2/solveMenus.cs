@@ -79,17 +79,18 @@ namespace Sectrics_V2
 
         private void solveForForces_Click(object sender, EventArgs e)
         {
-            string nodeX = "Node-X: ";
-            string nodeY = "Node-Y: ";
-            string dofs = "Dofs: ";
-            string toMember = "To-Member: ";
-            string fromMember = "From-Member: ";
-            string restrainedDOFS = "Restrained-DOFS: ";
-            string forceX = "Forces-X: ";
-            string forceY = "Force-Y: ";
-            string stiffness = "Stiffness: ";
-            string areas = "Areas: ";
-            string ndof = "Ndof: "+Program.bridgeData.ndof.ToString();
+            string nodeX = "";
+            string nodeY = "";
+            string dofsX = "";
+            string dofsY = "";
+            string toMember = "";
+            string fromMember = "";
+            string restrainedDOFS = "";
+            string forceX = "";
+            string forceY = "";
+            string stiffness = "";
+            string areas = "";
+            string ndof = Program.bridgeData.ndof.ToString();
 
             for(int i = 0; i < Program.bridgeData.nodes.Count; i++)
             {
@@ -99,7 +100,8 @@ namespace Sectrics_V2
 
             for(int i = 0; i < Program.bridgeData.degreesOfFreedom.Count; i++)
             {
-                dofs += Convert.ToString(Program.bridgeData.degreesOfFreedom[i]) + " ";
+                dofsX += Convert.ToString(Program.bridgeData.degreesOfFreedom[i].xDegreeOfFreedom) + " ";
+                dofsY += Convert.ToString(Program.bridgeData.degreesOfFreedom[i].yDegreesOfFreedom) + " ";
             }
 
             for(int i = 0; i < Program.bridgeData.memberConnection.Count; i++)
@@ -110,7 +112,7 @@ namespace Sectrics_V2
 
             for(int i = 0; i < Program.bridgeData.restrainedDegreesOfFreedom.Count; i++)
             {
-                restrainedDOFS += Convert.ToString(Program.bridgeData.restrainedDegreesOfFreedom[i]);
+                restrainedDOFS += Convert.ToString(Program.bridgeData.restrainedDegreesOfFreedom[i]) + " ";
             }
 
             for (int i = 0; i < Program.bridgeData.forces.Count; i++)
@@ -138,7 +140,7 @@ namespace Sectrics_V2
             IMLSharpPython mlSharpPython = new MLSharpPython(filePythonExePath);
             // Test image
             // Define Python script file and input parameter name
-            string fileNameParameter = $"{filePythonNamePath} {nodeX} {nodeY} {dofs} {toMember} {fromMember} {restrainedDOFS} {forceX} {forceY} {stiffness} {areas} {ndof}";
+            string fileNameParameter = $"{filePythonNamePath} / {nodeX} / {nodeY} / {dofsX} / {dofsY} / {toMember} / {fromMember} / {restrainedDOFS} / {forceX} / {forceY} / {stiffness} / {areas} / {ndof}";
 
             // Execute the python script file 
             outputText = mlSharpPython.ExecutePythonScript(fileNameParameter, out standardError);

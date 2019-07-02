@@ -1,15 +1,19 @@
 import sys
+from itertools import groupby
 import numpy as np
 from numpy.linalg import norm
 from scipy.linalg import eigh
 
 def setup():
-	print('Number of arguments:', len(sys.argv), 'arguments.')
-	print('Argument List:', str(sys.argv))
 	# define the coordinate system
 	x_axis = np.array([1,0])
 	y_axis = np.array([0,1])
+	sectricsInput = sys.argv
 
+	# define the model
+	name, nodeX, nodeY, dofsX, dofsY, toMember, fromMember, restrainedDOFS, forceX, forceY, youngModulus, area, ndof = (list(g) for k,g in groupby(sectricsInput, key=lambda x: x != '/') if k)
+
+	print(name)
 	# define the model
 	nodes              = { 1:[0,0], 2:[40,0], 3:[40,30], 4:[0,30]}
 	degrees_of_freedom = { 1:[1,2], 2:[3,4], 3:[5,6], 4:[7,8]}
@@ -23,7 +27,7 @@ def setup():
 	# geometric properties
 	areas = {1:0.284, 2:0.284, 3:0.284, 4:0.284}
 
-	ndofs = 2 * len(nodes)
+	ndofs = int(ndof[0])
 
 	# assertions
 	assert len(densities) == len(elements) == len(stiffnesses) == len(areas)
@@ -32,7 +36,7 @@ def setup():
 
 	return {  'x_axis':x_axis, 'y_axis':y_axis, 'nodes':nodes, 'degrees_of_freedom':degrees_of_freedom,   \
 	      	  'elements':elements, 'restrained_dofs':restrained_dofs, 'forces':forces, 'ndofs':ndofs,     \
-	      	  'densities':densities, 'stiffnesses':stiffnesses, 'areas':areas }
+	      	  'stiffnesses':stiffnesses, 'areas':areas }
 
 
 def points(element, properties):
