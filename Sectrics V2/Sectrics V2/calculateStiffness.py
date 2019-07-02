@@ -11,26 +11,25 @@ def setup():
 	sectricsInput = sys.argv
 
 	# define the model
-	name, nodeX, nodeY, dofsX, dofsY, toMember, fromMember, restrainedDOFS, forceX, forceY, youngModulus, area, ndof = (list(g) for k,g in groupby(sectricsInput, key=lambda x: x != '/') if k)
+	name, nodeX, nodeY, dofsX, dofsY, toMember, fromMember, restrainedDOFS, forceX, forceY, youngModulus, a, ndof = (list(g) for k,g in groupby(sectricsInput, key=lambda x: x != '/') if k)
 
 	print(name)
 	# define the model
-	nodes              = { 1:[0,0], 2:[40,0], 3:[40,30], 4:[0,30]}
-	degrees_of_freedom = { 1:[1,2], 2:[3,4], 3:[5,6], 4:[7,8]}
-	elements 		   = { 1:[1,2], 2:[2,3], 3:[1,3], 4:[3,4]}
-	restrained_dofs    = [1,2,3,7,8]
-	forces             = { 1:[0,0], 2:[20000,0], 3:[0,-25000], 4:[0,0]}
+	nodes              = list(zip(list(map(int, nodeX)), list(map(int, nodeY))))
+	degrees_of_freedom = list(map(list, zip(map(int, dofsX),map(int, dofsY))))
+	elements 		   = { 0:[0,1], 1:[1,2], 2:[0,2], 3:[2,3]}
+	restrained_dofs    = list(map(int, restrainedDOFS))
+	forces             = { 0:[0,0], 1:[20000,0], 2:[0,-25000], 3:[0,0]}
 
 	# material properties - AISI 1095 Carbon Steel (Spring Steel)
-	densities   = {1:0.284, 2:0.284, 3:0.284, 4:0.284}
-	stiffnesses = {1:30.0e6, 2:30.0e6, 3:30.0e6, 4:30.0e6}
+	stiffnesses = list(map(float, youngModulus))
 	# geometric properties
-	areas = {1:0.284, 2:0.284, 3:0.284, 4:0.284}
+	areas = list(map(float, a))
 
 	ndofs = int(ndof[0])
 
 	# assertions
-	assert len(densities) == len(elements) == len(stiffnesses) == len(areas)
+	assert len(elements) == len(stiffnesses) == len(areas)
 	assert len(restrained_dofs) < ndofs
 	assert len(forces) == len(nodes)
 
