@@ -147,10 +147,8 @@ def get_stresses(properties, X):
 	return stresses
 
 def show_results(X, stresses):
-	print('Nodal Displacments:', X)
-	print('Stresses:', stresses)
-	print( 'Displacment Magnitude:', round(norm(X),5))
-	print()
+	print('{0} / {1} / {2}').format(X, stresses, round(norm(X), 5))
+
 
 
 def main():

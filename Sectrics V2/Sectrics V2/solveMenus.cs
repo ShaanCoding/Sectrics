@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace Sectrics_V2
 {
@@ -146,61 +147,50 @@ namespace Sectrics_V2
             outputText = mlSharpPython.ExecutePythonScript(fileNameParameter, out standardError);
             if (string.IsNullOrEmpty(standardError))
             {
-                MessageBox.Show(outputText);
+                var outputTextSplit = outputText.Split('/');
+                var displacementNode = Regex.Replace(outputTextSplit[0], @"[^ 0-9a-zA-Z,.-]+", ""); //Nodal Displacement
+                var stressesNode = Regex.Replace(outputTextSplit[1], @"[^0-9a-zA-Z,.-]+", ""); //Stresses
+                var displacementMagnitude = Regex.Replace(outputTextSplit[2], @"[^0-9a-zA-Z,.-]+", ""); //Total Displacement Magnitude
+                var stressesArray = stressesNode.Split(',');
+
+
+
+                double[] stresses = new double[stressesArray.Count()];
+                for(int i = 0; i < stressesArray.Count(); i++)
+                {
+                    stresses[i] = Convert.ToDouble(stressesArray[i]);
+                }
+                barStressesTextbox.AppendText("===== Stresses =====\r\n");
+                barStressesTextbox.AppendText(Environment.NewLine);
+
+                for (int i = 0; i < Program.bridgeData.memberConnection.Count(); i++)
+                {
+                    barStressesTextbox.AppendText(Convert.ToString("Member" + i + " has stresses of" + stresses[i]) +" units"+ "\r\n");
+                    stressForPanel[i] = stresses[i];
+                }
+
+                //Calculates reaction forces for each support
+                for (int i = 0; i < Program.bridgeData.supportNode.Count; i++)
+                {
+                    reactionForceForPanel[i] = 0;
+                    for (int j = 0; j < Program.bridgeData.memberConnection.Count; j++)
+                    {
+                        if (Program.bridgeData.memberConnection[j].fromConnection == Program.bridgeData.supportNode[i] || Program.bridgeData.memberConnection[j].toConnection == Program.bridgeData.supportNode[i])
+                        {
+                            reactionForceForPanel[i] += stressForPanel[j];
+                        }
+                    }
+                    reactionForceForPanel[i] = reactionForceForPanel[i] * -1;
+                }
+
+                bridgeDrawing.Refresh();
+
             }
             else
             {
-                MessageBox.Show(standardError);
+                MessageBox.Show("ERROR: An Error Has Occured Calculating Stresses");
             }
-
-
-            /*
-            //Displacements
-            double[] displacements = Program.maths.vectorMatrixDotProduct(Program.maths.inverseMatrix(KRemovedDOF), forceRemovedDOF);
-
-            barStressesTextbox.AppendText("===== Displacements =====\r\n");
-            for(int i = 0; i < displacements.GetLength(0); i++)
-            {
-                barStressesTextbox.AppendText(Convert.ToString(displacements[i])+ "\r\n");
-            }
-            barStressesTextbox.AppendText(Environment.NewLine);
-            barStressesTextbox.AppendText(Environment.NewLine);
-            barStressesTextbox.AppendText("===== Stresses =====\r\n");
-            barStressesTextbox.AppendText(Environment.NewLine);
-
-            for (int i = 0; i < memberConnections.GetLength(0); i++)
-            {
-                int fromNode = memberConnections[i, 0];
-                int toNode = memberConnections[i, 1];
-                double[] fromPoint = { nodes[fromNode, 0], nodes[fromNode, 1] };
-                double[] toPoint = { nodes[toNode, 0], nodes[toNode, 1] };
-                double[] deltaPoint = { (toPoint[0] - fromPoint[0]), (toPoint[1] - fromPoint[1]) };
-                int[] dofs = { degreesOfFreedom[fromNode, 0], degreesOfFreedom[fromNode, 1], degreesOfFreedom[toNode, 0], degreesOfFreedom[toNode, 1] };
-                double[,] tau = rotation_matrix(deltaPoint);
-                double[] globalDisplacements = { 0, 0, displacements[0], displacements[1] };
-                double[] q = Program.maths.vectorMatrixDotProduct(tau, globalDisplacements);
-                double strain = (q[1] - q[0]) /Program. maths.distanceFormula(0, 0, deltaPoint[0], deltaPoint[1]);
-                double stress = stiffness[i] * strain;
-                barStressesTextbox.AppendText(Convert.ToString(stress)+ "\r\n");
-                stressForPanel[i] = stress;
-            }
-
-            //Calculates reaction forces for each support
-            for(int i = 0; i < Program.bridgeData.supportNode.Count; i++)
-            {
-                reactionForceForPanel[i] = 0;
-                for(int j = 0; j < Program.bridgeData.memberConnection.Count; j++)
-                {
-                    if(Program.bridgeData.memberConnection[j].fromConnection == Program.bridgeData.supportNode[i] || Program.bridgeData.memberConnection[j].toConnection == Program.bridgeData.supportNode[i])
-                    {
-                        reactionForceForPanel[i] += stressForPanel[j];
-                    }
-                }
-                reactionForceForPanel[i] = reactionForceForPanel[i] * -1;
-            }
-
-            bridgeDrawing.Refresh();
-            */
+           
         }
 
         private void bridgeDrawing_Paint(object sender, PaintEventArgs e)
