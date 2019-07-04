@@ -15,6 +15,7 @@ namespace Sectrics_V2
 {
     public partial class buildBridgeMenu : Form
     {
+        //Initalisation of global variables for main menu
         float zoom = 1f;
         double xMouseOffset;
         double yMouseOffset;
@@ -26,6 +27,7 @@ namespace Sectrics_V2
             InitializeComponent();
         }
 
+        //Resizing window function
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == 0x84)
@@ -46,16 +48,19 @@ namespace Sectrics_V2
             base.WndProc(ref m);
         }
 
+        //Exit application button
         private void exitApplication_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Minimize application button
         private void minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        //Change menu to nodes button
         private void nodesMenu_Click(object sender, EventArgs e)
         {
             nodes node = new nodes();
@@ -63,6 +68,7 @@ namespace Sectrics_V2
             node.Show();
         }
 
+        //Change menu to members button
         private void membersMenu_Click(object sender, EventArgs e)
         {
             members member = new members();
@@ -70,6 +76,7 @@ namespace Sectrics_V2
             member.Show();
         }
 
+        //Change menu to material properties
         private void materialPropertiesMenu_Click(object sender, EventArgs e)
         {
             materialProperties materialProperty = new materialProperties();
@@ -77,6 +84,7 @@ namespace Sectrics_V2
             materialProperty.Show();
         }
 
+        //Change menu to support menus
         private void supportsMenu_Click(object sender, EventArgs e)
         {
             supportMenus supportMenu = new supportMenus();
@@ -84,6 +92,7 @@ namespace Sectrics_V2
             supportMenu.Show();
         }
 
+        //Change menu to load menus
         private void loadsMenu_Click(object sender, EventArgs e)
         {
             loadsMenus loadMenu = new loadsMenus();
@@ -91,6 +100,7 @@ namespace Sectrics_V2
             loadMenu.Show();
         }
 
+        //Change menu to solve menus
         private void solveMenu_Click(object sender, EventArgs e)
         {
             solveMenus solveMenu = new solveMenus();
@@ -98,6 +108,7 @@ namespace Sectrics_V2
             solveMenu.Show();
         }
 
+        //Allows the form to be dragged around
         private void nodes_Load(object sender, EventArgs e)
         {
             if ((Program.generalFunctions.desktopX - Program.generalFunctions.movX) != 0 && (Program.generalFunctions.desktopY - Program.generalFunctions.movY) != null)
@@ -108,6 +119,7 @@ namespace Sectrics_V2
             bridgeDrawing.Refresh();
         }
 
+        //Changes menu to about menu
         private void aboutMenu_Click(object sender, EventArgs e)
         {
             aboutMenus aboutMenu = new aboutMenus();
@@ -115,6 +127,7 @@ namespace Sectrics_V2
             aboutMenu.Show();
         }
 
+        //Changes menu to exit menu
         private void exitMenu_Click(object sender, EventArgs e)
         {
             exitMenus exitMenu = new exitMenus();
@@ -122,6 +135,7 @@ namespace Sectrics_V2
             exitMenu.Show();
         }
 
+        //Mouse down function with flag indicating to allow movement for the menu
         private void moveMenu_MouseDown(object sender, MouseEventArgs e)
         {
             Program.generalFunctions.mov = 1;
@@ -129,6 +143,7 @@ namespace Sectrics_V2
             Program.generalFunctions.movY = e.Y;
         }
 
+        //Mouse movement function allowing movement for the menu
         private void moveMenu_MouseMove(object sender, MouseEventArgs e)
         {
             if (Program.generalFunctions.mov == 1)
@@ -139,11 +154,13 @@ namespace Sectrics_V2
             }
         }
 
+        //Moveup flag for the movement of the menu
         private void moveMenu_MouseUp(object sender, MouseEventArgs e)
         {
             Program.generalFunctions.mov = 0;
         }
 
+        //Draws the bridge
         private void bridgeDrawing_Paint(object sender, PaintEventArgs e)
         {
             try
@@ -225,12 +242,14 @@ namespace Sectrics_V2
             }
         }
 
+        //Barfor zooming in
         private void zoomInBar_Scroll(object sender, EventArgs e)
         {
             zoom = zoomInBar.Value / 100f;
             bridgeDrawing.Refresh();
         }
 
+        //Function allowing the movement of the bridge
         private void bridgeDrawing_MouseMove(object sender, MouseEventArgs e)
         {
             double oMouseXOffset = Cursor.Position.X;
@@ -253,17 +272,20 @@ namespace Sectrics_V2
 
         }
 
+        //Loads the bridge
         private void loadBridge_Click(object sender, EventArgs e)
         {
             Program.generalFunctions.LoadFileCSV();
             bridgeDrawing.Refresh();
         }
 
+        //Saves current bridge
         private void saveBridge_Click(object sender, EventArgs e)
         {
             Program.generalFunctions.saveFileCSV();
         }
 
+        //Creates new bridge
         private void newBridge_Click(object sender, EventArgs e)
         {
             confirmNewBridgeMenu confirmNewBridgeMenu = new confirmNewBridgeMenu();
@@ -271,6 +293,7 @@ namespace Sectrics_V2
             confirmNewBridgeMenu.Show();
         }
 
+        //Saves picture of bridge
         private void savePictureOfBridge_Click(object sender, EventArgs e)
         {
             try

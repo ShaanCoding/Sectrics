@@ -24,12 +24,8 @@ def setup():
 	forces[::2] = forceX
 	forces[1::2] = forceY
 	forces = list(map(int, forces))
-
-	# material properties - AISI 1095 Carbon Steel (Spring Steel)
 	stiffnesses = list(map(float, youngModulus))
-	# geometric properties
 	areas = list(map(float, a))
-
 	ndofs = int(ndof[0])
 
 	return {  'x_axis':x_axis, 'y_axis':y_axis, 'nodes':nodes, 'degrees_of_freedom':degrees_of_freedom,   \
@@ -152,15 +148,10 @@ def show_results(X, stresses):
 
 
 def main():
-	# problem setup
 	properties = setup()
-	# determine the global matrices
 	K, F = get_matrices(properties)
-	# calculate the static displacement of each element
 	X = np.linalg.inv(K).dot(F)
-	# determine the stresses in each element
 	stresses = get_stresses(properties, X)
-	# output results
 	show_results(X, stresses)
 
 

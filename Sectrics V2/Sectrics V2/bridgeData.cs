@@ -27,6 +27,7 @@ namespace Sectrics_V2
     }
     class BridgeData
     {
+        //Initalisation of global variables
         public List<string> supportType = new List<string>();
         public List<int> supportNode = new List<int>();
         public List<Nodes> nodes = new List<Nodes>();
