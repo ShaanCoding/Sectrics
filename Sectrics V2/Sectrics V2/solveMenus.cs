@@ -165,7 +165,7 @@ namespace Sectrics_V2
 
                 for (int i = 0; i < Program.bridgeData.memberConnection.Count(); i++)
                 {
-                    barStressesTextbox.AppendText(Convert.ToString("Member" + i + " has stresses of" + stresses[i]) +" units"+ "\r\n");
+                    barStressesTextbox.AppendText(Convert.ToString("Member " + i + " has stresses of " + stresses[i]) +" units "+ "\r\n");
                     stressForPanel[i] = stresses[i];
                 }
 
